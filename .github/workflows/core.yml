@@ -1,8 +1,11 @@
-name: Core suite
-on: [push, pull_request]
+name: Validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
 jobs:
   core:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     env:
       LEAN_NUM_THREADS: '2'
       PYTHONDONTWRITEBYTECODE: '1'
@@ -15,19 +18,16 @@ jobs:
         with:
           toolchain: stable
       - name: Install pinned Lean toolchains
-        shell: pwsh
         run: |
-          Invoke-WebRequest https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1 -OutFile $env:RUNNER_TEMP/elan-init.ps1
-          & $env:RUNNER_TEMP/elan-init.ps1 -NoPrompt 1 -DefaultToolchain leanprover/lean4:v4.32.0
-          Add-Content $env:GITHUB_PATH "$env:USERPROFILE/.elan/bin"
-          & "$env:USERPROFILE/.elan/bin/elan.exe" toolchain install leanprover/lean4:v4.29.0-rc7
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.32.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install leanprover/lean4:v4.29.0-rc7
       - name: Build pinned Nanoda
-        shell: pwsh
         run: |
-          git clone https://github.com/ammkrn/nanoda_lib $env:RUNNER_TEMP/nanoda
-          git -C $env:RUNNER_TEMP/nanoda checkout 3a2407216ee84a75f9e1aead6803d0578be06ae7
-          cargo build --release --manifest-path $env:RUNNER_TEMP/nanoda/Cargo.toml
-          Add-Content $env:GITHUB_ENV "COMPARATOR_NANODA=$env:RUNNER_TEMP/nanoda/target/release/nanoda_bin.exe"
+          git clone https://github.com/ammkrn/nanoda_lib "$RUNNER_TEMP/nanoda"
+          git -C "$RUNNER_TEMP/nanoda" checkout 3a2407216ee84a75f9e1aead6803d0578be06ae7
+          cargo build --release --manifest-path "$RUNNER_TEMP/nanoda/Cargo.toml"
+          echo "COMPARATOR_NANODA=$RUNNER_TEMP/nanoda/target/release/nanoda_bin" >> "$GITHUB_ENV"
       - name: Core suite (no Mathlib)
         run: python run.py test
       - uses: actions/upload-artifact@v4
@@ -35,3 +35,55 @@ jobs:
         with:
           name: core-results
           path: results/core-suite.json
+  erdos-example:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    env:
+      LEAN_NUM_THREADS: '2'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install Lean 4.32.0
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.32.0
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Build pinned Nanoda
+        run: |
+          git clone https://github.com/ammkrn/nanoda_lib "$RUNNER_TEMP/nanoda"
+          git -C "$RUNNER_TEMP/nanoda" checkout 3a2407216ee84a75f9e1aead6803d0578be06ae7
+          cargo build --release --manifest-path "$RUNNER_TEMP/nanoda/Cargo.toml"
+          echo "COMPARATOR_NANODA=$RUNNER_TEMP/nanoda/target/release/nanoda_bin" >> "$GITHUB_ENV"
+      - name: Fetch pinned target and Mathlib cache
+        run: |
+          git -c core.autocrlf=true clone https://github.com/openai/ten-proofs "$RUNNER_TEMP/ten-proofs"
+          git -C "$RUNNER_TEMP/ten-proofs" checkout 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6
+          cd "$RUNNER_TEMP/ten-proofs"
+          lake exe cache get
+      - name: Build only the Ramsey module, resuming crashes
+        run: |
+          cd "$RUNNER_TEMP/ten-proofs"
+          set +e
+          for attempt in 1 2 3; do
+            lake build MulticolorTriangleRamsey > build.log 2>&1
+            code=$?
+            cat build.log
+            if [ "$code" -eq 0 ]; then break; fi
+            if ! grep -Eq 'code (139|132|134|135)|Segmentation fault|stack overflow' build.log; then break; fi
+          done
+          exit "$code"
+      - name: Review the shipped theorem bundle
+        run: |
+          python run.py review --project "$RUNNER_TEMP/ten-proofs" --module MulticolorTriangleRamsey --bundle ErdosProblems.MulticolourTriangleRamsey.erdos_183 ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta --output example
+      - name: Diff every review artifact against the recorded bundle
+        run: python tests/compare_example.py example results/ten-proofs/I_MulticolorTriangleRamsey
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: erdos-example
+          path: example

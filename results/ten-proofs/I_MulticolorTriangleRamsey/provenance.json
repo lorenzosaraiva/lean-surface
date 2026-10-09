@@ -1,5 +1,6 @@
 {
   "challenge_lines": 61,
+  "challenge_nonblank_lines": 47,
   "imports": [
     "Lean",
     "Mathlib"
@@ -16,7 +17,7 @@
         "ErdosProblems.MulticolourTriangleRamsey.TriangleFree"
       ],
       "sha256": "b632f0bb84dcda46c2f795214269735b0d05be137506b6ef17d3b5bde9fad724",
-      "source": ".\\MulticolorTriangleRamsey.lean",
+      "source": "./MulticolorTriangleRamsey.lean",
       "source_end_line": 10,
       "source_start_line": 8,
       "start_byte": 127,
@@ -31,7 +32,7 @@
         "ErdosProblems.MulticolourTriangleRamsey.ForcesMonochromaticTriangle"
       ],
       "sha256": "5f8dd8c4ae740d0f3dc43a624a3faeaa21307dee325415f795e5cc07cb5b9750",
-      "source": ".\\MulticolorTriangleRamsey.lean",
+      "source": "./MulticolorTriangleRamsey.lean",
       "source_end_line": 227,
       "source_start_line": 226,
       "start_byte": 9474,
@@ -46,7 +47,7 @@
         "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber"
       ],
       "sha256": "19af787d2a0273950752163fb435287221907478fbbcc442522aec592cedc102",
-      "source": ".\\MulticolorTriangleRamsey.lean",
+      "source": "./MulticolorTriangleRamsey.lean",
       "source_end_line": 322,
       "source_start_line": 321,
       "start_byte": 13516,
@@ -61,7 +62,7 @@
         "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients"
       ],
       "sha256": "f74a842474444296d366bfe09bc3a14aaf8de2aa0b06fba917d23bd9d69b7f4e",
-      "source": ".\\MulticolorTriangleRamsey.lean",
+      "source": "./MulticolorTriangleRamsey.lean",
       "source_end_line": 2877,
       "source_start_line": 2792,
       "start_byte": 117144,
@@ -76,7 +77,7 @@
         "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta"
       ],
       "sha256": "52f73a99ce82afcfe99e7b8f5b324db2a6d94b0aa2716d1f546b5d401aee5b01",
-      "source": ".\\MulticolorTriangleRamsey.lean",
+      "source": "./MulticolorTriangleRamsey.lean",
       "source_end_line": 2997,
       "source_start_line": 2966,
       "start_byte": 125071,
@@ -91,7 +92,7 @@
         "ErdosProblems.MulticolourTriangleRamsey.erdos_183"
       ],
       "sha256": "3097e7d5cc9ef6a130cde366cf77348d0dd846b5d17775ca30f12b948f60a63d",
-      "source": ".\\MulticolorTriangleRamsey.lean",
+      "source": "./MulticolorTriangleRamsey.lean",
       "source_end_line": 3040,
       "source_start_line": 3035,
       "start_byte": 128148,
@@ -106,7 +107,7 @@
         "ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit"
       ],
       "sha256": "2eb8afefe4138e8bebd77f69979ec55c7a9b71011ff04b6e13483ba279d732e4",
-      "source": ".\\MulticolorTriangleRamsey.lean",
+      "source": "./MulticolorTriangleRamsey.lean",
       "source_end_line": 3051,
       "source_start_line": 3042,
       "start_byte": 128335,

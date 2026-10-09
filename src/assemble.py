@@ -101,6 +101,10 @@ def generate(project, module, decl, data, out):
     replacements = {}
     for name, source in data["targets"].items():
         tp, ti, tc = command(source)
+        if name in data.get("definition_holes", []):
+            selected[tp].add(ti)
+            owners.setdefault((tp, ti), set()).add(name)
+            continue
         vals = [
             v
             for v in tc["parts"]
@@ -257,6 +261,9 @@ def generate(project, module, decl, data, out):
         for i in sorted(keep):
             c = cmds[i]
             target = (p, i) in replacements
+            definition_body = bool(owners.get((p, i), set()) & set(data.get("definition_holes", [])))
+            if definition_body:
+                chunks.append(b"-- Definition hole: project body verbatim; body not checked by Comparator.\n")
             b = (
                 replacements[p, i]
                 if target
@@ -299,6 +306,7 @@ def generate(project, module, decl, data, out):
         source_declarations=sum(not r["target_statement"] for r in records),
         source_lines=sum(r["lines"] for r in records if not r["target_statement"]),
         challenge_lines=len(content.splitlines()),
+        challenge_nonblank_lines=sum(bool(line.strip()) for line in content.splitlines()),
         raw_constant_count_v0=data["header"]["reading_list_definitions"],
         support_constants=data["header"]["source_support_constants"],
         imports=imports,

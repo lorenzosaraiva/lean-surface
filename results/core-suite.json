@@ -1,10 +1,64 @@
 {
+  "body_fixtures": [
+    {
+      "expected": "EQUAL",
+      "first_difference": null,
+      "fixture": "BodyProofOnly",
+      "lean_version": "4.32.0",
+      "status": "PASS",
+      "verdict": "EQUAL"
+    },
+    {
+      "expected": "DIFFERENT",
+      "first_difference": {
+        "handmade_subterm": {
+          "kind": "nat",
+          "value": 8
+        },
+        "path": "$body.fn.arg.body.arg.fn.arg",
+        "solution_subterm": {
+          "kind": "nat",
+          "value": 7
+        }
+      },
+      "fixture": "BodyYesSet",
+      "lean_version": "4.32.0",
+      "status": "PASS",
+      "verdict": "DIFFERENT"
+    },
+    {
+      "expected": "EQUAL",
+      "first_difference": null,
+      "fixture": "BodyProofOnly",
+      "lean_version": "4.29.0-rc7",
+      "status": "PASS",
+      "verdict": "EQUAL"
+    },
+    {
+      "expected": "DIFFERENT",
+      "first_difference": {
+        "handmade_subterm": {
+          "kind": "nat",
+          "value": 8
+        },
+        "path": "$body.fn.arg.body.arg.fn.arg",
+        "solution_subterm": {
+          "kind": "nat",
+          "value": 7
+        }
+      },
+      "fixture": "BodyYesSet",
+      "lean_version": "4.29.0-rc7",
+      "status": "PASS",
+      "verdict": "DIFFERENT"
+    }
+  ],
   "fixtures": [
     {
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -31,7 +85,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -58,7 +112,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -85,7 +139,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -120,7 +174,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [
@@ -157,7 +211,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -198,7 +252,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -225,7 +279,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -260,7 +314,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -288,7 +342,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -316,7 +370,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -343,7 +397,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -370,7 +424,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -397,7 +451,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -424,7 +478,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -451,7 +505,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -480,7 +534,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -518,43 +572,18 @@
       "status": "PASS"
     },
     {
-      "comparator": {
-        "comparison": "PASS",
-        "error": "reviews/d1da7d7ec6e09a42569e8fcaaa19597627476b440d93bffb1de32d78e7cdffb7/nanoda.log: exit 101; see private cache log",
-        "lean_kernel": "PASS",
-        "nanoda_kernel": "FAIL"
-      },
-      "comparison_diagnostic": "Comparator comparison and axiom checks: PASS\nLean kernel replay: PASS\n",
-      "definition_holes": [
-        "quantity"
-      ],
-      "diagnostic": "",
-      "error": "unsafe definition roots are unsupported by pinned Nanoda (src/parser.rs:784); safety flags emitted, Comparator and Lean replay passed",
+      "export_attempted": false,
       "fixture": "Unsafe",
       "lean_version": "4.32.0",
-      "nanoda_diagnostic": "\nthread 'main' (31324) panicked at src\\parser.rs:784:17:\nassertion failed: !matches!(safety, DefinitionSafety::Unsafe | DefinitionSafety::Partial)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
-      "safety_flags": [
-        {
-          "declaration": [
-            "quantity"
-          ],
-          "modifier": "unsafe"
-        },
-        {
-          "name": "quantity",
-          "safety": "Lean.DefinitionSafety.unsafe"
-        }
-      ],
-      "source_safety_modifiers": [
-        "unsafe"
-      ],
-      "status": "FAIL"
+      "refusal": "explicit unsafe root refused before export: quantity; theorem roots cannot be unsafe, and safe constants cannot reference unsafe ones",
+      "status": "PASS",
+      "test_kind": "unsafe-root refusal before export"
     },
     {
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -581,7 +610,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -608,7 +637,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -635,7 +664,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -670,7 +699,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [
@@ -707,7 +736,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -748,7 +777,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -775,7 +804,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -810,7 +839,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -838,7 +867,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -866,7 +895,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -893,7 +922,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -920,7 +949,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -947,7 +976,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -974,7 +1003,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -1001,7 +1030,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -1030,7 +1059,7 @@
       "comparator": {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS",
         "profile": "trusted-cache; no sandbox"
       },
       "definition_holes": [],
@@ -1068,37 +1097,12 @@
       "status": "PASS"
     },
     {
-      "comparator": {
-        "comparison": "PASS",
-        "error": "reviews/2e1fadcc0b21dfa9a4a3da22a6788fff0b90b26bb61d37632e5903a7496fd8a2/nanoda.log: exit 101; see private cache log",
-        "lean_kernel": "PASS",
-        "nanoda_kernel": "FAIL"
-      },
-      "comparison_diagnostic": "Comparator comparison and axiom checks: PASS\nLean kernel replay: PASS\n",
-      "definition_holes": [
-        "quantity"
-      ],
-      "diagnostic": "",
-      "error": "unsafe definition roots are unsupported by pinned Nanoda (src/parser.rs:784); safety flags emitted, Comparator and Lean replay passed",
+      "export_attempted": false,
       "fixture": "Unsafe",
       "lean_version": "4.29.0-rc7",
-      "nanoda_diagnostic": "\nthread 'main' (15332) panicked at src\\parser.rs:784:17:\nassertion failed: !matches!(safety, DefinitionSafety::Unsafe | DefinitionSafety::Partial)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
-      "safety_flags": [
-        {
-          "declaration": [
-            "quantity"
-          ],
-          "modifier": "unsafe"
-        },
-        {
-          "name": "quantity",
-          "safety": "Lean.DefinitionSafety.unsafe"
-        }
-      ],
-      "source_safety_modifiers": [
-        "unsafe"
-      ],
-      "status": "FAIL"
+      "refusal": "explicit unsafe root refused before export: quantity; theorem roots cannot be unsafe, and safe constants cannot reference unsafe ones",
+      "status": "PASS",
+      "test_kind": "unsafe-root refusal before export"
     }
   ],
   "method": "Fixtures explicitly disable automatic implicit parameters so deleting a referenced name cannot silently generalize the statement. Delete each copied source declaration command, including each requested root; #check anchors make root deletion observable. Inductives/structures/mutual blocks are source command units, not separately editable generated constants.",

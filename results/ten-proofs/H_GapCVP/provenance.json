@@ -1,105 +1,767 @@
 {
-  "challenge_lines": 115,
+  "challenge_lines": 853,
+  "challenge_nonblank_lines": 740,
   "imports": [
     "Lean",
     "Mathlib"
   ],
   "matcher_context": "single source module; no cache reset required",
-  "raw_constant_count_v0": 18,
+  "raw_constant_count_v0": 147,
   "records": [
     {
-      "challenge_end_byte": 185,
-      "challenge_start_byte": 145,
+      "challenge_end_byte": 314,
+      "challenge_start_byte": 285,
+      "end_byte": 8766,
+      "lines": 1,
+      "owners": [
+        "GapCVP.Literal"
+      ],
+      "sha256": "5de95d65e0f67b2f9e861650717168a90b0ea36b941823d1252fed71e8fbe3dc",
+      "source": "./GapCVP.lean",
+      "source_end_line": 253,
+      "source_start_line": 253,
+      "start_byte": 8737,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 355,
+      "challenge_start_byte": 316,
+      "end_byte": 8809,
+      "lines": 1,
+      "owners": [
+        "GapCVP.ThreeClause"
+      ],
+      "sha256": "f893d778831a26728ebb72ee0eb9f5d444bb026d0264d5384aa122c454e7df85",
+      "source": "./GapCVP.lean",
+      "source_end_line": 255,
+      "source_start_line": 255,
+      "start_byte": 8770,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 392,
+      "challenge_start_byte": 357,
+      "end_byte": 8848,
+      "lines": 1,
+      "owners": [
+        "GapCVP.ThreeCNF"
+      ],
+      "sha256": "47ad273e09740ff99676f7e65648947d26f62ea133b7845d9c38d6ea19954758",
+      "source": "./GapCVP.lean",
+      "source_end_line": 257,
+      "source_start_line": 257,
+      "start_byte": 8813,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 547,
+      "challenge_start_byte": 394,
+      "end_byte": 9763,
+      "lines": 5,
+      "owners": [
+        "GapCVP.GapCVPInstance",
+        "GapCVP.GapCVPInstance.basis",
+        "GapCVP.GapCVPInstance.dimension",
+        "GapCVP.GapCVPInstance.mk",
+        "GapCVP.GapCVPInstance.radius",
+        "GapCVP.GapCVPInstance.target"
+      ],
+      "sha256": "50ca7292964496f8779ce551680cebec5dc88fc72d4af51b40b25015dd7afb57",
+      "source": "./GapCVP.lean",
+      "source_end_line": 280,
+      "source_start_line": 276,
+      "start_byte": 9610,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 683,
+      "challenge_start_byte": 575,
+      "end_byte": 11190,
+      "lines": 2,
+      "owners": [
+        "GapCVP.BinaryEncoding.lengthPrefixedWord"
+      ],
+      "sha256": "346fcc591554e84ab98c14a1560976cbc189e3d9e02b50d278816373d7f203a8",
+      "source": "./GapCVP.lean",
+      "source_end_line": 320,
+      "source_start_line": 319,
+      "start_byte": 11082,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 927,
+      "challenge_start_byte": 685,
+      "end_byte": 11606,
+      "lines": 7,
+      "owners": [
+        "GapCVP.BinaryEncoding.readUnaryPrefix"
+      ],
+      "sha256": "a0af13c0c63b9e913aefce29eb28414b5b2c5a4e1363839482496a9063700d7b",
+      "source": "./GapCVP.lean",
+      "source_end_line": 333,
+      "source_start_line": 327,
+      "start_byte": 11364,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1227,
+      "challenge_start_byte": 929,
+      "end_byte": 11908,
+      "lines": 8,
+      "owners": [
+        "GapCVP.BinaryEncoding.readUnaryPrefix_replicate"
+      ],
+      "sha256": "49c336b49ba68d2de057a6724ec1aaa881e266d71c1af7ed19cf04dcb5da0a6b",
+      "source": "./GapCVP.lean",
+      "source_end_line": 342,
+      "source_start_line": 335,
+      "start_byte": 11610,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1492,
+      "challenge_start_byte": 1229,
+      "end_byte": 12175,
+      "lines": 9,
+      "owners": [
+        "GapCVP.BinaryEncoding.readLengthPrefixedWord"
+      ],
+      "sha256": "31a7db391ee3e401e4a71a842809e8b678085bfa21e08f360a72422a9d24492c",
+      "source": "./GapCVP.lean",
+      "source_end_line": 352,
+      "source_start_line": 344,
+      "start_byte": 11912,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1775,
+      "challenge_start_byte": 1494,
+      "end_byte": 12460,
+      "lines": 6,
+      "owners": [
+        "GapCVP.BinaryEncoding.readLengthPrefixedWord_append"
+      ],
+      "sha256": "5c3cd071293b6c43c69a704c77741995fe7e73ae81170cddc2929e50a6328280",
+      "source": "./GapCVP.lean",
+      "source_end_line": 359,
+      "source_start_line": 354,
+      "start_byte": 12179,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1994,
+      "challenge_start_byte": 1777,
+      "end_byte": 12810,
+      "lines": 5,
+      "owners": [
+        "GapCVP.BinaryEncoding.readLiteral"
+      ],
+      "sha256": "6f084c5b8f7f1e2abc6bd65a2d6f1acf60faeb5e36e3d35159a6a67759637215",
+      "source": "./GapCVP.lean",
+      "source_end_line": 368,
+      "source_start_line": 364,
+      "start_byte": 12593,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2372,
+      "challenge_start_byte": 1996,
+      "end_byte": 13614,
+      "lines": 11,
+      "owners": [
+        "GapCVP.BinaryEncoding.readThreeClause"
+      ],
+      "sha256": "8d5458e43261c42c1fe17a4b4badaccc386bdc47d8a29b094db42f17175015a3",
+      "source": "./GapCVP.lean",
+      "source_end_line": 391,
+      "source_start_line": 381,
+      "start_byte": 13238,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2738,
+      "challenge_start_byte": 2374,
+      "end_byte": 14347,
+      "lines": 9,
+      "owners": [
+        "GapCVP.BinaryEncoding.readThreeClauses"
+      ],
+      "sha256": "80351df47f660cfcb1dcd5cdb852f58d4225a3a3854272a0323b020c93d6a63b",
+      "source": "./GapCVP.lean",
+      "source_end_line": 410,
+      "source_start_line": 402,
+      "start_byte": 13983,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3018,
+      "challenge_start_byte": 2740,
+      "end_byte": 15161,
+      "lines": 7,
+      "owners": [
+        "GapCVP.BinaryEncoding.decodeThreeCNF"
+      ],
+      "sha256": "a87811336fe4fbb28f65aa2191f83cba6d79c40ce7d1f711c8440ad219316387",
+      "source": "./GapCVP.lean",
+      "source_end_line": 432,
+      "source_start_line": 426,
+      "start_byte": 14883,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3208,
+      "challenge_start_byte": 3071,
+      "end_byte": 15974,
+      "lines": 2,
+      "owners": [
+        "GapCVP.BinaryEncoding.encodeAtomic"
+      ],
+      "sha256": "1b02add74b9507c886625a544cc0dfcc47889f67ed8e0024189247c24a96310a",
+      "source": "./GapCVP.lean",
+      "source_end_line": 455,
+      "source_start_line": 454,
+      "start_byte": 15837,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3532,
+      "challenge_start_byte": 3210,
+      "end_byte": 16300,
+      "lines": 8,
+      "owners": [
+        "GapCVP.BinaryEncoding.readAtomic"
+      ],
+      "sha256": "5067cb2f6e4c041cff88ace10bf7f46f4e9a6645328f46c98b04161a1afbfb33",
+      "source": "./GapCVP.lean",
+      "source_end_line": 464,
+      "source_start_line": 457,
+      "start_byte": 15978,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3735,
+      "challenge_start_byte": 3534,
+      "end_byte": 16505,
+      "lines": 4,
+      "owners": [
+        "GapCVP.BinaryEncoding.readAtomic_append"
+      ],
+      "sha256": "3525b0ab94b560331dc8d35d4465acab3c013ea1f7fa811be27de7ccb7a2c1ab",
+      "source": "./GapCVP.lean",
+      "source_end_line": 469,
+      "source_start_line": 466,
+      "start_byte": 16304,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3958,
+      "challenge_start_byte": 3737,
+      "end_byte": 16730,
+      "lines": 6,
+      "owners": [
+        "GapCVP.BinaryEncoding.encodeFinValues"
+      ],
+      "sha256": "e92d3315e8d48bbc9a232c8ec0030e88a7c629a1828f26c390a9e38b71cd6431",
+      "source": "./GapCVP.lean",
+      "source_end_line": 476,
+      "source_start_line": 471,
+      "start_byte": 16509,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4391,
+      "challenge_start_byte": 3960,
+      "end_byte": 17165,
+      "lines": 10,
+      "owners": [
+        "GapCVP.BinaryEncoding.readFinValues"
+      ],
+      "sha256": "9f0cd10b3574eff1feda5ffd990d0f3124f67a1802bce042df4eec015a1b2901",
+      "source": "./GapCVP.lean",
+      "source_end_line": 487,
+      "source_start_line": 478,
+      "start_byte": 16734,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 5112,
+      "challenge_start_byte": 4393,
+      "end_byte": 17888,
+      "lines": 21,
+      "owners": [
+        "GapCVP.BinaryEncoding.readFinValues_append"
+      ],
+      "sha256": "ab3f631224c02d4431a1840151cf753192f852c719d937a81cb595a5fbb8c9a3",
+      "source": "./GapCVP.lean",
+      "source_end_line": 509,
+      "source_start_line": 489,
+      "start_byte": 17169,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 5335,
+      "challenge_start_byte": 5114,
+      "end_byte": 18113,
+      "lines": 6,
+      "owners": [
+        "GapCVP.BinaryEncoding.encodeMatrixRows"
+      ],
+      "sha256": "2697630dabadbbcf15e678ac0e2bc880eb6b8844b685849490cefcb6123c9ff1",
+      "source": "./GapCVP.lean",
+      "source_end_line": 516,
+      "source_start_line": 511,
+      "start_byte": 17892,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 5795,
+      "challenge_start_byte": 5337,
+      "end_byte": 18575,
+      "lines": 12,
+      "owners": [
+        "GapCVP.BinaryEncoding.readMatrixRows"
+      ],
+      "sha256": "5b631cf11ad715b9f4980f5bc9f9c160431c60a24406b27dbab5ec23c453feb8",
+      "source": "./GapCVP.lean",
+      "source_end_line": 529,
+      "source_start_line": 518,
+      "start_byte": 18117,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 6512,
+      "challenge_start_byte": 5797,
+      "end_byte": 19294,
+      "lines": 21,
+      "owners": [
+        "GapCVP.BinaryEncoding.readMatrixRows_append"
+      ],
+      "sha256": "d581730adfb6277c9d73d6aa00122b3157723539ec3f5055ae732415ac7a2446",
+      "source": "./GapCVP.lean",
+      "source_end_line": 551,
+      "source_start_line": 531,
+      "start_byte": 18579,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 7320,
+      "challenge_start_byte": 6514,
+      "end_byte": 20328,
+      "lines": 20,
+      "owners": [
+        "GapCVP.BinaryEncoding.decodeGapCVPInstance"
+      ],
+      "sha256": "ca11120ebe7a95e92ae4906f3147c1b748ade90080272e20d491271395291f0a",
+      "source": "./GapCVP.lean",
+      "source_end_line": 578,
+      "source_start_line": 559,
+      "start_byte": 19522,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 7411,
+      "challenge_start_byte": 7371,
       "end_byte": 21820,
       "lines": 1,
       "owners": [
         "GapCVP.BitLanguage"
       ],
       "sha256": "bee860b9eb7c35d09369bd44da68b835dd69a2e56b56eb71a6552e4aa05a48db",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 621,
       "source_start_line": 621,
       "start_byte": 21780,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 237,
-      "challenge_start_byte": 187,
+      "challenge_end_byte": 7463,
+      "challenge_start_byte": 7413,
       "end_byte": 21874,
       "lines": 1,
       "owners": [
         "GapCVP.bitEncoding"
       ],
       "sha256": "2f0bf213274a72bf44ca5460d98fcb9cc8d628de6d1150a9f859edcf3b2950f4",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 623,
       "source_start_line": 623,
       "start_byte": 21824,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 435,
-      "challenge_start_byte": 239,
+      "challenge_end_byte": 7661,
+      "challenge_start_byte": 7465,
       "end_byte": 22074,
       "lines": 5,
       "owners": [
         "GapCVP.pairBitEncoding"
       ],
       "sha256": "c3dff865e72f88bed60185b5dbb07a9906e7bd591d7ce9cf90b803c38d34686d",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 629,
       "source_start_line": 625,
       "start_byte": 21878,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 542,
-      "challenge_start_byte": 437,
+      "challenge_end_byte": 7768,
+      "challenge_start_byte": 7663,
       "end_byte": 22183,
       "lines": 2,
       "owners": [
         "GapCVP.BitTM"
       ],
       "sha256": "50a146e20e3de6f634a23c601c70eea8e01d6f5ad95611db9afce8545c87c5a0",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 632,
       "source_start_line": 631,
       "start_byte": 22078,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 698,
-      "challenge_start_byte": 544,
+      "challenge_end_byte": 7924,
+      "challenge_start_byte": 7770,
       "end_byte": 22341,
       "lines": 3,
       "owners": [
         "GapCVP.VerifierTM"
       ],
       "sha256": "1e9f608a71437c58d6083d4c679071bc08ab1932616a8e4899555d458d799d5c",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 636,
       "source_start_line": 634,
       "start_byte": 22187,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 1090,
-      "challenge_start_byte": 700,
+      "challenge_end_byte": 8316,
+      "challenge_start_byte": 7926,
       "end_byte": 22735,
       "lines": 9,
       "owners": [
         "GapCVP.IsNP"
       ],
       "sha256": "38795734f3c2bcc98f42df7775c7677d81fa87c780bffc298b5e0d90ad5e5bc8",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 646,
       "source_start_line": 638,
       "start_byte": 22345,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 1356,
-      "challenge_start_byte": 1230,
+      "challenge_end_byte": 8435,
+      "challenge_start_byte": 8332,
+      "end_byte": 2608558,
+      "lines": 2,
+      "owners": [
+        "GapCVP.gapFactor400"
+      ],
+      "sha256": "b3cbc65852d8549520e22fc9744b87af7f0d164e71e9b043f99a61da2b449570",
+      "source": "./GapCVP.lean",
+      "source_end_line": 62098,
+      "source_start_line": 62097,
+      "start_byte": 2608455,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 8635,
+      "challenge_start_byte": 8517,
+      "end_byte": 3646874,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Factor400FinitePNormCorollary.finitePGapFactor"
+      ],
+      "sha256": "15598e5415191520762176d1456bad8d69d83e2af148adfb0b6c42a0f4dad3f1",
+      "source": "./GapCVP.lean",
+      "source_end_line": 87280,
+      "source_start_line": 87279,
+      "start_byte": 3646756,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 9029,
+      "challenge_start_byte": 8821,
+      "end_byte": 3727953,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance",
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.blockLength",
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.generator",
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.generatorRank",
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.mk",
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.radius",
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.target"
+      ],
+      "sha256": "be520013f55a8de2cbf9937fbf80b1978ce50cd84e03ad28022733dd3855e2b6",
+      "source": "./GapCVP.lean",
+      "source_end_line": 89251,
+      "source_start_line": 89246,
+      "start_byte": 3727745,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 9255,
+      "challenge_start_byte": 9031,
+      "end_byte": 3729629,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.binaryVectorOfIntegers"
+      ],
+      "sha256": "27a641d9b2319575553f7df5f37ff7790d59d571b5617c827a9efc4db3359636",
+      "source": "./GapCVP.lean",
+      "source_end_line": 89300,
+      "source_start_line": 89295,
+      "start_byte": 3729405,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 9533,
+      "challenge_start_byte": 9257,
+      "end_byte": 3729909,
+      "lines": 7,
+      "owners": [
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.binaryMatrixOfIntegers"
+      ],
+      "sha256": "d207260f5f524ed5c4ee994e382d7ed13a6a2125894fa996eae0b6ea6ac99801",
+      "source": "./GapCVP.lean",
+      "source_end_line": 89308,
+      "source_start_line": 89302,
+      "start_byte": 3729633,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 10606,
+      "challenge_start_byte": 9535,
+      "end_byte": 3732508,
+      "lines": 25,
+      "owners": [
+        "GapCVP.Factor400BinaryDecodingPromiseReduction.decodeBinaryNearestCodewordInstance"
+      ],
+      "sha256": "91d49f7f467d82a814d0fe4f50eeba3d6b601a6d6d97f8860010d5a0437c4c60",
+      "source": "./GapCVP.lean",
+      "source_end_line": 89369,
+      "source_start_line": 89345,
+      "start_byte": 3731437,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 10871,
+      "challenge_start_byte": 10724,
+      "end_byte": 5436435,
+      "lines": 5,
+      "owners": [
+        "GapCVP.Comparator.Instance",
+        "GapCVP.Comparator.Instance.basis",
+        "GapCVP.Comparator.Instance.dimension",
+        "GapCVP.Comparator.Instance.mk",
+        "GapCVP.Comparator.Instance.radius",
+        "GapCVP.Comparator.Instance.target"
+      ],
+      "sha256": "a9185713258cda71824d7a69c29fdd5effb71ccdaa30933ebb51b238900d826f",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129747,
+      "source_start_line": 129743,
+      "start_byte": 5436288,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 11491,
+      "challenge_start_byte": 11283,
+      "end_byte": 5437061,
+      "lines": 5,
+      "owners": [
+        "GapCVP.Comparator.encodeInstance"
+      ],
+      "sha256": "b8c77e62601c556ab22b653f77cc00586d31efbe13fe01a676611211cee9d10f",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129771,
+      "source_start_line": 129767,
+      "start_byte": 5436853,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 12193,
+      "challenge_start_byte": 11493,
+      "end_byte": 5437765,
+      "lines": 15,
+      "owners": [
+        "GapCVP.Comparator.decodeInstance"
+      ],
+      "sha256": "2cf444ec021d4145621523104baa2f16a94e9949e82ba277e6706c56d1606fbd",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129787,
+      "source_start_line": 129773,
+      "start_byte": 5437065,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 12967,
+      "challenge_start_byte": 12195,
+      "end_byte": 5438541,
+      "lines": 16,
+      "owners": [
+        "GapCVP.Comparator.decodeInstance_encode"
+      ],
+      "sha256": "59404462f8ad789362a3c7f8903c586104afa8593b8e91d6d28439932d7d703b",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129804,
+      "source_start_line": 129789,
+      "start_byte": 5437769,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 13114,
+      "challenge_start_byte": 12969,
+      "end_byte": 5438690,
+      "lines": 3,
+      "owners": [
+        "GapCVP.Comparator.encodeInstance_injective"
+      ],
+      "sha256": "b788a0ebb8f095cb281810db055566d497695c193d3138150466d433b09648e5",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129808,
+      "source_start_line": 129806,
+      "start_byte": 5438545,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 13281,
+      "challenge_start_byte": 13116,
+      "end_byte": 5438859,
+      "lines": 4,
+      "owners": [
+        "GapCVP.Comparator.wellFormed"
+      ],
+      "sha256": "6a82b599c2b42be79301179354b16870040d542800c9138a148dd719a2d1ea82",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129813,
+      "source_start_line": 129810,
+      "start_byte": 5438694,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 13478,
+      "challenge_start_byte": 13283,
+      "end_byte": 5439058,
+      "lines": 5,
+      "owners": [
+        "GapCVP.Comparator.hasIntegerTarget"
+      ],
+      "sha256": "a6ad27c018c80577ca7ff3bd5cbae5c6545130d816b43eaf693c63d50781dc02",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129819,
+      "source_start_line": 129815,
+      "start_byte": 5438863,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 13721,
+      "challenge_start_byte": 13480,
+      "end_byte": 5439303,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.distanceSquared"
+      ],
+      "sha256": "bc6caef07d57e9d59134709215c5ed6dbfdf107c00ba73b4c06b8108e9cc7724",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129826,
+      "source_start_line": 129821,
+      "start_byte": 5439062,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 13820,
+      "challenge_start_byte": 13723,
+      "end_byte": 5439404,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.gapFactor400"
+      ],
+      "sha256": "cc8314f8cfc2fa36ef095bf27106ecd1b9ed68118bcb08ebd21ff03bfef88b9f",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129829,
+      "source_start_line": 129828,
+      "start_byte": 5439307,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 14057,
+      "challenge_start_byte": 13822,
+      "end_byte": 5439643,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.gapYES400"
+      ],
+      "sha256": "cbcd908ce25d05990678dc379ea3e0718522e2645767d1be0508aa2a684ae0c7",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129836,
+      "source_start_line": 129831,
+      "start_byte": 5439408,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 14326,
+      "challenge_start_byte": 14059,
+      "end_byte": 5439914,
+      "lines": 7,
+      "owners": [
+        "GapCVP.Comparator.gapNO400"
+      ],
+      "sha256": "01628909a6fd23622d9104f1e9e305d16f01ce2398654261a18f788063c752f6",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129844,
+      "source_start_line": 129838,
+      "start_byte": 5439647,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 15239,
+      "challenge_start_byte": 14328,
+      "end_byte": 5440829,
+      "lines": 22,
+      "owners": [
+        "GapCVP.Comparator.gapYES400_not_gapNO400"
+      ],
+      "sha256": "8381a50afcb5fae8b0a57e824791a9c93490b0a8cf562ba0e9bcb2940d573a66",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129867,
+      "source_start_line": 129846,
+      "start_byte": 5439918,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 15453,
+      "challenge_start_byte": 15241,
+      "end_byte": 5441045,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.yesLanguage"
+      ],
+      "sha256": "9a1b6c8bb8e55e46eb93ab62d2261589623f2878b70868d3b8edf9f650ff5538",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129874,
+      "source_start_line": 129869,
+      "start_byte": 5440833,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 15665,
+      "challenge_start_byte": 15455,
+      "end_byte": 5441259,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.noLanguage"
+      ],
+      "sha256": "22dd84bb9831e830cc594374e08772811a63ef697b4bb82993934a9caa2d0a30",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129881,
+      "source_start_line": 129876,
+      "start_byte": 5441049,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 15793,
+      "challenge_start_byte": 15667,
       "end_byte": 5441389,
       "lines": 4,
       "owners": [
@@ -110,75 +772,387 @@
         "GapCVP.Comparator.PromiseProblem.yes"
       ],
       "sha256": "068e01e7f447dcd554d308a784d5b663e419afff2fce9f56d755e7453d2c7626",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 129886,
       "source_start_line": 129883,
       "start_byte": 5441263,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 1409,
-      "challenge_start_byte": 1358,
+      "challenge_end_byte": 16329,
+      "challenge_start_byte": 15870,
       "end_byte": 5441852,
-      "lines": 2,
+      "lines": 11,
       "owners": [
         "GapCVP.Comparator.gapCVP400Promise"
       ],
-      "sha256": "41e5e72d4136641f69561de8ddbcdc818dd34f6844d3e009d102c0c26efb3923",
-      "source": ".\\GapCVP.lean",
+      "sha256": "1548a11a424993d0e1483fc0db5f51c6023a6e151054665b2b5ad58e46a7d979",
+      "source": "./GapCVP.lean",
       "source_end_line": 129898,
       "source_start_line": 129888,
       "start_byte": 5441393,
-      "target_statement": true
+      "target_statement": false
     },
     {
-      "challenge_end_byte": 1488,
-      "challenge_start_byte": 1411,
-      "end_byte": 5451033,
+      "challenge_end_byte": 16539,
+      "challenge_start_byte": 16331,
+      "end_byte": 5442064,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.BinaryNearestCodewordInstance",
+        "GapCVP.Comparator.BinaryNearestCodewordInstance.blockLength",
+        "GapCVP.Comparator.BinaryNearestCodewordInstance.generator",
+        "GapCVP.Comparator.BinaryNearestCodewordInstance.generatorRank",
+        "GapCVP.Comparator.BinaryNearestCodewordInstance.mk",
+        "GapCVP.Comparator.BinaryNearestCodewordInstance.radius",
+        "GapCVP.Comparator.BinaryNearestCodewordInstance.target"
+      ],
+      "sha256": "be520013f55a8de2cbf9937fbf80b1978ce50cd84e03ad28022733dd3855e2b6",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129905,
+      "source_start_line": 129900,
+      "start_byte": 5441856,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 16747,
+      "challenge_start_byte": 16541,
+      "end_byte": 5442274,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.BinarySyndromeDecodingInstance",
+        "GapCVP.Comparator.BinarySyndromeDecodingInstance.blockLength",
+        "GapCVP.Comparator.BinarySyndromeDecodingInstance.checkCount",
+        "GapCVP.Comparator.BinarySyndromeDecodingInstance.mk",
+        "GapCVP.Comparator.BinarySyndromeDecodingInstance.parityCheck",
+        "GapCVP.Comparator.BinarySyndromeDecodingInstance.radius",
+        "GapCVP.Comparator.BinarySyndromeDecodingInstance.syndrome"
+      ],
+      "sha256": "cd4b47c0f948458917ce120ccb7a9712fa42558b7093d5198f8d3e708ac6843c",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129912,
+      "source_start_line": 129907,
+      "start_byte": 5442068,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 17194,
+      "challenge_start_byte": 16749,
+      "end_byte": 5442723,
+      "lines": 9,
+      "owners": [
+        "GapCVP.Comparator.encodeBinaryNearestCodewordInstance"
+      ],
+      "sha256": "f971d4565ad603407dc29b453d243c6487449aeb8e7d0651fe544abf41bc9372",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129922,
+      "source_start_line": 129914,
+      "start_byte": 5442278,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 17636,
+      "challenge_start_byte": 17196,
+      "end_byte": 5443167,
+      "lines": 9,
+      "owners": [
+        "GapCVP.Comparator.encodeBinarySyndromeDecodingInstance"
+      ],
+      "sha256": "86920f3aac0fdae435e9396c5d4a0ac56c5bdeea5ca0a8ce1de49d9bfb38495d",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129932,
+      "source_start_line": 129924,
+      "start_byte": 5442727,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 17823,
+      "challenge_start_byte": 17638,
+      "end_byte": 5443356,
+      "lines": 4,
+      "owners": [
+        "GapCVP.Comparator.binaryIntegerRepresentative_cast"
+      ],
+      "sha256": "13639d0765173e6dc037641780678c7135b71ffdaae88a002ad2b6f880f464d1",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129937,
+      "source_start_line": 129934,
+      "start_byte": 5443171,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 19074,
+      "challenge_start_byte": 17825,
+      "end_byte": 5444609,
+      "lines": 26,
+      "owners": [
+        "GapCVP.Comparator.decodeBinaryNearestCodewordInstance"
+      ],
+      "sha256": "af4cb06bd228ea0ec0108f233b54c78166847056d241681c27259b88b89b9e57",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129964,
+      "source_start_line": 129939,
+      "start_byte": 5443360,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 20015,
+      "challenge_start_byte": 19076,
+      "end_byte": 5445552,
+      "lines": 18,
+      "owners": [
+        "GapCVP.Comparator.decodeBinaryNearestCodewordInstance_encode"
+      ],
+      "sha256": "53996ace7410be053036d1cb0e910ef70963c68e7768a0b029ce5ce46fa4c3e5",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129983,
+      "source_start_line": 129966,
+      "start_byte": 5444613,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 20230,
+      "challenge_start_byte": 20017,
+      "end_byte": 5445769,
+      "lines": 4,
+      "owners": [
+        "GapCVP.Comparator.encodeBinaryNearestCodewordInstance_injective"
+      ],
+      "sha256": "295ecf91c33ac2f5edf3c9b03914dde5592a8f6aff8501fe13d197c0c144deea",
+      "source": "./GapCVP.lean",
+      "source_end_line": 129988,
+      "source_start_line": 129985,
+      "start_byte": 5445556,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 21478,
+      "challenge_start_byte": 20232,
+      "end_byte": 5447019,
+      "lines": 26,
+      "owners": [
+        "GapCVP.Comparator.decodeBinarySyndromeDecodingInstance"
+      ],
+      "sha256": "78b43d503feebe64619dea9125f7e68e34a78fcec5775362565f5e93a08dff5a",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130015,
+      "source_start_line": 129990,
+      "start_byte": 5445773,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 22426,
+      "challenge_start_byte": 21480,
+      "end_byte": 5447969,
+      "lines": 18,
+      "owners": [
+        "GapCVP.Comparator.decodeBinarySyndromeDecodingInstance_encode"
+      ],
+      "sha256": "b464a5df93c287b085d8cba86d051ad9192082b993b4da9d7ccc27f5d071fe61",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130034,
+      "source_start_line": 130017,
+      "start_byte": 5447023,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 22644,
+      "challenge_start_byte": 22428,
+      "end_byte": 5448189,
+      "lines": 4,
+      "owners": [
+        "GapCVP.Comparator.encodeBinarySyndromeDecodingInstance_injective"
+      ],
+      "sha256": "404eb6233b3f2753785d73266f7f9097bd93f7b0ec56266786296030474867e9",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130039,
+      "source_start_line": 130036,
+      "start_byte": 5447973,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 22931,
+      "challenge_start_byte": 22646,
+      "end_byte": 5448478,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.binaryNearestCodeword"
+      ],
+      "sha256": "85e4f0dacb271297d069e57a92f508f66e6e81707594ad3b765afe577a7ae8c5",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130046,
+      "source_start_line": 130041,
+      "start_byte": 5448193,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 23058,
+      "challenge_start_byte": 22933,
+      "end_byte": 5448607,
+      "lines": 3,
+      "owners": [
+        "GapCVP.Comparator.binaryNearestTarget"
+      ],
+      "sha256": "528867cc5a710e91505c39ca21edb9511bd0720c41db3d4e82c47a68c6d97010",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130050,
+      "source_start_line": 130048,
+      "start_byte": 5448482,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 23323,
+      "challenge_start_byte": 23060,
+      "end_byte": 5448874,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.binarySyndromeProduct"
+      ],
+      "sha256": "6207758fe50d6bed80561ea7b6c037508b1392635b90ce035d7c7ad2828c600f",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130057,
+      "source_start_line": 130052,
+      "start_byte": 5448611,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 23453,
+      "challenge_start_byte": 23325,
+      "end_byte": 5449006,
+      "lines": 3,
+      "owners": [
+        "GapCVP.Comparator.binarySyndromeTarget"
+      ],
+      "sha256": "e690256c1f975b1ad39a5dfa0127b81c3982bd1131b37ae2d9c98e45198562ec",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130061,
+      "source_start_line": 130059,
+      "start_byte": 5448878,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 23564,
+      "challenge_start_byte": 23455,
+      "end_byte": 5449119,
       "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.binaryCodeGapFactor"
+      ],
+      "sha256": "d0553804b220626fe7abfef53690103800f6ea8935c26b0d8dc22f3332284aea",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130064,
+      "source_start_line": 130063,
+      "start_byte": 5449010,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 25551,
+      "challenge_start_byte": 23641,
+      "end_byte": 5451033,
+      "lines": 44,
       "owners": [
         "GapCVP.Comparator.binaryNearestCodewordPromise"
       ],
-      "sha256": "3dab4a0f9735fb60fa7b98ce3224d5f34ca74ff2dd4478332c60adfb1fec1049",
-      "source": ".\\GapCVP.lean",
+      "sha256": "6b4b7fcc6fc652a7e2939bab8042f4f4c2fa39ff96572d74cde7dd780d9b806f",
+      "source": "./GapCVP.lean",
       "source_end_line": 130109,
       "source_start_line": 130066,
       "start_byte": 5449123,
-      "target_statement": true
+      "target_statement": false
     },
     {
-      "challenge_end_byte": 1568,
-      "challenge_start_byte": 1490,
+      "challenge_end_byte": 27511,
+      "challenge_start_byte": 25628,
       "end_byte": 5452920,
-      "lines": 2,
+      "lines": 39,
       "owners": [
         "GapCVP.Comparator.binarySyndromeDecodingPromise"
       ],
-      "sha256": "cbcce36105b146ef41bf696ee22ce0ff786e15d96ace074e8d10961ba6bbfd64",
-      "source": ".\\GapCVP.lean",
+      "sha256": "827fdb3997ec95b755a7e717793ff437e196108c99aa0d4fa3f87db097a9443c",
+      "source": "./GapCVP.lean",
       "source_end_line": 130149,
       "source_start_line": 130111,
       "start_byte": 5451037,
-      "target_statement": true
+      "target_statement": false
     },
     {
-      "challenge_end_byte": 1664,
-      "challenge_start_byte": 1570,
-      "end_byte": 5455083,
+      "challenge_end_byte": 27658,
+      "challenge_start_byte": 27513,
+      "end_byte": 5453069,
       "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.finitePNorm"
+      ],
+      "sha256": "1c3cad52815d50e99bf401ce71ad0383f085a7fefc3652ae581fbf19abae5da4",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130152,
+      "source_start_line": 130151,
+      "start_byte": 5452924,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 27889,
+      "challenge_start_byte": 27660,
+      "end_byte": 5453302,
+      "lines": 4,
+      "owners": [
+        "GapCVP.Comparator.finitePLatticeDiscrepancy"
+      ],
+      "sha256": "a838560c4b9dae24073f14391d3aa7b5ab51b377cf08b893c0e36e0ad4373013",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130157,
+      "source_start_line": 130154,
+      "start_byte": 5453073,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 28059,
+      "challenge_start_byte": 27891,
+      "end_byte": 5453474,
+      "lines": 3,
+      "owners": [
+        "GapCVP.Comparator.finitePLatticeDistance"
+      ],
+      "sha256": "526861db40cf4efd8a477cfff30082c4877db2cfe86ca2eda9cb28a6d49b29d4",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130161,
+      "source_start_line": 130159,
+      "start_byte": 5453306,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 28187,
+      "challenge_start_byte": 28061,
+      "end_byte": 5453604,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.finitePGapFactor"
+      ],
+      "sha256": "5b657f9c1ebc02c86b1b9ae2374d617ae2b74b8233f947fdd085df9a7f7e5f03",
+      "source": "./GapCVP.lean",
+      "source_end_line": 130164,
+      "source_start_line": 130163,
+      "start_byte": 5453478,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 29739,
+      "challenge_start_byte": 28264,
+      "end_byte": 5455083,
+      "lines": 36,
       "owners": [
         "GapCVP.Comparator.finitePGapCVPPromise"
       ],
-      "sha256": "fe5355ef1753c41aa65a1388d733b695cd365ec213a25cec95809616f90cef9c",
-      "source": ".\\GapCVP.lean",
+      "sha256": "41e58e763ece44c5b7d5ce7744a2db62f4f32462fd274165845db78281bd4e22",
+      "source": "./GapCVP.lean",
       "source_end_line": 130201,
       "source_start_line": 130166,
       "start_byte": 5453608,
-      "target_statement": true
+      "target_statement": false
     },
     {
-      "challenge_end_byte": 1973,
-      "challenge_start_byte": 1666,
+      "challenge_end_byte": 30048,
+      "challenge_start_byte": 29741,
       "end_byte": 5455394,
       "lines": 6,
       "owners": [
@@ -190,90 +1164,90 @@
         "GapCVP.Comparator.PromiseReduction.soundness"
       ],
       "sha256": "194e6f978152f0969dba239404b5dc9af17cff04ec1e361da3c31b746f73f890",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 130208,
       "source_start_line": 130203,
       "start_byte": 5455087,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 2180,
-      "challenge_start_byte": 1975,
+      "challenge_end_byte": 30255,
+      "challenge_start_byte": 30050,
       "end_byte": 5455603,
       "lines": 5,
       "owners": [
         "GapCVP.Comparator.IsNPHardPromise"
       ],
       "sha256": "b9799980fb0483e814708aed73c612124606782cc75c9aaa361e0879317821f2",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 130214,
       "source_start_line": 130210,
       "start_byte": 5455398,
       "target_statement": false
     },
     {
-      "challenge_end_byte": 2256,
-      "challenge_start_byte": 2182,
+      "challenge_end_byte": 30331,
+      "challenge_start_byte": 30257,
       "end_byte": 5464595,
       "lines": 2,
       "owners": [
         "GapCVP.Comparator.gapCVP400IsNPHard"
       ],
       "sha256": "1a368cdaca0bf66a39f5e2bcc1b7a14fc4f47839e3e83bc93ef3aac335260ef3",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 130400,
       "source_start_line": 130398,
       "start_byte": 5464319,
       "target_statement": true
     },
     {
-      "challenge_end_byte": 2361,
-      "challenge_start_byte": 2258,
+      "challenge_end_byte": 30436,
+      "challenge_start_byte": 30333,
       "end_byte": 5464912,
       "lines": 3,
       "owners": [
         "GapCVP.Comparator.binaryNearestCodewordIsNPHard"
       ],
       "sha256": "623660480a5d04f59749946861fd59e6a1d24407647eb5f37ddabe67819adced",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 130407,
       "source_start_line": 130402,
       "start_byte": 5464599,
       "target_statement": true
     },
     {
-      "challenge_end_byte": 2468,
-      "challenge_start_byte": 2363,
+      "challenge_end_byte": 30543,
+      "challenge_start_byte": 30438,
       "end_byte": 5465248,
       "lines": 3,
       "owners": [
         "GapCVP.Comparator.binarySyndromeDecodingIsNPHard"
       ],
       "sha256": "55dcfba85255e14c17864dc12a830ecc944ecb7c3cb886a6969035017b9f796f",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 130414,
       "source_start_line": 130409,
       "start_byte": 5464916,
       "target_statement": true
     },
     {
-      "challenge_end_byte": 2593,
-      "challenge_start_byte": 2470,
+      "challenge_end_byte": 30668,
+      "challenge_start_byte": 30545,
       "end_byte": 5465585,
       "lines": 3,
       "owners": [
         "GapCVP.Comparator.finitePNormGapCVPIsNPHard"
       ],
       "sha256": "345e65ddee74920634af7e6dfd790f855a3c35fc0b0d541c3dc3b9b26c4b0fe6",
-      "source": ".\\GapCVP.lean",
+      "source": "./GapCVP.lean",
       "source_end_line": 130422,
       "source_start_line": 130416,
       "start_byte": 5465252,
       "target_statement": true
     }
   ],
-  "sha256": "289655a5ce25a9bd605e280b70fb77ddaf4b2216fa643237f08d3de3bbbf8017",
-  "source_declarations": 9,
-  "source_lines": 36,
-  "support_constants": 0
+  "sha256": "06514bae8e44efb3e63ecebbea3c31d15ccbbeff50dcd2353f9b63a6357654b0",
+  "source_declarations": 76,
+  "source_lines": 665,
+  "support_constants": 458
 }

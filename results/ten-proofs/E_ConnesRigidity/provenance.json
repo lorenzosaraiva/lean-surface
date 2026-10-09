@@ -1,5 +1,6 @@
 {
   "challenge_lines": 241,
+  "challenge_nonblank_lines": 195,
   "imports": [
     "Lean",
     "Mathlib"
@@ -20,7 +21,7 @@
         "ConnesRigidity.CountableDiscreteGroup.mk"
       ],
       "sha256": "77fe1b1790bac59fa5b7af4338a5961b6339618dd4aab18447936eba1a0e3ee8",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 45,
       "source_start_line": 42,
       "start_byte": 758,
@@ -35,7 +36,7 @@
         "ConnesRigidity.CountableDiscreteGroup.instCoeSortType"
       ],
       "sha256": "3af779186b0c6355bd3506f3f03b4a97e856dc232671969ac552e015c4e96fba",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 50,
       "source_start_line": 49,
       "start_byte": 914,
@@ -50,7 +51,7 @@
         "ConnesRigidity.conjugacyClass"
       ],
       "sha256": "9a65f91fb0479fa2a82600eb99fd46d3a311d5fe71ce469c37fc89b3c06e2edc",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 57,
       "source_start_line": 56,
       "start_byte": 1081,
@@ -65,7 +66,7 @@
         "ConnesRigidity.IsICC"
       ],
       "sha256": "774aa21c42b9801fd66d8e7dfbb35afd6669743b5789e86b053d9879d42185d0",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 60,
       "source_start_line": 59,
       "start_byte": 1190,
@@ -80,7 +81,7 @@
         "ConnesRigidity.GroupsIsomorphic"
       ],
       "sha256": "249cdbc7550475cb7867fdda01b34c5d1be37a9279e752028d46eeb99210cbea",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 63,
       "source_start_line": 62,
       "start_byte": 1317,
@@ -95,7 +96,7 @@
         "ConnesRigidity.UnitaryRepresentation"
       ],
       "sha256": "5258e8e0b75da0472a600337391fd4233b4845e48efce042846ed115cd4c2af3",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 68,
       "source_start_line": 65,
       "start_byte": 1405,
@@ -110,7 +111,7 @@
         "ConnesRigidity.UnitaryRepresentation.IsInvariant"
       ],
       "sha256": "912f1bd79ceaa43d7552c5f1cc5de3889173b9232a3a83889f78fa9a429366ec",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 76,
       "source_start_line": 75,
       "start_byte": 1729,
@@ -125,7 +126,7 @@
         "ConnesRigidity.UnitaryRepresentation.HasAlmostInvariantUnitVectors"
       ],
       "sha256": "ea636758bf250e7a87d7c54b181c0775fcb2292323d6932593efed16802a7ec7",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 80,
       "source_start_line": 78,
       "start_byte": 1845,
@@ -140,7 +141,7 @@
         "ConnesRigidity.HasKazhdanPropertyT"
       ],
       "sha256": "c287a8438bd085f7f56df20b2c72ebb09fc206b56fa20657fece080c64cf0f76",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 91,
       "source_start_line": 84,
       "start_byte": 2088,
@@ -155,7 +156,7 @@
         "ConnesRigidity.GroupL2"
       ],
       "sha256": "ef8a7f9ab7be815a15636523fd07d622fd976b63eee4fb401b2943a8e2621d88",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 97,
       "source_start_line": 97,
       "start_byte": 2458,
@@ -170,7 +171,7 @@
         "ConnesRigidity.l2Reindex"
       ],
       "sha256": "4a5aa333deab19a803498f780006649482f731f579ee2b6149ca0cf1b239b99d",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 135,
       "source_start_line": 99,
       "start_byte": 2517,
@@ -185,7 +186,7 @@
         "ConnesRigidity.leftRegularUnitary"
       ],
       "sha256": "09fa269a01326cf9811274eaf3da99b0de35d663b351b3066a92dccb4f8404dd",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 151,
       "source_start_line": 149,
       "start_byte": 4198,
@@ -200,7 +201,7 @@
         "ConnesRigidity.leftRegularRepresentation"
       ],
       "sha256": "f4afbcd1c06527656d9c4c02f974c9bd764583912b5cf6ef67215fc92cc0e576",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 175,
       "source_start_line": 159,
       "start_byte": 4572,
@@ -215,7 +216,7 @@
         "ConnesRigidity.vonNeumannClosure"
       ],
       "sha256": "0a3aa534b4721d421b81eb4b052800e298e42ce35a8f51e97292bbcf34360b5a",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 194,
       "source_start_line": 177,
       "start_byte": 5055,
@@ -230,7 +231,7 @@
         "ConnesRigidity.groupVonNeumannAlgebra"
       ],
       "sha256": "eb12f18060123a6bb699b489627b0402750a79f4df3fee6ec76db4ee792489ff",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 199,
       "source_start_line": 196,
       "start_byte": 5884,
@@ -245,7 +246,7 @@
         "ConnesRigidity.GroupVonNeumannAlgebra"
       ],
       "sha256": "29d37ea11f2657601042d6e343e110eccd2a0947ee619b5e2be496037eced346",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 202,
       "source_start_line": 201,
       "start_byte": 6103,
@@ -260,7 +261,7 @@
         "ConnesRigidity.delta"
       ],
       "sha256": "be5002b5c2c8feb639ceea2239c15224fba9aea64d0adb8ead5f721aebfe0c15",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 207,
       "source_start_line": 204,
       "start_byte": 6219,
@@ -275,7 +276,7 @@
         "ConnesRigidity.canonicalTrace"
       ],
       "sha256": "7a21ccfe24ba4fcdb1bbe4ec85d7ffb57fe88cd6e96f2b9aacfce425d37df6a4",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 211,
       "source_start_line": 209,
       "start_byte": 6336,
@@ -290,7 +291,7 @@
         "ConnesRigidity.ProjectionLE"
       ],
       "sha256": "d57d4d755a18889d5aac076e531de10c6885e9c2ea3c24721b52f142bcdc0fcd",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 214,
       "source_start_line": 213,
       "start_byte": 6519,
@@ -305,7 +306,7 @@
         "ConnesRigidity.IsProjectionSupremum"
       ],
       "sha256": "4e23f8a9d54e96f6b0460f1477fba3937dbaed71ad6ba82494effa73364750e0",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 220,
       "source_start_line": 216,
       "start_byte": 6593,
@@ -320,7 +321,7 @@
         "ConnesRigidity.IsNormalStarAlgEquiv"
       ],
       "sha256": "ffd91b7876d712056fc61f6b169ecfd40285ff6efbd69ab02acda97e6881eaba",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 230,
       "source_start_line": 222,
       "start_byte": 6864,
@@ -339,7 +340,7 @@
         "ConnesRigidity.TracialGroupFactorEquiv.trace_preserving"
       ],
       "sha256": "448670162a6e964afdeb50f2a6b0712770e1d356d96a6097900d76f6d77c208e",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 238,
       "source_start_line": 232,
       "start_byte": 7307,
@@ -354,7 +355,7 @@
         "ConnesRigidity.TracialGroupFactorsIsomorphic"
       ],
       "sha256": "85b136f77b833c752f847f60000c59a93812159e06546fe25409489a98a09880",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 242,
       "source_start_line": 240,
       "start_byte": 7650,
@@ -369,7 +370,7 @@
         "ConnesRigidity.exists_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors"
       ],
       "sha256": "f6420df3290b94f897ad35db67af0e7ac3408dcc17586e5efb59e8386f504c07",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 37345,
       "source_start_line": 36954,
       "start_byte": 1461289,
@@ -384,7 +385,7 @@
         "ConnesRigidity.exists_infinite_pairwise_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors"
       ],
       "sha256": "26c667bd97f2f096f6bdc8e153c52ab22500d3b358f0fc9356163e65281bf007",
-      "source": ".\\ConnesRigidity.lean",
+      "source": "./ConnesRigidity.lean",
       "source_end_line": 37370,
       "source_start_line": 37347,
       "start_byte": 1485251,

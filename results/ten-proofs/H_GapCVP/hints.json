@@ -48,7 +48,32 @@
     "GapCVP.Comparator.gapCVP400IsNPHard": [],
     "GapCVP.Comparator.gapCVP400Promise": []
   },
-  "safety": [],
+  "safety": [
+    {
+      "name": "GapCVP.BinaryEncoding.encodeFinValues._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    },
+    {
+      "name": "GapCVP.BinaryEncoding.encodeMatrixRows._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    },
+    {
+      "name": "GapCVP.BinaryEncoding.readFinValues._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    },
+    {
+      "name": "GapCVP.BinaryEncoding.readMatrixRows._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    },
+    {
+      "name": "GapCVP.BinaryEncoding.readThreeClauses._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    },
+    {
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    }
+  ],
   "source_modifiers": [],
   "stub_hints": [],
   "totalization": []

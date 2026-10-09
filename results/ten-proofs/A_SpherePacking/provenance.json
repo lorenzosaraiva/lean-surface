@@ -1,5 +1,6 @@
 {
   "challenge_lines": 289,
+  "challenge_nonblank_lines": 203,
   "imports": [
     "Lean",
     "Mathlib"
@@ -16,7 +17,7 @@
         "CohnElkies.Euclidean"
       ],
       "sha256": "1e666270719778f6fef0142800e5a5f09f922a11c01f0238cef163991f935286",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 38,
       "source_start_line": 38,
       "start_byte": 1300,
@@ -31,7 +32,7 @@
         "CohnElkies.TestFunction"
       ],
       "sha256": "16404a96d274f4b603ac81edf136ef491515d7434b3e0f50534f14a5762dfd93",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 40,
       "source_start_line": 40,
       "start_byte": 1360,
@@ -46,7 +47,7 @@
         "CohnElkies.unitBallVolume"
       ],
       "sha256": "8c5a6db2092889f7c4d2a3c208a235a8376ae254ed8da07c29457e533e63efd7",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 59,
       "source_start_line": 58,
       "start_byte": 2033,
@@ -61,7 +62,7 @@
         "CohnElkies.numeralTwoAtLeast"
       ],
       "sha256": "f8e9ab7597ac450cf9c02d1d5e3c133b20cd38252baa6ca645b82494c547e120",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48051,
       "source_start_line": 48051,
       "start_byte": 1796032,
@@ -76,7 +77,7 @@
         "CohnElkies.euclideanFiniteDimensional"
       ],
       "sha256": "cf7b0e782a50d35ee5661556c1ab73ac0062b2ec79fee0d0c94275d7205605df",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48055,
       "source_start_line": 48053,
       "start_byte": 1796111,
@@ -91,7 +92,7 @@
         "CohnElkies.euclideanBorelSpace"
       ],
       "sha256": "072a8bdc9448bc68817e005b47bbfdffc0a96768ed488621c7b76e5794e60232",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48059,
       "source_start_line": 48057,
       "start_byte": 1796253,
@@ -111,7 +112,7 @@
         "SpherePacking.separation_pos"
       ],
       "sha256": "7392adb5e63a5d130ed4252bc8546e519393fa90db8a83293d92d68b9fd8b9b5",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48067,
       "source_start_line": 48063,
       "start_byte": 1796400,
@@ -126,7 +127,7 @@
         "SpherePacking.occupiedBallRegion"
       ],
       "sha256": "4dc6d70c273f73907dd8758d1fefa4412df4eec3ab3275198be700373730592e",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48114,
       "source_start_line": 48112,
       "start_byte": 1798497,
@@ -141,7 +142,7 @@
         "SpherePacking.densityInsideRadius"
       ],
       "sha256": "947911438b5fe7bcdf60cf34c5fde7d62c9dfd71a951d649127bbc04b43f743b",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48118,
       "source_start_line": 48116,
       "start_byte": 1798694,
@@ -156,7 +157,7 @@
         "SpherePacking.upperPackingDensity"
       ],
       "sha256": "086f3c590d671922d6434a70879784d33fd3ae15cce57ddf8f45fd53523bae68",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48121,
       "source_start_line": 48120,
       "start_byte": 1798901,
@@ -171,7 +172,7 @@
         "SpherePackingConstant"
       ],
       "sha256": "80942079b36ab61abc4f9d6b27ac2f512e8ac77f6c9f8dd3edd015720de64d47",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 48247,
       "source_start_line": 48246,
       "start_byte": 1804152,
@@ -186,7 +187,7 @@
         "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper"
       ],
       "sha256": "6f39108b3e960acdb1503ab7bed6794003a0719e48ac27954eb6295220df2d15",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 53438,
       "source_start_line": 53426,
       "start_byte": 2062842,
@@ -208,7 +209,7 @@
         "PackingBounds.FullAdmissible.real"
       ],
       "sha256": "47f6484f76f97cd81d62c221fb3e82f847a1b8d4d16827e10ad7565735852d23",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 53467,
       "source_start_line": 53457,
       "start_byte": 2063792,
@@ -223,7 +224,7 @@
         "PackingBounds.fullQuotient"
       ],
       "sha256": "b01565b21e1ceb9c17205f577e3d1cf144d4e40e33ebc95e7df9f375b83c08e2",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 53471,
       "source_start_line": 53469,
       "start_byte": 2064284,
@@ -238,7 +239,7 @@
         "PackingBounds.fullQuotientSet"
       ],
       "sha256": "b9642f2bcff2ea835c18f1c5c5f6f063caa90c754c2e50c6eb45bf71739ecbcd",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 53474,
       "source_start_line": 53473,
       "start_byte": 2064453,
@@ -253,7 +254,7 @@
         "PackingBounds.fullLinearProgram"
       ],
       "sha256": "85b1dec4d0e79ea8018c70142bc91eb74727e5f365dedc0b7498523fc07d775d",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 53478,
       "source_start_line": 53476,
       "start_byte": 2064536,
@@ -268,7 +269,7 @@
         "PackingBounds.FullMain.exact_limit"
       ],
       "sha256": "01772fe7db8e0d89d701564c049f3a854c95019fbd0260e849ac1f083acc91c6",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 55390,
       "source_start_line": 55383,
       "start_byte": 2142462,
@@ -283,7 +284,7 @@
         "PackingBounds.FullMain.exact_binary_exponent"
       ],
       "sha256": "bab2996a23ec3da55d0b0e53551571cf8f86a51450a72ea1a6557c708097988a",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 55400,
       "source_start_line": 55392,
       "start_byte": 2142724,
@@ -309,7 +310,7 @@
         "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.universal_nonnegative_delta"
       ],
       "sha256": "527d37299c3e4feae7f8b0d9d3f2df134af449e89ce0c0870d7962ff9a96812c",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 55488,
       "source_start_line": 55430,
       "start_byte": 2143786,
@@ -324,7 +325,7 @@
         "PackingBounds.sharpFullCohnElkiesManuscriptConclusions"
       ],
       "sha256": "2f784114ed9cd20ec95380ffac79578104def26f1cee54e54cb10e8883d763e5",
-      "source": ".\\SpherePacking.lean",
+      "source": "./SpherePacking.lean",
       "source_end_line": 55612,
       "source_start_line": 55591,
       "start_byte": 2151086,

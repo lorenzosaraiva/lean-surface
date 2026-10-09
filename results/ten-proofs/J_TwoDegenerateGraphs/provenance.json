@@ -1,5 +1,6 @@
 {
   "challenge_lines": 66,
+  "challenge_nonblank_lines": 48,
   "imports": [
     "Lean",
     "Mathlib"
@@ -16,7 +17,7 @@
         "TwoDegenerateGraphs.neighborsWithin"
       ],
       "sha256": "edbfccfa1966dcfc30b25b5145749f42f3b9f59d45b853ce3e15efe6d1366600",
-      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source": "./CompactnessAndDegeneracy.lean",
       "source_end_line": 11869,
       "source_start_line": 11866,
       "start_byte": 459036,
@@ -31,7 +32,7 @@
         "TwoDegenerateGraphs.IsDegenerate"
       ],
       "sha256": "2fb75d4df42602b740df4cccd4509f41015ccda06188f3142ab65aaa7ea077bb",
-      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source": "./CompactnessAndDegeneracy.lean",
       "source_end_line": 11873,
       "source_start_line": 11871,
       "start_byte": 459191,
@@ -46,7 +47,7 @@
         "TwoDegenerateGraphs.IsTwoDegenerate"
       ],
       "sha256": "f914ad336fbadca7d37054fa94ca132992f57df6c1c63c13b163ad6f035385f4",
-      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source": "./CompactnessAndDegeneracy.lean",
       "source_end_line": 11876,
       "source_start_line": 11875,
       "start_byte": 459352,
@@ -61,7 +62,7 @@
         "TwoDegenerateGraphs.DegeneracyConjectureStatement"
       ],
       "sha256": "f418b32712e09552c7c742bf71d9dccf0c18ec08d92d2394959c5c10af113976",
-      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source": "./CompactnessAndDegeneracy.lean",
       "source_end_line": 11883,
       "source_start_line": 11878,
       "start_byte": 459440,
@@ -76,7 +77,7 @@
         "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample"
       ],
       "sha256": "36352241f368205c3653d220eb396f1cf7bb669a33cef63a407ef2acc9c75634",
-      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source": "./CompactnessAndDegeneracy.lean",
       "source_end_line": 18541,
       "source_start_line": 18440,
       "start_byte": 734062,
@@ -91,7 +92,7 @@
         "TwoDegenerateGraphs.not_erdos_146"
       ],
       "sha256": "c20a84c3c70d75db5804ac0e4e9c72a4f83b276883ef39a02f4afb3d78ebc871",
-      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source": "./CompactnessAndDegeneracy.lean",
       "source_end_line": 18584,
       "source_start_line": 18543,
       "start_byte": 738442,

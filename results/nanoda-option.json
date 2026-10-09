@@ -1,0 +1,20 @@
+{
+  "differing_status_fields": [
+    "nanoda"
+  ],
+  "disabled_binary_configured": false,
+  "status": "PASS",
+  "theorem": "ErdosProblems.MulticolourTriangleRamsey.erdos_183",
+  "with_nanoda": {
+    "comparison": "PASS",
+    "lean_kernel": "PASS",
+    "nanoda": "PASS",
+    "profile": "trusted-cache; no sandbox"
+  },
+  "without_nanoda": {
+    "comparison": "PASS",
+    "lean_kernel": "PASS",
+    "nanoda": "skipped",
+    "profile": "trusted-cache; no sandbox"
+  }
+}

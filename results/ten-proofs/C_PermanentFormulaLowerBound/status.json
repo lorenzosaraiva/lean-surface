@@ -1,6 +1,6 @@
 {
   "comparison": "PASS",
   "lean_kernel": "PASS",
-  "nanoda_kernel": "PASS",
+  "nanoda": "PASS",
   "profile": "trusted-cache; no sandbox"
 }

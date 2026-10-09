@@ -1,161 +1,116 @@
 # surface
 
-surface extracts the source definitions needed to read Lean theorem statements,
-replaces the requested proofs with holes, and emits a standalone challenge.
-Several theorem statements can share a bundle. Definitions from packages outside
-the target package stay trusted imports.
+A Lean theorem can compile while its statement differs from what a reader intended. surface extracts a standalone challenge containing the requested statements and the source definitions needed to read them, bundles shared dependencies, and checks it against a built project with Comparator and Lean replay. Nanoda replay is on by default. External packages remain imports; interpretation remains the human reader's job.
 
-This is a v0.1.0 release candidate. Check the committed validation reports before
-using a language feature. A failing case is reported explicitly.
+## Example: Erdos problem 183
 
-## Requirements and one command
+Shortened from `results/ten-proofs/I_MulticolorTriangleRamsey/Challenge.lean`:
 
-Python 3.12+, Git, Elan with Lean **4.32.0** and **4.29.0-rc7**, and a native
-Nanoda binary are required. These are the only toolchains exercised; no other
-Lean version is claimed. Windows builds use `LEAN_NUM_THREADS=2`. All Lean
-commands run serially. Successful cached compilation steps are reused; a step
-that crashes is retried at most three times.
+```lean
+import Mathlib
+namespace ErdosProblems.MulticolourTriangleRamsey
 
-Build Nanoda once, outside this checkout, using Rust and the platform C linker:
+def TriangleFree {n k : Nat}
+    (C : SimpleGraph.TopEdgeLabeling (Fin n) (Fin k)) : Prop :=
+  forall colour : Fin k, (C.labelGraph colour).CliqueFree 3
+
+def ForcesMonochromaticTriangle (n k : Nat) : Prop :=
+  forall C : SimpleGraph.TopEdgeLabeling (Fin n) (Fin k), Not (TriangleFree C)
+
+noncomputable def triangleRamseyNumber (k : Nat) : Nat :=
+  sInf {n : Nat | ForcesMonochromaticTriangle n k}
+
+theorem erdos_183 :
+    Filter.Tendsto
+      (fun k : Nat => (triangleRamseyNumber k : Real) ^ ((1 : Real) / (k : Real)))
+      Filter.atTop Filter.atTop := by sorry
+end ErdosProblems.MulticolourTriangleRamsey
+```
+
+The displayed proof hole is the question to compare with the project. The complete bundle, exact copied context, metrics and check outcomes are in the result directory.
+
+## Quickstart
+
+Python 3.12+, Git and Elan are required. Only Lean **4.32.0** and **4.29.0-rc7** are supported and tested. Use an already built target project. The driver does not rebuild the target or change its source. Lean processes execute serially with `LEAN_NUM_THREADS=2`; crashed steps resume up to three times and ordinary errors fail immediately.
+
+For the pinned, built ten-proofs checkout:
+
+```powershell
+elan toolchain install leanprover/lean4:v4.32.0
+python run.py review --project ../ten-proofs --module MulticolorTriangleRamsey ErdosProblems.MulticolourTriangleRamsey.erdos_183 --no-nanoda --output example
+```
+
+This runs Comparator's strict comparison and axiom checks plus Lean replay. `status.json` records `"nanoda": "skipped"`. Removing `--no-nanoda` enables the independent replay and requires a native Nanoda binary:
 
 ```powershell
 git clone https://github.com/ammkrn/nanoda_lib ../nanoda
 git -C ../nanoda checkout 3a2407216ee84a75f9e1aead6803d0578be06ae7
 cargo build --release --manifest-path ../nanoda/Cargo.toml
 $env:COMPARATOR_NANODA = (Resolve-Path ../nanoda/target/release/nanoda_bin.exe)
-elan toolchain install leanprover/lean4:v4.32.0
 elan toolchain install leanprover/lean4:v4.29.0-rc7
 python run.py test
 ```
 
-The core suite downloads only Comparator, Lean4Checker and lean4export source,
-compiles their necessary modules serially, and uses synthetic fixtures. It does
-not need Mathlib. The irreducible_def fixture uses small attributed upstream
-elaborator utilities in tests/Support with Lean-only import boundaries. The test command returns nonzero if any required fixture,
-deletion test or negative control fails. No skipped check is counted as a pass.
+On Linux, set `COMPARATOR_NANODA` to the `nanoda_bin` executable without `.exe`. The core suite needs no Mathlib and keeps both replays enabled. Its small attributed irreducible-definition utilities use Lean-only imports.
 
-On Linux, set `COMPARATOR_NANODA` to `../nanoda/target/release/nanoda_bin`.
-The native driver has the same trusted-cache threat model on both platforms.
+Use `--bundle` with multiple declarations, `--definition NAME` for a definition hole, `--trusted-root ROOT` to extend the import boundary, and `--output DIR` to choose the destination. Default trusted imports are every package outside the target package. Outputs include `Challenge.lean`, Comparator `config.json`, `metrics.json`, advisory `hints.json`, source `provenance.json` and `status.json`. Metrics report declarations, physical and nonblank lines, and raw constants including generated auxiliaries.
 
-## Review a cached project
+`--cache DIR` or the `SURFACE_CACHE` environment variable selects a cache. Reuse successful builds. Comparison receipts bind exact exports, configuration, checker, pins, toolchain and (when enabled) Nanoda binary. A skipped independent replay is never reported as a pass.
 
-Build the target beforehand. This tool does not rebuild it or change its source.
-For the pinned ten-proofs checkout with existing artifacts:
+## Measured results
 
-```powershell
-python run.py review --project ../ten-proofs --module MulticolorTriangleRamsey --bundle ErdosProblems.MulticolourTriangleRamsey.erdos_183 ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit --output ../example
-```
+The upstream is pinned to `94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6`. Declaration counts use source-command units; physical lines include blanks and comments, and nonblank counts include comment lines. Every constant-set difference is classified in its `comparison.json`.
 
-`--definition NAME` designates a Comparator definition hole. Its type is copied
-and its body is replaced by `sorry`; this is a deliberate change to the contract,
-not a body-equivalence guarantee. `--trusted-root ROOT` can add a module root to
-the import boundary. By default, all sources belonging to the target package
-are candidates for copying and every external package stays an import. Git
-projects include tracked and untracked nonignored source files; Lake dependency
-and generated review directories are excluded.
-`--cache DIR` selects the private cache directory (place it outside the checkout).
-The optional `SURFACE_CACHE` environment variable
-selects the same cache when no `--cache` argument is given. It allows a fresh
-checkout to reuse successful steps while running the unchanged `python run.py test`
-command used by CI.
-
-The output includes `Challenge.lean`, `config.json`, `metrics.json`, `hints.json`,
-`provenance.json` and `status.json`. Source statements, definitions and required
-lexical context are copied verbatim; only explicitly requested proof/definition
-holes and generated context/`#check` anchors are added. Provenance records byte
-ranges and hashes. Hints flag syntactic unused binders, configured totalizing
-operations, constant-looking stubs, and partial/unsafe modifiers. **Hints are
-advisory**: they establish neither a mathematical error nor dispensability.
-
-Explicitly requested unsafe roots use lean4export's `--export-unsafe` option
-(`Export.lean:73`, `Export.lean:238` at the pinned exporter revision). Otherwise
-the exporter omits those constants. This includes them in the existing strict
-comparison; it does not disable safety matching or either replay. Unsafe and
-partial source modifiers remain prominent hints. Runtime behavior, termination,
-and the safety of executing such definitions are outside this tool's guarantee.
-The pinned Nanoda parser rejects unsafe definition tags (`src/parser.rs:784`),
-so an explicit unsafe root currently returns failure even when Comparator and
-Lean replay pass. Its hints and individual check outcomes are still emitted.
-This unresolved required fixture keeps the full core suite and CI red.
-
-For a single source module containing private or hygienic auxiliaries, the driver
-compiles the unchanged challenge bytes under the original module identity, then
-loads the resulting artifact as `Challenge`. `metrics.json` records that identity.
-Compile through the driver to preserve it; renaming only the source filename can
-change auxiliary names and cause strict comparison to reject the result.
-
-## Guarantees and limits
-
-A successful `status.json` records strict upstream Comparator comparison and
-axiom checks, Lean kernel replay, and independent Nanoda replay. This establishes
-that the checked statements and their recursively compared constants match the
-cached project, under the configured import and definition-hole boundary.
-Extraction from an environment alone is not called kernel verification.
-
-Completeness is checked by standalone compilation and Comparator, not assumed
-from a source traversal. The core suite measures source-command minimality by
-deleting each retained declaration command and recompiling. Requested roots have
-`#check` anchors, so deleting a root also fails. Structures/inductives and mutual
-blocks are source command units; their generated constants are counted separately.
-The fixtures disable automatic implicit parameters explicitly: otherwise a
-deleted definition name can become a parameter and change the statement while
-still compiling. Typed compiler errors, rather than compiler crashes, count as
-successful deletion controls.
-This does not prove global minimum line count or minimality for arbitrary inputs.
-The validation report discloses any remaining redundant command.
-
-The tool cannot guarantee that a statement means what its author intended.
-Reading the statement, definitions, imports and definition-hole intent remains
-the human's job. The tool aims to make that reading smaller. It does not provide
-nonvacuity witnesses, prove the parser/generator correct, or verify external
-mathematical prose.
-
-## Threat model
-
-The **native trusted-cache profile is not an adversarial sandbox**. Source,
-metaprograms, imported modules, cached artifacts, toolchain and checking binaries
-must be controlled or trusted. Loading compiled environments and compiling source
-can execute code. Do not run it on an untrusted submission. The upstream Linux
-Comparator launcher uses Landrun and a systemd address-family restriction; this
-driver does not claim those guarantees and does not replace them with a fake
-sandbox. It calls upstream comparison/axiom/replay APIs without weakening them.
-Both kernels, exporter, operating system and hardware remain trust assumptions.
-Source hashes bind evidence; they are not signatures or a verified build chain.
-
-## Reproduce and inspect results
-
-`results/ten-proofs/SUMMARY.md` compares every shipped bundle, with constant-level
-differences classified in each `comparison.json`. The upstream is pinned to
-`94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6`.
+| Challenge | Theirs declarations / lines | Theirs nonblank | Ours declarations / lines | Ours nonblank | Constants theirs / ours | Theirs-only / ours-only | Our bugs | Lean | Nanoda |
+|---|---:|---:|---:|---:|---:|---:|---:|---|---|
+| A_SpherePacking | 20 / 185 | 149 | 20 / 289 | 203 | 75 / 75 | 0 / 0 | 0 | PASS | PASS |
+| B_BinaryCodes | 44 / 197 | 142 | 38 / 237 | 162 | 61 / 55 | 6 / 0 | 0 | PASS | PASS |
+| B_SphericalCodes | 65 / 302 | 215 | 63 / 498 | 318 | 99 / 97 | 2 / 0 | 0 | PASS | PASS |
+| C_PermanentFormulaLowerBound | 10 / 102 | 83 | 10 / 114 | 90 | 137 / 137 | 0 / 0 | 0 | PASS | PASS |
+| D_NonSoficGroup | 5 / 39 | 28 | 5 / 66 | 44 | 36 / 36 | 0 / 0 | 0 | PASS | PASS |
+| E_ConnesRigidity | 25 / 223 | 183 | 25 / 241 | 195 | 100 / 100 | 0 / 0 | 0 | PASS | PASS |
+| F_EhrhartVolumeInequality | 14 / 78 | 55 | 14 / 141 | 104 | 34 / 34 | 0 / 0 | 0 | PASS | PASS |
+| G_QuantumParallelRepetition | 14 / 139 | 111 | 14 / 171 | 127 | 91 / 91 | 0 / 0 | 0 | PASS | PASS |
+| H_GapCVP | 44 / 313 | 258 | 80 / 853 | 740 | 145 / 320 | 2 / 177 | 0 | PASS | PASS |
+| I_MulticolorTriangleRamsey | 7 / 50 | 40 | 7 / 61 | 47 | 7 / 7 | 0 / 0 | 0 | PASS | PASS |
+| J_CompactnessConjecture | 11 / 90 | 73 | 11 / 120 | 89 | 29 / 29 | 0 / 0 | 0 | PASS | PASS |
+| J_TwoDegenerateGraphs | 6 / 47 | 38 | 6 / 66 | 48 | 6 / 6 | 0 / 0 | 0 | PASS | PASS |
 
 ```powershell
 python run.py reproduce --project ../ten-proofs
 python run.py reproduce --project ../ten-proofs --verify
 ```
 
-The second command must reproduce every tracked result byte-for-byte using the
-cached project. Runtime caches/logs stay outside this checkout. A successful comparison receipt
-is reused only when the exact export bytes, config, checker source, pinned
-dependency revisions, toolchain and Nanoda binary hashes match. Changed inputs
-run both checks again; cached successes are not unverified skips. Writes to
-project or dependency import artifacts invalidate exports through their metadata.
-This assumes a trusted cache, not resistance to forged artifact timestamps. Field semantics
-and the special definition-hole boundary are documented in
-[Comparator configuration](docs/COMPARATOR_CONFIG.md).
+The verification command compares every emitted bundle file byte-for-byte against the committed results from cached builds. Target Git checkout line endings are part of the source provenance. The example CI job uses CRLF target sources to match these verbatim Windows artifacts, while the driver and core tests also run on Ubuntu.
 
-## Unsupported cases observed
+## GapCVP definition bodies
 
-- Lean 4.32.0, Unsafe: unsafe definition roots are unsupported by pinned Nanoda (src/parser.rs:784); safety flags emitted, Comparator and Lean replay passed.
-- Lean 4.29.0-rc7, Unsafe: unsafe definition roots are unsupported by pinned Nanoda (src/parser.rs:784); safety flags emitted, Comparator and Lean replay passed.
+All four `GapCVP.Comparator` definition holes returned **EQUAL** when project and handmade bodies were compared after proof erasure: `gapCVP400Promise`, `binaryNearestCodewordPromise`, `binarySyndromeDecodingPromise`, and `finitePGapCVPPromise`. Exact trees and verdicts are in `results/ten-proofs/H_GapCVP/bodies.json`.
 
-Unknown toolchains, unavailable source ranges, mixed selective opens or attribute
-commands that also name omitted declarations, private or hygienic declarations spanning
-multiple source modules, and missing or ambiguous requested body spans fail
-loudly. Root bodies with standard assignments, equation clauses and structure
-`where` values are supported. A failure never grants a comparison or minimality guarantee.
+Comparator's `definition_names` checks types and safety but excludes the bodies from its comparison. surface keeps those names in the configuration and now copies the project's full bodies verbatim, marked **body not checked by Comparator**. The separate `bodies` command replaces each proof-valued subterm identified by `Meta.isProof` with one placeholder in its original typing context. It compares the remaining syntax, ignoring binder names and metadata. It performs no unfolding or reduction and does not claim semantic equivalence of referenced definitions. The proof-field control returns EQUAL; changing a yes-set returns DIFFERENT with the first differing subterm and its path.
 
-## License and citation
+```powershell
+python run.py bodies --project ../ten-proofs --module GapCVP --handmade-module ComparatorChallenges.H_GapCVP GapCVP.Comparator.gapCVP400Promise --output body-result.json
+```
 
-Apache-2.0; see `LICENSE` and `NOTICE`. Cite with `CITATION.cff`. Change the single
-`name` value in `tool.json`, then run `python run.py docs` to regenerate branded
-documentation. The repository working name follows `lean-` plus that value.
+## Guarantees and limits
+
+A successful status records strict upstream comparison and axiom checks and Lean replay; independent Nanoda replay is separately labeled PASS or skipped. Standalone compilation and comparison check completeness under the configured import and definition-hole boundary. Environment extraction alone is never called kernel verification. Hints are advisory and prove neither an error nor dispensability.
+
+The core suite deletes each retained declaration command and requires a compiler error. Requested roots have `#check` anchors, and fixtures disable automatic implicit parameters. Structures, inductives and mutual blocks are source-command units. This establishes fixture minimality, not global minimum line count or minimality for arbitrary inputs. Negative controls must reject a tampered statement, weakened hypothesis and changed ordinary definition body. Unsafe refusal tests run before export; safe fixture checks remain unchanged.
+
+The tool cannot guarantee intended statement meaning, nonvacuity, external prose, runtime termination or a verified parser/generator. Definition-hole bodies are visibly outside Comparator's body contract. The separate proof-erasure measurement has the limits stated above.
+
+## Threat model
+
+The native trusted-cache profile provides no adversarial sandbox. Source, metaprograms, imports, caches, compiler and checking binaries, operating system and hardware must be trusted or controlled. Compiling and loading environments can execute code. Do not run this driver on untrusted submissions. It uses upstream comparison, axiom and replay APIs unchanged. Source hashes bind evidence but are neither signatures nor a verified build chain; artifact timestamps assume a trusted cache.
+
+## Unsupported cases
+
+Explicit unsafe roots are refused before export. Theorem roots cannot be unsafe, and Lean safe constants cannot reference unsafe ones. Unsafe executable code is outside this proof-review boundary. Partial definitions remain flagged and are checked through Lean's safe opaque interface.
+
+Every listed core fixture passed on both pinned toolchains; see results/core-suite.json. The following input restrictions still fail loudly.
+
+Unknown toolchains, unavailable source ranges, mixed selective opens or attributes naming omitted declarations, private or hygienic declarations spanning multiple source modules, and missing or ambiguous body spans fail loudly. Single-module private or hygienic auxiliaries require compilation under the original module identity; the driver records and preserves it. No failed or skipped check grants a success guarantee.
+
+Apache-2.0; see `LICENSE`, `NOTICE` and `CITATION.cff`. Change `name` in `tool.json` and run `python run.py docs` to regenerate branded documentation.

@@ -1,14 +1,5 @@
-I am working on {{name}}, a Lean statement-review tool. Given theorem names in a
-built project, it extracts a standalone challenge from the source definitions
-used by their types. It can bundle related statements and leaves external
-packages as imports. The native trusted-cache driver checks the generated
-challenge against the project with Comparator and replays the solution in Lean
-and Nanoda. It does not provide an adversarial sandbox.
+{{name}} extracts standalone Lean statement-review challenges from built projects, bundles shared definitions, and checks them with Comparator and Lean replay; Nanoda is enabled by default.
 
-The repository includes synthetic deletion tests, negative comparison controls,
-and constant-level comparisons with the shipped ten-proofs challenges. The
-validation reports list failures and unsupported syntax. Hints are advisory;
-humans still need to judge statement meaning and definition-hole intent.
+In the pinned ten-proofs checkout, all four GapCVP definition-hole bodies compared EQUAL to the handmade bodies after replacing proof-valued subterms with one placeholder. Comparator itself excludes these bodies from comparison. The generated challenge now displays the project bodies verbatim, and a separate check records the erased trees and any first structural difference. It does not unfold referenced definitions or establish intended mathematical meaning.
 
-This is a release candidate. Feedback on the supported boundary, source command
-minimality and definition-hole presentation would be useful.
+The repository includes constant-level bundle comparisons, deletion tests, negative controls and unsafe-root refusal tests. Hints are advisory. The native driver assumes trusted source and caches and provides no adversarial sandbox. Feedback on the supported syntax boundary and definition-body presentation would be useful.

@@ -1,10 +1,16 @@
 # Changelog
 
-## v0.1.0 — release candidate
+## v0.1.0
 
 - {{name}} extracts verbatim statement challenges and bundles requested roots.
-- Definition-hole support follows upstream Comparator's explicit contract.
-- Native serial checks use strict Comparator comparison plus Lean and Nanoda.
-- Includes synthetic deletion/negative controls and pinned ten-proofs results.
-- Remaining failures and unsupported language forms are recorded in the validation
-  reports; this candidate is not advertised as supporting every Lean construct.
+- Definition-hole bodies are displayed verbatim, with Comparator's exclusion
+  labeled and a separate proof-erasure comparison against handmade bodies.
+- Explicit unsafe roots are refused before export and tested as refusals.
+- Nanoda replay remains enabled by default; `--no-nanoda` explicitly records a
+  skipped replay while retaining strict comparison, axiom checks and Lean replay.
+- Metrics include physical and nonblank lines and raw generated constants.
+- Includes deletion tests, negative controls, proof-erasure fixtures and pinned
+  ten-proofs comparisons with byte-for-byte reproduction.
+- Core CI runs on Ubuntu; the manual example job builds only the Ramsey module.
+  Actual run outcomes are recorded separately, without claiming arbitrary-input
+  minimality, intended statement meaning or an adversarial sandbox.

@@ -37,14 +37,23 @@ holes: `gapCVP400Promise`, `binaryNearestCodewordPromise`,
 `binarySyndromeDecodingPromise`, and `finitePGapCVPPromise`, all in
 `GapCVP.Comparator`. The handmade challenge gives these definitions concrete
 bodies whose disjointness proofs use `sorry`. Comparator still treats the whole
-definition body as a hole, because of the configuration—not just that proof field.
+definition body as a hole, because of the configuration - not just that proof field.
 
-Our bundle preserves exactly the four theorem and four definition root lists,
-copying definition signatures with explicit whole-body holes. This can omit
-constants needed only by the handmade promise bodies. Those differences are
-classified as `needed by definition_names`, with a separately recorded full-body
-closure. Comparator verifies the filled project definitions' types, safety,
-allowed axioms and kernel acceptance. It **does not** establish that the filled
-promise languages implement the human-written challenge bodies. That intent
-requires additional human or mechanical review; upstream documents the same
-limitation in its README's “Definition Holes” section.
+Our bundle preserves exactly the four theorem and four definition root lists.
+The project definition bodies and their source dependencies are now copied
+verbatim and marked "body not checked by Comparator". Comparator still excludes
+these bodies from its recursive comparison, while checking types, safety,
+solution axioms and replay. This boundary is unchanged.
+
+The separate `bodies` command compares independently loaded project and handmade
+bodies after erasing every proof-valued expression using `Meta.isProof` in its
+original typing context. It ignores metadata and binder names, represents bound
+variables and universe parameters by indices, and reports EQUAL or the first
+structural DIFFERENT node and path. It does not unfold referenced constants,
+reduce terms, or establish intended mathematical meaning. All four GapCVP
+measurements are EQUAL; see `results/ten-proofs/H_GapCVP/bodies.json`.
+
+The native CLI's `--no-nanoda` option corresponds to disabling the independent
+replay only. Strict Comparator comparison, solution axiom checks and Lean replay
+still run unchanged. Its status records `nanoda: skipped`; the default remains
+independent replay enabled.

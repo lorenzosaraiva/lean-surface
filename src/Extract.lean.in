@@ -60,7 +60,7 @@ partial def visit (env : Environment) (n : Name) : StateM Closure Unit := do
       modify fun s => { s with boundary := s.boundary.insert n }
       return
     modify fun s => { s with items := s.items.push n }
-    for e in (if definitionHoles.contains n.toString then #[c.type] else readingExprs c) do
+    for e in readingExprs c do
       for dep in e.getUsedConstants do visit env dep
     match c with
     | .inductInfo i =>
@@ -458,7 +458,11 @@ def review (decl : Name) (patterns : Array Pattern) : CoreM (Json × String) := 
     | some proof =>
       let text := (← Meta.MetaM.run' (Meta.ppExpr proof)).pretty 100
       pure (obj [("trust", js "verbatim"), ("text", js text)])
-  let (_, originalClosure) := (c.type.getUsedConstants.forM (visit env)).run {}
+  let rootExprs : Array Expr := if definitionHoles.contains decl.toString then readingExprs c else #[c.type]
+  let visitRoot : StateM Closure Unit := do
+    for e in rootExprs do
+      for n in e.getUsedConstants do visit env n
+  let (_, originalClosure) := visitRoot.run {}
   let mut localInstances : Array ConstantInfo := #[]
   for i in [:env.header.moduleData.size] do
     if stopped env.allImportedModuleNames[i]! then continue
@@ -471,7 +475,6 @@ def review (decl : Name) (patterns : Array Pattern) : CoreM (Json × String) := 
   while next < closure.items.size do
     let n := closure.items[next]!
     next := next + 1
-    if definitionHoles.contains n.toString then continue
     if let some ci := env.find? n then
       if let some value := ci.value? (allowOpaque := true) then
         let (_, expanded) := (value.getUsedConstants.forM (visit env)).run closure

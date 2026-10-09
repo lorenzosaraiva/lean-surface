@@ -15,5 +15,5 @@
     "P11",
     "P12"
   ],
-  "scope": "all release working-tree files except .git and this self-report; no content exemptions"
+  "scope": "Git-tracked and untracked nonignored release files, excluding this self-report; ignored build caches are not publication content"
 }

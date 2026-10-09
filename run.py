@@ -38,7 +38,8 @@ def command(args, cwd, log, env=None, stdin=None, stdout_file=None):
             )
             log.write_bytes(result.stdout + result.stderr)
         else:
-            with stdout_file.open("wb") as stream:
+            temporary = stdout_file.with_name(stdout_file.name + ".pending")
+            with temporary.open("wb") as stream:
                 result = subprocess.run(
                     args,
                     cwd=cwd,
@@ -47,6 +48,7 @@ def command(args, cwd, log, env=None, stdin=None, stdout_file=None):
                     stdout=stream,
                     stderr=subprocess.PIPE,
                 )
+            os.replace(temporary, stdout_file)
             log.write_bytes(result.stderr)
         attempts.append({"attempt": attempt, "exit_code": result.returncode})
         if result.returncode not in CRASHES:
@@ -339,6 +341,7 @@ def scrub(value, project):
             value = re.sub(
                 re.escape(p), ".", value, flags=re.IGNORECASE if os.name == "nt" else 0
             )
+        value = re.sub(r"\.\\[^\s:()]*", lambda m: m.group().replace("\\", "/"), value)
         return value
     if isinstance(value, list):
         return [scrub(x, project) for x in value]
@@ -383,8 +386,8 @@ def export_signature(project, cfg, challenge_lib):
 def comparison_signature(project, cfg, work):
     """Bind a successful receipt to the exact exports, driver, pins and Nanoda binary."""
     nanoda = os.environ.get("COMPARATOR_NANODA")
-    if not nanoda:
-        raise ValueError("COMPARATOR_NANODA is required; see README setup")
+    if cfg["enable_nanoda"] and not nanoda:
+        raise ValueError("COMPARATOR_NANODA is required unless --no-nanoda is set")
     h = hashlib.sha256(json.dumps(cfg, sort_keys=True).encode())
     h.update(toolchain(project).encode())
     h.update((ROOT / "src/Check.lean").read_bytes())
@@ -398,7 +401,7 @@ def comparison_signature(project, cfg, work):
     for path in [
         work / "challenge.export",
         work / "solution.export",
-        pathlib.Path(nanoda),
+        *([pathlib.Path(nanoda)] if cfg["enable_nanoda"] else []),
     ]:
         with path.open("rb") as stream:
             for chunk in iter(lambda: stream.read(1048576), b""):
@@ -445,14 +448,11 @@ def compare(project, cfg, challenge_lib, work):
     cp = work / "challenge.export"
     sp = work / "solution.export"
     requested = set(cfg["theorem_names"] + cfg.get("definition_names", []))
-    export_options = (
-        ["--export-unsafe"]
-        if any(
-            c["name"] in requested and "unsafe" in c["safety"]
-            for c in inventory(project, "Challenge", [challenge_lib])
-        )
-        else []
-    )
+    unsafe_roots = [c["name"] for c in inventory(project, cfg["solution_module"])
+                    if c["name"] in requested and "unsafe" in c["safety"]]
+    if unsafe_roots:
+        raise ValueError("explicit unsafe root refused before export: " + ", ".join(unsafe_roots))
+    export_options = []
     signature = export_signature(project, cfg, challenge_lib)
     if export_options:
         signature = hashlib.sha256(
@@ -500,9 +500,12 @@ def compare(project, cfg, challenge_lib, work):
         cached = json.loads(receipt.read_text(encoding="utf-8"))
         if (
             cached.get("signature") == check_signature
-            and cached.get("status", {}).get("nanoda_kernel") == "PASS"
+            and cached.get("status", {}).get("nanoda", cached.get("status", {}).get("nanoda_kernel")) == ("PASS" if cfg["enable_nanoda"] else "skipped")
         ):
-            return cached["status"]
+            status = cached["status"]
+            if "nanoda_kernel" in status:
+                status["nanoda"] = status.pop("nanoda_kernel")
+            return status
     cfgfile = work / "config.json"
     dump(cfgfile, cfg)
     try:
@@ -520,38 +523,39 @@ def compare(project, cfg, challenge_lib, work):
         e.check_status = {
             "comparison": "PASS" if compared else "FAIL",
             "lean_kernel": "FAIL" if compared else "NOT RUN",
-            "nanoda_kernel": "NOT RUN",
+            "nanoda": "NOT RUN",
             "error": str(e),
         }
         raise
-    nanoda = os.environ.get("COMPARATOR_NANODA")
-    if not nanoda:
-        raise ValueError("COMPARATOR_NANODA is required; see README setup")
-    ncfg = work / "nanoda.json"
-    dump(
-        ncfg,
-        {
-            "use_stdin": True,
-            "permitted_axioms": cfg["permitted_axioms"],
-            "unpermitted_axiom_hard_error": True,
-            "nat_extension": True,
-            "string_extension": True,
-        },
-    )
-    try:
-        command([nanoda, ncfg], work, work / "nanoda.log", stdin=sp.read_bytes())
-    except RuntimeError as e:
-        e.check_status = {
-            "comparison": "PASS",
-            "lean_kernel": "PASS",
-            "nanoda_kernel": "FAIL",
-            "error": str(e),
-        }
-        raise
+    if cfg["enable_nanoda"]:
+        nanoda = os.environ.get("COMPARATOR_NANODA")
+        if not nanoda:
+            raise ValueError("COMPARATOR_NANODA is required; see README setup")
+        ncfg = work / "nanoda.json"
+        dump(
+            ncfg,
+            {
+                "use_stdin": True,
+                "permitted_axioms": cfg["permitted_axioms"],
+                "unpermitted_axiom_hard_error": True,
+                "nat_extension": True,
+                "string_extension": True,
+            },
+        )
+        try:
+            command([nanoda, ncfg], work, work / "nanoda.log", stdin=sp.read_bytes())
+        except RuntimeError as e:
+            e.check_status = {
+                "comparison": "PASS",
+                "lean_kernel": "PASS",
+                "nanoda": "FAIL",
+                "error": str(e),
+            }
+            raise
     status = {
         "comparison": "PASS",
         "lean_kernel": "PASS",
-        "nanoda_kernel": "PASS",
+        "nanoda": "PASS" if cfg["enable_nanoda"] else "skipped",
         "profile": "trusted-cache; no sandbox",
     }
     dump(receipt, {"signature": check_signature, "status": status})
@@ -559,9 +563,15 @@ def compare(project, cfg, challenge_lib, work):
 
 
 def review(
-    project, module, names, out, definitions=(), trusted=(), bundle=False, check=True
+    project, module, names, out, definitions=(), trusted=(), bundle=False, check=True, no_nanoda=False
 ):
     project = project.resolve()
+    requested = set([*names, *definitions])
+    unsafe = [c["name"] for c in inventory(project, module)
+              if c["name"] in requested and "unsafe" in c["safety"]]
+    if unsafe:
+        raise ValueError("explicit unsafe root refused before export: " + ", ".join(unsafe)
+                         + "; theorem roots cannot be unsafe, and safe constants cannot reference unsafe ones")
     out.mkdir(parents=True, exist_ok=True)
     if len(names) > 1 and not bundle:
         raise ValueError("multiple declarations require --bundle")
@@ -645,6 +655,7 @@ def review(
         "reading_list": list(rows.values()),
         "parsed_sources": list(parsed.values()),
         "targets": {n: f["target_source"] for n, f in zip(targets, facts)},
+        "definition_holes": list(definitions),
         "trusted_roots": sorted(roots),
         "boundary": sorted({x for f in facts for x in f["boundary"]}),
         "preserve_private_module": preserve_private,
@@ -683,7 +694,7 @@ def review(
         "theorem_names": list(names),
         "definition_names": list(definitions),
         "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"],
-        "enable_nanoda": True,
+        "enable_nanoda": not no_nanoda,
     }
     dump(out / "config.json", cfg)
     hints = {
@@ -712,6 +723,7 @@ def review(
     dump(out / "provenance.json", scrub(generation, project))
     metrics = {
         "lines": len(challenge.read_bytes().splitlines()),
+        "nonblank_lines": sum(bool(line.strip()) for line in challenge.read_bytes().splitlines()),
         "declarations": len(generation["records"]),
         "raw_constants": len(constants),
         "constants": constants,
@@ -724,7 +736,7 @@ def review(
     status = {
         "comparison": "NOT RUN",
         "lean_kernel": "NOT RUN",
-        "nanoda_kernel": "NOT RUN",
+        "nanoda": "NOT RUN",
     }
     if check:
         try:
@@ -736,11 +748,13 @@ def review(
                 {
                     "comparison": "FAIL",
                     "lean_kernel": "NOT CONFIRMED",
-                    "nanoda_kernel": "NOT CONFIRMED",
+                    "nanoda": "NOT CONFIRMED",
                     "error": str(e),
                 },
             )
-        for filename in ["comparator.log", "nanoda.log", "Challenge.compile.log"]:
+        if no_nanoda and (out / "nanoda.log").exists():
+            (out / "nanoda.log").unlink()
+        for filename in ["comparator.log", "Challenge.compile.log", *([] if no_nanoda else ["nanoda.log"])]:
             if (work / filename).exists():
                 (out / filename).write_text(
                     scrub(
@@ -748,6 +762,7 @@ def review(
                         project,
                     ),
                     encoding="utf-8",
+                    newline="\n",
                 )
     dump(out / "status.json", status)
     return {
@@ -779,12 +794,19 @@ def main():
     p.add_argument("--module", required=True)
     p.add_argument("declarations", nargs="+")
     p.add_argument("--bundle", action="store_true")
+    p.add_argument("--no-nanoda", action="store_true")
     p.add_argument("--definition", action="append", default=[])
     p.add_argument("--trusted-root", action="append", default=[])
     p.add_argument("--output", type=pathlib.Path, required=True)
     p = sub.add_parser("reproduce")
     p.add_argument("--project", type=pathlib.Path, required=True)
     p.add_argument("--verify", action="store_true")
+    p = sub.add_parser("bodies")
+    p.add_argument("--project", type=pathlib.Path, required=True)
+    p.add_argument("--module", required=True)
+    p.add_argument("--handmade-module", required=True)
+    p.add_argument("definitions", nargs="+")
+    p.add_argument("--output", type=pathlib.Path, required=True)
     sub.add_parser("test")
     sub.add_parser("docs")
     p = sub.add_parser("privacy")
@@ -801,9 +823,10 @@ def main():
             args.definition,
             args.trusted_root,
             args.bundle,
+            no_nanoda=args.no_nanoda,
         )
         print(json.dumps(result["status"]))
-        return 0 if result["status"].get("nanoda_kernel") == "PASS" else 1
+        return 0 if result["status"].get("comparison") == "PASS" and result["status"].get("lean_kernel") == "PASS" and result["status"].get("nanoda") in {"PASS", "skipped"} else 1
     spec = importlib.util.spec_from_file_location("tasks", ROOT / "src/tasks.py")
     tasks = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(tasks)

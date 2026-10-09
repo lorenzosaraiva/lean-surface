@@ -1,12 +1,21 @@
-# surface v0.1.0 candidate
+# surface v0.1.0
 
-This candidate packages a source statement-review extractor, bundle generator,
-native trusted-cache checker, advisory hints and reproducible comparison tables.
-It uses the target's toolchain and leaves external packages as imports. Requested
-theorem proofs are replaced by holes. Explicit definition holes retain the
-upstream Comparator semantics and need a separate check of intended bodies.
+The tool extracts source challenges from built Lean projects, bundles statement
+dependencies and checks them with Comparator and Lean replay. Nanoda replay is
+enabled by default and can be explicitly omitted with `--no-nanoda`; the status
+labels that omission as skipped.
 
-The validation reports determine what is supported. Unresolved fixture or
-comparison failures block a release claim. No general minimum-size theorem or
-statement-intent guarantee is claimed. Publication should wait for the blockers
-in `results/VALIDATION.md` to be resolved.
+Definition-hole bodies are displayed verbatim and labeled outside Comparator's
+body comparison. A separate proof-erasure check reports four EQUAL GapCVP bodies
+against the handmade challenge. Proof-only and changed-yes-set controls distinguish
+the erasure boundary. Explicit unsafe roots are refused before export.
+
+Metrics include physical and nonblank lines, source declaration commands and raw
+constants. The result directories include constant-set classifications and cached
+byte-for-byte reproduction evidence. Supported fixture minimality is tested by
+declaration deletion, without claiming a global minimality theorem.
+
+Supported Lean versions: 4.32.0 and 4.29.0-rc7. Native trusted-cache profile;
+source, caches, packages, checking binaries, operating system and hardware remain
+trust assumptions. Hints are advisory. See results/VALIDATION.md for actual local
+and CI outcomes. No statement-meaning or runtime-safety guarantee is made.

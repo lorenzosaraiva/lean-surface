@@ -4,7 +4,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -12,11 +12,13 @@
     "ours_declarations": 20,
     "ours_lines": 289,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 203,
     "status": "PASS",
     "theirs_constants": 75,
     "theirs_declarations": 20,
     "theirs_lines": 185,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 149,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -24,7 +26,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -32,11 +34,13 @@
     "ours_declarations": 38,
     "ours_lines": 237,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 162,
     "status": "PASS",
     "theirs_constants": 61,
     "theirs_declarations": 44,
     "theirs_lines": 197,
     "theirs_minus_ours": 6,
+    "theirs_nonblank_lines": 142,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -44,7 +48,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -52,11 +56,13 @@
     "ours_declarations": 63,
     "ours_lines": 498,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 318,
     "status": "PASS",
     "theirs_constants": 99,
     "theirs_declarations": 65,
     "theirs_lines": 302,
     "theirs_minus_ours": 2,
+    "theirs_nonblank_lines": 215,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -64,7 +70,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -72,11 +78,13 @@
     "ours_declarations": 10,
     "ours_lines": 114,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 90,
     "status": "PASS",
     "theirs_constants": 137,
     "theirs_declarations": 10,
     "theirs_lines": 102,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 83,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -84,7 +92,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -92,11 +100,13 @@
     "ours_declarations": 5,
     "ours_lines": 66,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 44,
     "status": "PASS",
     "theirs_constants": 36,
     "theirs_declarations": 5,
     "theirs_lines": 39,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 28,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -104,7 +114,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -112,11 +122,13 @@
     "ours_declarations": 25,
     "ours_lines": 241,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 195,
     "status": "PASS",
     "theirs_constants": 100,
     "theirs_declarations": 25,
     "theirs_lines": 223,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 183,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -124,7 +136,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -132,11 +144,13 @@
     "ours_declarations": 14,
     "ours_lines": 141,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 104,
     "status": "PASS",
     "theirs_constants": 34,
     "theirs_declarations": 14,
     "theirs_lines": 78,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 55,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -144,7 +158,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -152,31 +166,53 @@
     "ours_declarations": 14,
     "ours_lines": 171,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 127,
     "status": "PASS",
     "theirs_constants": 91,
     "theirs_declarations": 14,
     "theirs_lines": 139,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 111,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
+    "body_verdicts": [
+      {
+        "name": "GapCVP.Comparator.gapCVP400Promise",
+        "verdict": "EQUAL"
+      },
+      {
+        "name": "GapCVP.Comparator.binaryNearestCodewordPromise",
+        "verdict": "EQUAL"
+      },
+      {
+        "name": "GapCVP.Comparator.binarySyndromeDecodingPromise",
+        "verdict": "EQUAL"
+      },
+      {
+        "name": "GapCVP.Comparator.finitePGapCVPPromise",
+        "verdict": "EQUAL"
+      }
+    ],
     "challenge": "H_GapCVP",
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
-    "ours_constants": 52,
-    "ours_declarations": 17,
-    "ours_lines": 115,
-    "ours_minus_theirs": 0,
+    "ours_constants": 320,
+    "ours_declarations": 80,
+    "ours_lines": 853,
+    "ours_minus_theirs": 177,
+    "ours_nonblank_lines": 740,
     "status": "PASS",
     "theirs_constants": 145,
     "theirs_declarations": 44,
     "theirs_lines": 313,
-    "theirs_minus_ours": 93,
+    "theirs_minus_ours": 2,
+    "theirs_nonblank_lines": 258,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -184,7 +220,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -192,11 +228,13 @@
     "ours_declarations": 7,
     "ours_lines": 61,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 47,
     "status": "PASS",
     "theirs_constants": 7,
     "theirs_declarations": 7,
     "theirs_lines": 50,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 40,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -204,7 +242,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -212,11 +250,13 @@
     "ours_declarations": 11,
     "ours_lines": 120,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 89,
     "status": "PASS",
     "theirs_constants": 29,
     "theirs_declarations": 11,
     "theirs_lines": 90,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 73,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   },
   {
@@ -224,7 +264,7 @@
     "comparator": {
       "comparison": "PASS",
       "lean_kernel": "PASS",
-      "nanoda_kernel": "PASS",
+      "nanoda": "PASS",
       "profile": "trusted-cache; no sandbox"
     },
     "our_bugs": 0,
@@ -232,11 +272,13 @@
     "ours_declarations": 6,
     "ours_lines": 66,
     "ours_minus_theirs": 0,
+    "ours_nonblank_lines": 48,
     "status": "PASS",
     "theirs_constants": 6,
     "theirs_declarations": 6,
     "theirs_lines": 47,
     "theirs_minus_ours": 0,
+    "theirs_nonblank_lines": 38,
     "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
   }
 ]

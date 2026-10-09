@@ -1,6 +1,22 @@
 """Release validation and reproducible result generation."""
 
-import hashlib, json, re
+import hashlib, json, re, importlib.util
+
+
+def body_check(app, project, module, handmade_module, names, output):
+    spec = importlib.util.spec_from_file_location("body_check", app.ROOT / "src/bodies.py")
+    implementation = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(implementation)
+    return implementation.compare(app, project, module, handmade_module, names, output)
+
+
+def bodies(app, args):
+    report = body_check(app, args.project, args.module, args.handmade_module,
+                        args.definitions, args.output)
+    for row in report["definitions"]:
+        print(row["name"], row["verdict"], flush=True)
+    # A measured difference is a successful measurement, not a compiler failure.
+    return 0
 
 FIXTURES = {
     "CRLF": "def caf\u00e9 : Nat := 7\ntheorem sample : caf\u00e9 = 7 := rfl\n",
@@ -100,6 +116,31 @@ def test(app, args):
                 )
                 target = "Outer.Inner.sample" if name == "Nested" else "sample"
                 out = app.CACHE / "test-results" / version / name
+                if name == "Unsafe":
+                    original_compare = app.compare
+                    export_attempted = []
+                    def reject_export(*args, **kwargs):
+                        export_attempted.append(True)
+                        raise ValueError("unexpected export after unsafe root")
+                    app.compare = reject_export
+                    try:
+                        try:
+                            app.review(project, name, [target], out, definitions=["quantity"])
+                            raise ValueError("unsafe root was accepted")
+                        except ValueError as e:
+                            if "explicit unsafe root refused before export" not in str(e):
+                                raise
+                            row["refusal"] = str(e)
+                        if export_attempted:
+                            raise ValueError("unsafe root reached export")
+                    finally:
+                        app.compare = original_compare
+                    row["test_kind"] = "unsafe-root refusal before export"
+                    row["export_attempted"] = False
+                    row["status"] = "PASS"
+                    results.append(row)
+                    print(version, name, "PASS (refused before export)", flush=True)
+                    continue
                 result = app.review(
                     project,
                     name,
@@ -121,7 +162,7 @@ def test(app, args):
                         for flag in hints["source_modifiers"]
                     ):
                         raise ValueError("safety flag missing")
-                if result["status"]["nanoda_kernel"] != "PASS":
+                if result["status"]["nanoda"] != "PASS":
                     row["comparison_diagnostic"] = (out / "comparator.log").read_text(
                         encoding="utf-8", errors="replace"
                     )
@@ -129,13 +170,6 @@ def test(app, args):
                         row["nanoda_diagnostic"] = (out / "nanoda.log").read_text(
                             encoding="utf-8", errors="replace"
                         )
-                        if (
-                            "DefinitionSafety::Unsafe | DefinitionSafety::Partial"
-                            in row["nanoda_diagnostic"]
-                        ):
-                            raise ValueError(
-                                "unsafe definition roots are unsupported by pinned Nanoda (src/parser.rs:784); safety flags emitted, Comparator and Lean replay passed"
-                            )
                     raise ValueError("two-kernel comparison did not pass")
                 deletions = []
                 challenge = (out / "Challenge.lean").read_bytes()
@@ -239,9 +273,30 @@ def test(app, args):
             )
         negatives.append({"mutation": name, "rejected_by_comparator": rejected})
         print("negative", name, "PASS" if rejected else "FAIL", flush=True)
+    body_fixtures = []
+    for version in app.CONFIG["lean_versions"]:
+        project = setup_fixture_project(app, version, "body-controls")
+        prefix = "import Lean\nstructure Promise where\n yes : Nat → Bool\n evidence : True\n"
+        for mod, proof, number in [("BodySolution", "True.intro", 7),
+                                   ("BodyProofOnly", "by exact id True.intro", 7),
+                                   ("BodyYesSet", "True.intro", 8)]:
+            source = project / (mod + ".lean")
+            source.write_text(prefix + f"def quantity : Promise := ⟨fun n => n == {number}, {proof}⟩\n",
+                              encoding="utf-8", newline="\n")
+            app.cached_compile(project, source, project / (".lake/build/lib/lean/" + mod + ".olean"))
+        for mod, expected in [("BodyProofOnly", "EQUAL"), ("BodyYesSet", "DIFFERENT")]:
+            report = body_check(app, project, "BodySolution", mod, ["quantity"],
+                                app.CACHE / "body-fixtures" / version / (mod + ".json"))
+            row = {"lean_version": version, "fixture": mod, "expected": expected,
+                   "verdict": report["definitions"][0]["verdict"],
+                   "first_difference": report["definitions"][0]["first_difference"]}
+            row["status"] = "PASS" if row["verdict"] == expected else "FAIL"
+            body_fixtures.append(row)
+            print(version, mod, row["status"], row["verdict"], flush=True)
     evidence = {
         "fixtures": results,
         "negative_controls": negatives,
+        "body_fixtures": body_fixtures,
         "method": "Fixtures explicitly disable automatic implicit parameters so deleting a referenced name cannot silently generalize the statement. Delete each copied source declaration command, including each requested root; #check anchors make root deletion observable. Inductives/structures/mutual blocks are source command units, not separately editable generated constants.",
     }
     app.dump(app.ROOT / "results/core-suite.json", app.scrub(evidence, project))
@@ -249,6 +304,7 @@ def test(app, args):
         0
         if all(x["status"] == "PASS" for x in results)
         and all(x["rejected_by_comparator"] for x in negatives)
+        and all(x["status"] == "PASS" for x in body_fixtures)
         else 1
     )
 
@@ -375,8 +431,10 @@ def reproduce(app, args):
             row.update(
                 {
                     "theirs_lines": len(shipped.read_bytes().splitlines()),
+                    "theirs_nonblank_lines": sum(bool(line.strip()) for line in shipped.read_bytes().splitlines()),
                     "theirs_declarations": count,
                     "ours_lines": result["metrics"]["lines"],
+                    "ours_nonblank_lines": result["metrics"]["nonblank_lines"],
                     "ours_declarations": result["metrics"]["declarations"],
                     "theirs_constants": len(theirs),
                     "ours_constants": result["metrics"]["raw_constants"],
@@ -389,9 +447,14 @@ def reproduce(app, args):
                     "comparator": result["status"],
                 }
             )
+            if cfg.get("definition_names"):
+                report = body_check(app, project, cfg["solution_module"], cfg["challenge_module"],
+                                    cfg["definition_names"], out / "bodies.json")
+                row["body_verdicts"] = [{"name": d["name"], "verdict": d["verdict"]}
+                                        for d in report["definitions"]]
             row["status"] = (
                 "PASS"
-                if result["status"]["nanoda_kernel"] == "PASS" and row["our_bugs"] == 0
+                if result["status"]["nanoda"] == "PASS" and row["our_bugs"] == 0
                 else "FAIL"
             )
         except (ValueError, RuntimeError, OSError) as e:
@@ -406,11 +469,11 @@ def reproduce(app, args):
         )
     app.dump(results / "summary.json", rows)
     text = f"# {app.NAME}: shipped challenge comparison\n\nPinned upstream: `{commit}`. Counts are explained in the measurement notes. Checks use the native trusted-cache profile.\n\n"
-    text += "| Challenge | Theirs declarations / lines | Ours declarations / lines | Constants theirs / ours | Theirs-only / ours-only | Our bugs | Lean | Nanoda |\n|---|---:|---:|---:|---:|---:|---|---|\n"
+    text += "| Challenge | Theirs declarations / lines | Theirs nonblank | Ours declarations / lines | Ours nonblank | Constants theirs / ours | Theirs-only / ours-only | Our bugs | Lean | Nanoda |\n|---|---:|---:|---:|---:|---:|---:|---:|---|---|\n"
     for r in rows:
         get = lambda k: r.get(k, "FAIL")
-        text += f"| {r['challenge']} | {get('theirs_declarations')} / {get('theirs_lines')} | {get('ours_declarations')} / {get('ours_lines')} | {get('theirs_constants')} / {get('ours_constants')} | {get('theirs_minus_ours')} / {get('ours_minus_theirs')} | {get('our_bugs')} | {r.get('comparator', {}).get('lean_kernel', 'FAIL')} | {r.get('comparator', {}).get('nanoda_kernel', 'FAIL')} |\n"
-    text += "\nSource declarations count Lean parser declaration/lemma commands and mutual command blocks; generated constant counts include constructors, projections and auxiliaries. Physical source lines include comments and blanks. The same source command unit policy is used for both sides. Definition hole bodies are excluded from comparison; their type dependencies remain checked. Each constant difference is recorded in comparison.json.\n"
+        text += f"| {r['challenge']} | {get('theirs_declarations')} / {get('theirs_lines')} | {get('theirs_nonblank_lines')} | {get('ours_declarations')} / {get('ours_lines')} | {get('ours_nonblank_lines')} | {get('theirs_constants')} / {get('ours_constants')} | {get('theirs_minus_ours')} / {get('ours_minus_theirs')} | {get('our_bugs')} | {r.get('comparator', {}).get('lean_kernel', 'FAIL')} | {r.get('comparator', {}).get('nanoda', 'FAIL')} |\n"
+    text += "\nSource declarations count Lean parser declaration/lemma commands and mutual command blocks; generated constant counts include constructors, projections and auxiliaries. Physical source lines include comments and blanks; nonblank lines count lines containing a non-whitespace byte. The same source command unit policy is used for both sides. Definition hole bodies are copied verbatim but excluded from Comparator comparison; their type dependencies remain checked. bodies.json separately compares project and handmade bodies after proof erasure. Each constant difference is recorded in comparison.json.\n"
     (results / "SUMMARY.md").write_text(text, encoding="utf-8", newline="\n")
     if args.verify:
         after = {
@@ -448,6 +511,9 @@ def docs(app, args):
             else "Validation is in progress; see results/core-suite.json. No unsupported case is silently accepted."
         )
     )
+    summary = app.ROOT / "results/ten-proofs/SUMMARY.md"
+    table = "\n".join(line for line in summary.read_text(encoding="utf-8").splitlines()
+                      if line.startswith("|")) if summary.exists() else "Results pending."
     for template in [
         app.ROOT / "docs/README.md.in",
         app.ROOT / "CHANGELOG.md.in",
@@ -464,7 +530,8 @@ def docs(app, args):
             template.read_text(encoding="utf-8")
             .replace("{{name}}", app.NAME)
             .replace("{{cache_env}}", app.NAME.upper() + "_CACHE")
-            .replace("{{unsupported}}", unsupported),
+            .replace("{{unsupported}}", unsupported)
+            .replace("{{results_table}}", table),
             encoding="utf-8",
             newline="\n",
         )
@@ -474,8 +541,13 @@ def docs(app, args):
 def privacy(app, args):
     patterns = json.loads(args.pattern_file.read_text(encoding="utf-8"))
     hits = []
-    for path in app.ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
+    files = app.command(
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+        app.ROOT, app.CACHE / "privacy-files.log"
+    ).decode("utf-8").split("\0")
+    for relative in sorted(set(files) - {""}):
+        path = app.ROOT / relative
+        if not path.is_file():
             continue
         if path.name == "privacy.json":
             continue
@@ -497,7 +569,7 @@ def privacy(app, args):
                 args.pattern_file.read_bytes()
             ).hexdigest(),
             "hits": hits,
-            "scope": "all release working-tree files except .git and this self-report; no content exemptions",
+            "scope": "Git-tracked and untracked nonignored release files, excluding this self-report; ignored build caches are not publication content",
         },
     )
     return 1 if hits else 0

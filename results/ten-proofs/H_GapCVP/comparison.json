@@ -1,378 +1,723 @@
 {
-  "ours_minus_theirs": [],
-  "ours_raw_constants": 52,
+  "ours_minus_theirs": [
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.decodeGapCVPInstance"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.decodeGapCVPInstance.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.decodeGapCVPInstance.match_3"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.decodeGapCVPInstance.match_5"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.decodeThreeCNF"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.decodeThreeCNF._sparseCasesOn_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.decodeThreeCNF.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.decodeThreeCNF.match_4"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.encodeAtomic.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.encodeFinValues.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.encodeFinValues.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.encodeFinValues.eq_def"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.encodeMatrixRows.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.encodeMatrixRows.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.encodeMatrixRows.eq_def"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.lengthPrefixedWord.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readAtomic"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readAtomic.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readAtomic.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readAtomic_append"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readFinValues"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readFinValues._f"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readFinValues._sunfold"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readFinValues._unsafe_rec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readFinValues.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readFinValues.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readFinValues.eq_def"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readFinValues.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readFinValues.match_3"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readFinValues_append"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readLengthPrefixedWord"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readLengthPrefixedWord.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readLengthPrefixedWord_append"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readLiteral"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readLiteral._sparseCasesOn_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readLiteral._sparseCasesOn_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readLiteral.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows._f"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows._sunfold"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows._unsafe_rec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows.eq_def"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows.match_3"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows.match_5"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readMatrixRows_append"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClause"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClause.match_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClauses"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClauses._f"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClauses._sunfold"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClauses._unsafe_rec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClauses.match_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readThreeClauses.match_3"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readThreeClauses.match_5"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix._f"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix._sunfold"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix._unsafe_rec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix.eq_2"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix.eq_3"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix.eq_def"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix.match_3"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.BinaryEncoding.readUnaryPrefix_replicate"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.binaryIntegerRepresentative_cast"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.binaryNearestCodewordPromise._proof_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.binarySyndromeDecodingPromise._proof_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.decodeBinaryNearestCodewordInstance"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.decodeBinaryNearestCodewordInstance.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.decodeBinaryNearestCodewordInstance_encode"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.decodeBinarySyndromeDecodingInstance"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.decodeBinarySyndromeDecodingInstance.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.decodeBinarySyndromeDecodingInstance_encode"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.decodeInstance"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.decodeInstance.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.decodeInstance_encode"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.encodeBinaryNearestCodewordInstance.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.encodeBinaryNearestCodewordInstance_injective"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.encodeBinarySyndromeDecodingInstance.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.encodeBinarySyndromeDecodingInstance_injective"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.encodeInstance.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.encodeInstance_injective"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.finitePGapCVPPromise._proof_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.gapCVP400Promise._proof_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.gapNO400.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.gapYES400.eq_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Comparator.gapYES400_not_gapNO400"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.noLanguage.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.wellFormed.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Comparator.yesLanguage.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance._sizeOf_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance._sizeOf_inst"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.blockLength"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.casesOn"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.ctorIdx"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.generator"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.generatorRank"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.mk"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.mk._flat_ctor"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.mk.inj"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.mk.injEq"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.mk.noConfusion"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.mk.sizeOf_spec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.noConfusion"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.noConfusionType"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.radius"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.rec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.recOn"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.BinaryNearestCodewordInstance.target"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.binaryMatrixOfIntegers"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.binaryVectorOfIntegers"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.decodeBinaryNearestCodewordInstance"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.decodeBinaryNearestCodewordInstance.match_1"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.decodeBinaryNearestCodewordInstance.match_3"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400BinaryDecodingPromiseReduction.decodeBinaryNearestCodewordInstance.match_5"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Factor400FinitePNormCorollary.finitePGapFactor"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.Factor400FinitePNormCorollary.finitePGapFactor._proof_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance._sizeOf_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance._sizeOf_inst"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.basis"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.casesOn"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.ctorIdx"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.dimension"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.mk"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.mk._flat_ctor"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.mk.inj"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.mk.injEq"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.mk.noConfusion"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.mk.sizeOf_spec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.noConfusion"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.noConfusionType"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.radius"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.rec"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.recOn"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.GapCVPInstance.target"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.Literal"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.ThreeCNF"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.ThreeClause"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "GapCVP.gapFactor400"
+    },
+    {
+      "classification": "needed by definition_names",
+      "name": "GapCVP.gapFactor400._proof_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.encodeFinValues.match_1.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.encodeFinValues.match_1.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.encodeFinValues.match_1.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.encodeMatrixRows.match_1.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.encodeMatrixRows.match_1.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.encodeMatrixRows.match_1.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readFinValues.match_1.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readFinValues.match_1.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readFinValues.match_1.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readFinValues.match_3.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readFinValues.match_3.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readFinValues.match_3.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_1.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_1.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_1.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_3.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_3.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_3.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_5.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_5.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readMatrixRows.match_5.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readThreeClauses.match_5.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readThreeClauses.match_5.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readThreeClauses.match_5.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readUnaryPrefix.match_1.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readUnaryPrefix.match_1.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readUnaryPrefix.match_1.splitter"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readUnaryPrefix.match_3.eq_1"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readUnaryPrefix.match_3.eq_2"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readUnaryPrefix.match_3.eq_3"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "_private.Challenge.0.GapCVP.BinaryEncoding.readUnaryPrefix.match_3.splitter"
+    }
+  ],
+  "ours_raw_constants": 320,
   "theirs_minus_ours": [
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.encodeAtomic"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.encodeFinValues"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.encodeFinValues._f"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.BinaryEncoding.encodeFinValues._sunfold"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.BinaryEncoding.encodeFinValues._unsafe_rec"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.encodeFinValues.match_1"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.encodeMatrixRows"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.encodeMatrixRows._f"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.BinaryEncoding.encodeMatrixRows._sunfold"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.BinaryEncoding.encodeMatrixRows._unsafe_rec"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.encodeMatrixRows.match_1"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.BinaryEncoding.lengthPrefixedWord"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance._sizeOf_1"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance._sizeOf_inst"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.blockLength"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.casesOn"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.ctorIdx"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.generator"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.generatorRank"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.mk"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.mk._flat_ctor"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.mk.inj"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.mk.injEq"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.mk.noConfusion"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.mk.sizeOf_spec"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.noConfusion"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.noConfusionType"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.radius"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.rec"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.recOn"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinaryNearestCodewordInstance.target"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance._sizeOf_1"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance._sizeOf_inst"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.blockLength"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.casesOn"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.checkCount"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.ctorIdx"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.mk"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.mk._flat_ctor"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.mk.inj"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.mk.injEq"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.mk.noConfusion"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.mk.sizeOf_spec"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.noConfusion"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.noConfusionType"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.parityCheck"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.radius"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.rec"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.recOn"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.BinarySyndromeDecodingInstance.syndrome"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.Instance"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance._sizeOf_1"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance._sizeOf_inst"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.Instance.basis"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.casesOn"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.ctorIdx"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.Instance.dimension"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.Instance.mk"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.mk._flat_ctor"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.mk.inj"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.mk.injEq"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.mk.noConfusion"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.mk.sizeOf_spec"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.noConfusion"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.noConfusionType"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.Instance.radius"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.rec"
-    },
-    {
-      "classification": "unused by any listed theorem",
-      "name": "GapCVP.Comparator.Instance.recOn"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.Instance.target"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.binaryCodeGapFactor"
-    },
     {
       "classification": "needed by definition_names",
       "name": "GapCVP.Comparator.binaryCodeGapFactor._proof_1"
     },
     {
       "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.binaryNearestCodeword"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.binaryNearestTarget"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.binarySyndromeProduct"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.binarySyndromeTarget"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.distanceSquared"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.encodeBinaryNearestCodewordInstance"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.encodeBinarySyndromeDecodingInstance"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.encodeInstance"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.finitePGapFactor"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.finitePLatticeDiscrepancy"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.finitePLatticeDistance"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.finitePNorm"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.gapFactor400"
-    },
-    {
-      "classification": "needed by definition_names",
       "name": "GapCVP.Comparator.gapFactor400._proof_1"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.gapNO400"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.gapYES400"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.hasIntegerTarget"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.noLanguage"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.wellFormed"
-    },
-    {
-      "classification": "needed by definition_names",
-      "name": "GapCVP.Comparator.yesLanguage"
     }
   ],
   "theirs_raw_constants": 145

@@ -881,6 +881,7 @@
   "definition_holes": [],
   "lean_version": "4.32.0",
   "lines": 120,
+  "nonblank_lines": 89,
   "raw_constants": 29,
   "source_sha256": "81ae485a985e20f0f2e476c999a38ce0561173f2d91f29cadd473c38be32309b"
 }
