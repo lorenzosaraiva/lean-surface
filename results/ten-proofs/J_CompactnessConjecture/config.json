@@ -1,0 +1,16 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "CompactnessAndDegeneracy",
+  "theorem_names": [
+    "CompactnessConjecture.quantitativeCompactnessCounterexample",
+    "CompactnessConjecture.compactnessCounterexample_bigO",
+    "CompactnessConjecture.not_erdos_180"
+  ]
+}

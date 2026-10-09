@@ -1,0 +1,338 @@
+{
+  "challenge_lines": 289,
+  "imports": [
+    "Lean",
+    "Mathlib"
+  ],
+  "matcher_context": "single source module; no cache reset required",
+  "raw_constant_count_v0": 41,
+  "records": [
+    {
+      "challenge_end_byte": 392,
+      "challenge_start_byte": 336,
+      "end_byte": 1356,
+      "lines": 1,
+      "owners": [
+        "CohnElkies.Euclidean"
+      ],
+      "sha256": "1e666270719778f6fef0142800e5a5f09f922a11c01f0238cef163991f935286",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 38,
+      "source_start_line": 38,
+      "start_byte": 1300,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 449,
+      "challenge_start_byte": 394,
+      "end_byte": 1415,
+      "lines": 1,
+      "owners": [
+        "CohnElkies.TestFunction"
+      ],
+      "sha256": "16404a96d274f4b603ac81edf136ef491515d7434b3e0f50534f14a5762dfd93",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 40,
+      "source_start_line": 40,
+      "start_byte": 1360,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 550,
+      "challenge_start_byte": 451,
+      "end_byte": 2132,
+      "lines": 2,
+      "owners": [
+        "CohnElkies.unitBallVolume"
+      ],
+      "sha256": "8c5a6db2092889f7c4d2a3c208a235a8376ae254ed8da07c29457e533e63efd7",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 59,
+      "source_start_line": 58,
+      "start_byte": 2033,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 895,
+      "challenge_start_byte": 820,
+      "end_byte": 1796107,
+      "lines": 1,
+      "owners": [
+        "CohnElkies.numeralTwoAtLeast"
+      ],
+      "sha256": "f8e9ab7597ac450cf9c02d1d5e3c133b20cd38252baa6ca645b82494c547e120",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48051,
+      "source_start_line": 48051,
+      "start_byte": 1796032,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1035,
+      "challenge_start_byte": 897,
+      "end_byte": 1796249,
+      "lines": 3,
+      "owners": [
+        "CohnElkies.euclideanFiniteDimensional"
+      ],
+      "sha256": "cf7b0e782a50d35ee5661556c1ab73ac0062b2ec79fee0d0c94275d7205605df",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48055,
+      "source_start_line": 48053,
+      "start_byte": 1796111,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1157,
+      "challenge_start_byte": 1037,
+      "end_byte": 1796373,
+      "lines": 3,
+      "owners": [
+        "CohnElkies.euclideanBorelSpace"
+      ],
+      "sha256": "072a8bdc9448bc68817e005b47bbfdffc0a96768ed488621c7b76e5794e60232",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48059,
+      "source_start_line": 48057,
+      "start_byte": 1796253,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1423,
+      "challenge_start_byte": 1180,
+      "end_byte": 1796643,
+      "lines": 5,
+      "owners": [
+        "SpherePacking",
+        "SpherePacking.centers",
+        "SpherePacking.centers_dist",
+        "SpherePacking.mk",
+        "SpherePacking.separation",
+        "SpherePacking.separation_pos"
+      ],
+      "sha256": "7392adb5e63a5d130ed4252bc8546e519393fa90db8a83293d92d68b9fd8b9b5",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48067,
+      "source_start_line": 48063,
+      "start_byte": 1796400,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1638,
+      "challenge_start_byte": 1445,
+      "end_byte": 1798690,
+      "lines": 3,
+      "owners": [
+        "SpherePacking.occupiedBallRegion"
+      ],
+      "sha256": "4dc6d70c273f73907dd8758d1fefa4412df4eec3ab3275198be700373730592e",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48114,
+      "source_start_line": 48112,
+      "start_byte": 1798497,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1843,
+      "challenge_start_byte": 1640,
+      "end_byte": 1798897,
+      "lines": 3,
+      "owners": [
+        "SpherePacking.densityInsideRadius"
+      ],
+      "sha256": "947911438b5fe7bcdf60cf34c5fde7d62c9dfd71a951d649127bbc04b43f743b",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48118,
+      "source_start_line": 48116,
+      "start_byte": 1798694,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1972,
+      "challenge_start_byte": 1845,
+      "end_byte": 1799028,
+      "lines": 2,
+      "owners": [
+        "SpherePacking.upperPackingDensity"
+      ],
+      "sha256": "086f3c590d671922d6434a70879784d33fd3ae15cce57ddf8f45fd53523bae68",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48121,
+      "source_start_line": 48120,
+      "start_byte": 1798901,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2165,
+      "challenge_start_byte": 2064,
+      "end_byte": 1804253,
+      "lines": 2,
+      "owners": [
+        "SpherePackingConstant"
+      ],
+      "sha256": "80942079b36ab61abc4f9d6b27ac2f512e8ac77f6c9f8dd3edd015720de64d47",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 48247,
+      "source_start_line": 48246,
+      "start_byte": 1804152,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2935,
+      "challenge_start_byte": 2621,
+      "end_byte": 2063455,
+      "lines": 8,
+      "owners": [
+        "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper"
+      ],
+      "sha256": "6f39108b3e960acdb1503ab7bed6794003a0719e48ac27954eb6295220df2d15",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 53438,
+      "source_start_line": 53426,
+      "start_byte": 2062842,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 3744,
+      "challenge_start_byte": 3256,
+      "end_byte": 2064280,
+      "lines": 11,
+      "owners": [
+        "PackingBounds.FullAdmissible",
+        "PackingBounds.FullAdmissible.fourier_nonneg",
+        "PackingBounds.FullAdmissible.fourier_real",
+        "PackingBounds.FullAdmissible.fourier_zero_pos",
+        "PackingBounds.FullAdmissible.function",
+        "PackingBounds.FullAdmissible.mk",
+        "PackingBounds.FullAdmissible.outside_nonpos",
+        "PackingBounds.FullAdmissible.real"
+      ],
+      "sha256": "47f6484f76f97cd81d62c221fb3e82f847a1b8d4d16827e10ad7565735852d23",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 53467,
+      "source_start_line": 53457,
+      "start_byte": 2063792,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3911,
+      "challenge_start_byte": 3746,
+      "end_byte": 2064449,
+      "lines": 3,
+      "owners": [
+        "PackingBounds.fullQuotient"
+      ],
+      "sha256": "b01565b21e1ceb9c17205f577e3d1cf144d4e40e33ebc95e7df9f375b83c08e2",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 53471,
+      "source_start_line": 53469,
+      "start_byte": 2064284,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3992,
+      "challenge_start_byte": 3913,
+      "end_byte": 2064532,
+      "lines": 2,
+      "owners": [
+        "PackingBounds.fullQuotientSet"
+      ],
+      "sha256": "b9642f2bcff2ea835c18f1c5c5f6f063caa90c754c2e50c6eb45bf71739ecbcd",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 53474,
+      "source_start_line": 53473,
+      "start_byte": 2064453,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4113,
+      "challenge_start_byte": 3994,
+      "end_byte": 2064655,
+      "lines": 3,
+      "owners": [
+        "PackingBounds.fullLinearProgram"
+      ],
+      "sha256": "85b1dec4d0e79ea8018c70142bc91eb74727e5f365dedc0b7498523fc07d775d",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 53478,
+      "source_start_line": 53476,
+      "start_byte": 2064536,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4498,
+      "challenge_start_byte": 4310,
+      "end_byte": 2142720,
+      "lines": 7,
+      "owners": [
+        "PackingBounds.FullMain.exact_limit"
+      ],
+      "sha256": "01772fe7db8e0d89d701564c049f3a854c95019fbd0260e849ac1f083acc91c6",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 55390,
+      "source_start_line": 55383,
+      "start_byte": 2142462,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 4731,
+      "challenge_start_byte": 4500,
+      "end_byte": 2143035,
+      "lines": 8,
+      "owners": [
+        "PackingBounds.FullMain.exact_binary_exponent"
+      ],
+      "sha256": "bab2996a23ec3da55d0b0e53551571cf8f86a51450a72ea1a6557c708097988a",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 55400,
+      "source_start_line": 55392,
+      "start_byte": 2142724,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 7202,
+      "challenge_start_byte": 4854,
+      "end_byte": 2146134,
+      "lines": 59,
+      "owners": [
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.base_two_decimal_certificate",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.base_two_exponent_positive",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.base_two_logarithmic_rate",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.base_two_vanishing_exponential_error",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.linear_program_root",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.mk",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.natural_logarithmic_rate",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.natural_vanishing_exponential_error",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.root_before_infimum",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.root_before_infimum_vanishing_error",
+        "PackingBounds.SharpFullCohnElkiesManuscriptConclusions.universal_nonnegative_delta"
+      ],
+      "sha256": "527d37299c3e4feae7f8b0d9d3f2df134af449e89ce0c0870d7962ff9a96812c",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 55488,
+      "source_start_line": 55430,
+      "start_byte": 2143786,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 7314,
+      "challenge_start_byte": 7204,
+      "end_byte": 2152249,
+      "lines": 3,
+      "owners": [
+        "PackingBounds.sharpFullCohnElkiesManuscriptConclusions"
+      ],
+      "sha256": "2f784114ed9cd20ec95380ffac79578104def26f1cee54e54cb10e8883d763e5",
+      "source": ".\\SpherePacking.lean",
+      "source_end_line": 55612,
+      "source_start_line": 55591,
+      "start_byte": 2151086,
+      "target_statement": true
+    }
+  ],
+  "sha256": "31b993af95b6c00a041776e1c9e84dc81ed8eaea403472be2d9db0784c7a75c8",
+  "source_declarations": 16,
+  "source_lines": 104,
+  "support_constants": 0
+}

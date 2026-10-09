@@ -1,0 +1,10 @@
+# Changelog
+
+## v0.1.0 — release candidate
+
+- {{name}} extracts verbatim statement challenges and bundles requested roots.
+- Definition-hole support follows upstream Comparator's explicit contract.
+- Native serial checks use strict Comparator comparison plus Lean and Nanoda.
+- Includes synthetic deletion/negative controls and pinned ten-proofs results.
+- Remaining failures and unsupported language forms are recorded in the validation
+  reports; this candidate is not advertised as supporting every Lean construct.

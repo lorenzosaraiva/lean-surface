@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "MetricCodes",
+  "theorem_names": [
+    "MetricCodes.Johnson.main_binary_theorem",
+    "MetricCodes.Spherical.HigherHierarchy.main_general",
+    "MetricCodes.Spherical.HigherHierarchy.strict_hierarchy",
+    "MetricCodes.Spherical.HigherHierarchy.NumericalMaximum.eventually_kissingNumber_lt_published"
+  ]
+}

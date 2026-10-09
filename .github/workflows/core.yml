@@ -1,0 +1,37 @@
+name: Core suite
+on: [push, pull_request]
+jobs:
+  core:
+    runs-on: windows-latest
+    env:
+      LEAN_NUM_THREADS: '2'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+        with:
+          toolchain: stable
+      - name: Install pinned Lean toolchains
+        shell: pwsh
+        run: |
+          Invoke-WebRequest https://raw.githubusercontent.com/leanprover/elan/master/elan-init.ps1 -OutFile $env:RUNNER_TEMP/elan-init.ps1
+          & $env:RUNNER_TEMP/elan-init.ps1 -NoPrompt 1 -DefaultToolchain leanprover/lean4:v4.32.0
+          Add-Content $env:GITHUB_PATH "$env:USERPROFILE/.elan/bin"
+          & "$env:USERPROFILE/.elan/bin/elan.exe" toolchain install leanprover/lean4:v4.29.0-rc7
+      - name: Build pinned Nanoda
+        shell: pwsh
+        run: |
+          git clone https://github.com/ammkrn/nanoda_lib $env:RUNNER_TEMP/nanoda
+          git -C $env:RUNNER_TEMP/nanoda checkout 3a2407216ee84a75f9e1aead6803d0578be06ae7
+          cargo build --release --manifest-path $env:RUNNER_TEMP/nanoda/Cargo.toml
+          Add-Content $env:GITHUB_ENV "COMPARATOR_NANODA=$env:RUNNER_TEMP/nanoda/target/release/nanoda_bin.exe"
+      - name: Core suite (no Mathlib)
+        run: python run.py test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: core-results
+          path: results/core-suite.json

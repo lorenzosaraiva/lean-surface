@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "QuantumParallelRepetition",
+  "theorem_names": [
+    "QuantumParallelRepetition.distributionUniformExponential",
+    "QuantumParallelRepetition.standardQuantumParallelRepetition"
+  ]
+}

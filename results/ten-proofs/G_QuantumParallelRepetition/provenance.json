@@ -1,0 +1,248 @@
+{
+  "challenge_lines": 171,
+  "imports": [
+    "Lean",
+    "Mathlib"
+  ],
+  "matcher_context": "single source module; no cache reset required",
+  "raw_constant_count_v0": 37,
+  "records": [
+    {
+      "challenge_end_byte": 493,
+      "challenge_start_byte": 199,
+      "end_byte": 482,
+      "lines": 6,
+      "owners": [
+        "QuantumParallelRepetition.Game",
+        "QuantumParallelRepetition.Game.mk",
+        "QuantumParallelRepetition.Game.predicate",
+        "QuantumParallelRepetition.Game.questionWeight",
+        "QuantumParallelRepetition.Game.weight_nonneg",
+        "QuantumParallelRepetition.Game.weight_normalized"
+      ],
+      "sha256": "7e077a46249d793a9efd7936428e0ac3729c86da21a448c9e9d7f9bf4738d547",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 17,
+      "source_start_line": 12,
+      "start_byte": 188,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1689,
+      "challenge_start_byte": 569,
+      "end_byte": 2502,
+      "lines": 24,
+      "owners": [
+        "QuantumParallelRepetition.Game.repeat"
+      ],
+      "sha256": "677844e7867b4c74b7b9733937a19f72ef1821e8281a4a44176eea11c2d5a0c8",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 72,
+      "source_start_line": 49,
+      "start_byte": 1382,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1852,
+      "challenge_start_byte": 1701,
+      "end_byte": 3193,
+      "lines": 4,
+      "owners": [
+        "QuantumParallelRepetition.DensityMatrix",
+        "QuantumParallelRepetition.DensityMatrix.matrix",
+        "QuantumParallelRepetition.DensityMatrix.mk",
+        "QuantumParallelRepetition.DensityMatrix.positive",
+        "QuantumParallelRepetition.DensityMatrix.trace_one"
+      ],
+      "sha256": "4114e35ce831056d18738069fbf53d3e25a2f0c2889b9068f643c02cd707f592",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 91,
+      "source_start_line": 88,
+      "start_byte": 3042,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2048,
+      "challenge_start_byte": 1854,
+      "end_byte": 3391,
+      "lines": 4,
+      "owners": [
+        "QuantumParallelRepetition.POVM",
+        "QuantumParallelRepetition.POVM.complete",
+        "QuantumParallelRepetition.POVM.effect",
+        "QuantumParallelRepetition.POVM.mk",
+        "QuantumParallelRepetition.POVM.positive"
+      ],
+      "sha256": "2d5a4661eda1116971e29422b190350f35b6b886280ad7baba2bc7f15001bf34",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 96,
+      "source_start_line": 93,
+      "start_byte": 3197,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2443,
+      "challenge_start_byte": 2050,
+      "end_byte": 3788,
+      "lines": 11,
+      "owners": [
+        "QuantumParallelRepetition.Strategy",
+        "QuantumParallelRepetition.Strategy.Alice",
+        "QuantumParallelRepetition.Strategy.Bob",
+        "QuantumParallelRepetition.Strategy.aliceMeasurement",
+        "QuantumParallelRepetition.Strategy.alice_decidableEq",
+        "QuantumParallelRepetition.Strategy.alice_fintype",
+        "QuantumParallelRepetition.Strategy.bobMeasurement",
+        "QuantumParallelRepetition.Strategy.bob_decidableEq",
+        "QuantumParallelRepetition.Strategy.bob_fintype",
+        "QuantumParallelRepetition.Strategy.mk",
+        "QuantumParallelRepetition.Strategy.state"
+      ],
+      "sha256": "f184e911122cf5e137d5d709d048500581a9ee6db019c4ce8fd54008295cc1dc",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 108,
+      "source_start_line": 98,
+      "start_byte": 3395,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2868,
+      "challenge_start_byte": 2673,
+      "end_byte": 4792,
+      "lines": 3,
+      "owners": [
+        "QuantumParallelRepetition.Strategy.jointEffect"
+      ],
+      "sha256": "df7202cb85c97eb72c2cf75e0e5c2c6fd83a7aa6cf387078e5f1c86eaf58f250",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 131,
+      "source_start_line": 129,
+      "start_byte": 4597,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3012,
+      "challenge_start_byte": 2870,
+      "end_byte": 5161,
+      "lines": 2,
+      "owners": [
+        "QuantumParallelRepetition.Strategy.outcomeProbability"
+      ],
+      "sha256": "ed864890354ff3938c7d0efbf6dbc8ca0b5183d3fdad5181576dad19bd8130f6",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 139,
+      "source_start_line": 138,
+      "start_byte": 5019,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3211,
+      "challenge_start_byte": 3014,
+      "end_byte": 6789,
+      "lines": 4,
+      "owners": [
+        "QuantumParallelRepetition.Strategy.winProbability"
+      ],
+      "sha256": "8cfaee923590caac2d418e91e35c8adf3e84cc661898ef3f88222e3d8fae95bf",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 178,
+      "source_start_line": 175,
+      "start_byte": 6592,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3381,
+      "challenge_start_byte": 3227,
+      "end_byte": 8512,
+      "lines": 3,
+      "owners": [
+        "QuantumParallelRepetition.entangledValue"
+      ],
+      "sha256": "8834c7fb2419432c35f795491da9ee208dadb53fcd851bec9b0588677303a359",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 221,
+      "source_start_line": 219,
+      "start_byte": 8358,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3531,
+      "challenge_start_byte": 3383,
+      "end_byte": 9773,
+      "lines": 3,
+      "owners": [
+        "QuantumParallelRepetition.repeatedEntangledValue"
+      ],
+      "sha256": "a64e7b0b5093c75b50004221ce51a4fc59fbd003af633b56ac00b0f4b607cecc",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 253,
+      "source_start_line": 251,
+      "start_byte": 9625,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3835,
+      "challenge_start_byte": 3679,
+      "end_byte": 906472,
+      "lines": 3,
+      "owners": [
+        "QuantumParallelRepetition.HasExponentialBound"
+      ],
+      "sha256": "abb2654df0a3dc5410fb644c9dfa8df522c1a3cece1acfa6ca8c12e55b4b1cf2",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 23658,
+      "source_start_line": 23656,
+      "start_byte": 906316,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4123,
+      "challenge_start_byte": 3977,
+      "end_byte": 908571,
+      "lines": 3,
+      "owners": [
+        "QuantumParallelRepetition.StandardQuantumParallelRepetition"
+      ],
+      "sha256": "b69b3573ccd68d22b42f421b6c547f4f830601930250a056cf8acb4b1aa30fd3",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 23714,
+      "source_start_line": 23712,
+      "start_byte": 908425,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4781,
+      "challenge_start_byte": 4153,
+      "end_byte": 2754561,
+      "lines": 17,
+      "owners": [
+        "QuantumParallelRepetition.distributionUniformExponential"
+      ],
+      "sha256": "9ff76df6563e7b0accc3d4705defb980b9e739b09cdd652fcb41443c8377e5f8",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 70969,
+      "source_start_line": 70953,
+      "start_byte": 2753892,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 4980,
+      "challenge_start_byte": 4783,
+      "end_byte": 2754810,
+      "lines": 6,
+      "owners": [
+        "QuantumParallelRepetition.standardQuantumParallelRepetition"
+      ],
+      "sha256": "e790a595b8f214cc5ba3697d6ac84fe197f90a186f33dd9722091001aa0e4e6d",
+      "source": ".\\QuantumParallelRepetition.lean",
+      "source_end_line": 70976,
+      "source_start_line": 70971,
+      "start_byte": 2754565,
+      "target_statement": true
+    }
+  ],
+  "sha256": "b8e3d231acb6c79a5b095c4f286c13bc56c9b6563645f06a5eaa0170b3bd708c",
+  "source_declarations": 12,
+  "source_lines": 70,
+  "support_constants": 0
+}

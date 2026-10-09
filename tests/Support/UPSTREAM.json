@@ -1,0 +1,12 @@
+{
+  "mathlib_revision": "81a5d257c8e410db227a6665ed08f64fea08e997",
+  "batteries_revision": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+  "files": {
+    "NameMap.lean": "Batteries/Lean/NameMapAttribute.lean",
+    "Eqns.lean": "Mathlib/Tactic/Eqns.lean",
+    "TermReduce.lean": "Mathlib/Util/TermReduce.lean",
+    "Irreducible.lean": "Mathlib/Tactic/IrreducibleDef.lean",
+    "Expr.lean": "Mathlib/Lean/Expr/Basic.lean:490-514 (reduceProjStruct? excerpt)"
+  },
+  "adaptation": "Replace module/import headers with Lean-only Support imports, including meta imports. The 4.29 fixture inserts an exposed public Inhabited (Thunk a) compatibility instance into the NameMap import header. Upstream declaration bodies and original author notices are preserved."
+}

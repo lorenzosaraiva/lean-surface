@@ -1,0 +1,13 @@
+Copyright 2026 Lorenzo Saraiva, PUC-Rio.
+
+Generated ten-proofs challenge snippets derive from OpenAI's ten-proofs repository,
+revision 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6, under Apache-2.0.
+
+Comparator and Lean4Checker are separate Apache-2.0 dependencies credited in their
+upstream source. lean4export and Nanoda retain their upstream licensing. This
+repository does not vendor their source or distribute their binaries.
+
+The core-suite Support modules adapt upstream Mathlib/Batteries elaborator
+utilities by changing their import boundaries to Lean-only fixture support.
+Their original copyright and author notices are preserved. They remain
+Apache-2.0; this does not vendor or require the Mathlib library.

@@ -1,0 +1,10 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group": []
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

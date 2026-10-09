@@ -1,0 +1,129 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "MetricCodes.Hamming.binaryRate_lt_classicalRate": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hδ",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 δ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hδ'",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} δ (1 / 2)"
+      }
+    ],
+    "MetricCodes.Hamming.exists_binaryRate_improvement": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hδ",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 δ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hδ'",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} δ (1 / 2)"
+      }
+    ],
+    "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hd",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 d"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hdhalf",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} d (1 / 2)"
+      }
+    ],
+    "MetricCodes.Johnson.binaryRate_lt_mrrw": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hd",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 d"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hdhalf",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} d (1 / 2)"
+      }
+    ],
+    "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hd",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 d"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hdhalf",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} d (1 / 2)"
+      }
+    ],
+    "MetricCodes.MRRW.strict_mrrw2": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hδ",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 δ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hhalf",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} δ (1 / 2)"
+      }
+    ]
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

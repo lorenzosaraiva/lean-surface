@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "NonSoficGroup",
+  "theorem_names": [
+    "SoficGroups.SourceTopLevelCompressionFinal.exists_finitelyPresented_nonsofic_group"
+  ]
+}

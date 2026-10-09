@@ -1,0 +1,12 @@
+# {{name}} v0.1.0 candidate
+
+This candidate packages a source statement-review extractor, bundle generator,
+native trusted-cache checker, advisory hints and reproducible comparison tables.
+It uses the target's toolchain and leaves external packages as imports. Requested
+theorem proofs are replaced by holes. Explicit definition holes retain the
+upstream Comparator semantics and need a separate check of intended bodies.
+
+The validation reports determine what is supported. Unresolved fixture or
+comparison failures block a release claim. No general minimum-size theorem or
+statement-intent guarantee is claimed. Publication should wait for the blockers
+in `results/VALIDATION.md` to be resolved.

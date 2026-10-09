@@ -1,0 +1,183 @@
+{
+  "challenge_lines": 120,
+  "imports": [
+    "Lean",
+    "Mathlib"
+  ],
+  "matcher_context": "single source module; no cache reset required",
+  "raw_constant_count_v0": 13,
+  "records": [
+    {
+      "challenge_end_byte": 236,
+      "challenge_start_byte": 159,
+      "end_byte": 223,
+      "lines": 3,
+      "owners": [
+        "CompactnessConjecture.FiniteGraph",
+        "CompactnessConjecture.FiniteGraph.graph",
+        "CompactnessConjecture.FiniteGraph.mk",
+        "CompactnessConjecture.FiniteGraph.order"
+      ],
+      "sha256": "5997c5bb802da5b253bcbcfd5225edd0bc297accac72eaa8c7116922cfc4115a",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 12,
+      "source_start_line": 10,
+      "start_byte": 146,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 391,
+      "challenge_start_byte": 238,
+      "end_byte": 380,
+      "lines": 3,
+      "owners": [
+        "CompactnessConjecture.FamilyFree"
+      ],
+      "sha256": "5e9c825d1e94308efdaf6eb0123f5f99726c0d6d88aba4c2bba8253df3167471",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 16,
+      "source_start_line": 14,
+      "start_byte": 227,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 611,
+      "challenge_start_byte": 393,
+      "end_byte": 602,
+      "lines": 5,
+      "owners": [
+        "CompactnessConjecture.familyExtremal"
+      ],
+      "sha256": "d42943e6ca38f1b2bd8606ac5048b1c1f87899993fccd033b37fff7c70394948",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 22,
+      "source_start_line": 18,
+      "start_byte": 384,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 729,
+      "challenge_start_byte": 613,
+      "end_byte": 722,
+      "lines": 2,
+      "owners": [
+        "CompactnessConjecture.IsCyclicFamily"
+      ],
+      "sha256": "9c8c1f683abb0db3251dfcd8cc06b8abc45b1b1e031a9477c0f385a766118744",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 25,
+      "source_start_line": 24,
+      "start_byte": 606,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 981,
+      "challenge_start_byte": 731,
+      "end_byte": 976,
+      "lines": 5,
+      "owners": [
+        "CompactnessConjecture.IsCompactFamily"
+      ],
+      "sha256": "9cf2c7b3548b49167e85f28c1d711b03f1282ea66b7ef1d679f1f81246663c5e",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 31,
+      "source_start_line": 27,
+      "start_byte": 726,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1137,
+      "challenge_start_byte": 983,
+      "end_byte": 1134,
+      "lines": 3,
+      "owners": [
+        "CompactnessConjecture.CompactnessConjectureStatement"
+      ],
+      "sha256": "7d8f8fbf91b2a64adc1fe5f777f51e9d8cb338b04e8efb164e5e2f79555bc2ef",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 35,
+      "source_start_line": 33,
+      "start_byte": 980,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1311,
+      "challenge_start_byte": 1244,
+      "end_byte": 160175,
+      "lines": 2,
+      "owners": [
+        "CompactnessConjecture.extremalScale"
+      ],
+      "sha256": "5d3e5f181664fdf317a3d286e81d00eb65baae456a0a0f40ec22f1d2d40ae9c0",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 4211,
+      "source_start_line": 4210,
+      "start_byte": 160108,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1537,
+      "challenge_start_byte": 1313,
+      "end_byte": 160895,
+      "lines": 5,
+      "owners": [
+        "CompactnessConjecture.UniformMemberLower"
+      ],
+      "sha256": "637831f379ae8a0b16786544858ce471694da53e6455dc65307799457887e676",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 4232,
+      "source_start_line": 4228,
+      "start_byte": 160671,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1687,
+      "challenge_start_byte": 1611,
+      "end_byte": 339778,
+      "lines": 3,
+      "owners": [
+        "CompactnessConjecture.not_erdos_180"
+      ],
+      "sha256": "48209960d45acd711499febad3a4664dcdae7fb50e25732ffc433794b2822c5e",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 8970,
+      "source_start_line": 8967,
+      "start_byte": 339606,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 2571,
+      "challenge_start_byte": 1792,
+      "end_byte": 355744,
+      "lines": 19,
+      "owners": [
+        "CompactnessConjecture.quantitativeCompactnessCounterexample"
+      ],
+      "sha256": "69333dfa7332b53e3c8ee4e0351ac2bfdffa172bc65c00d5d94dd715785970a3",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 9346,
+      "source_start_line": 9320,
+      "start_byte": 354500,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 3171,
+      "challenge_start_byte": 2573,
+      "end_byte": 356821,
+      "lines": 15,
+      "owners": [
+        "CompactnessConjecture.compactnessCounterexample_bigO"
+      ],
+      "sha256": "423b40da491dd0a9bdc805883ff4b1ecca1b29b1c7c0d57ebd21f132a39dff8b",
+      "source": ".\\CompactnessAndDegeneracy.lean",
+      "source_end_line": 9371,
+      "source_start_line": 9348,
+      "start_byte": 355748,
+      "target_statement": true
+    }
+  ],
+  "sha256": "81ae485a985e20f0f2e476c999a38ce0561173f2d91f29cadd473c38be32309b",
+  "source_declarations": 8,
+  "source_lines": 28,
+  "support_constants": 0
+}

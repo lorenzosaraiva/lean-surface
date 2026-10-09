@@ -1,0 +1,601 @@
+import Lean
+
+open Lean
+
+/- Uses the target's Lean executable, environment, and source search path.
+   The default driver assembles verbatim source, compiles a challenge and records
+   optional Comparator results. Extraction never modifies target source. -/
+namespace StatementReview
+
+def obj (xs : List (String × Json)) : Json := Json.mkObj xs
+def js (s : String) : Json := toJson s
+def jn (n : Nat) : Json := toJson n
+def mechanical := "mechanical"
+
+def ppOptions : Options := ({} : Options)
+  |>.setBool `pp.fullNames true
+  |>.setBool `pp.universes true
+  |>.set `format.width (100 : Nat)
+  |>.set `maxRecDepth (10000 : Nat)
+  |>.set `maxHeartbeats (0 : Nat)
+
+def stopped (mod : Name) : Bool :=
+  !(__LOCAL_MODULES__ : List String).contains mod.toString
+
+def definitionHoles : List String := __DEFINITION_HOLES__
+
+def moduleOf (env : Environment) (n : Name) : Option Name := do
+  let i ← env.getModuleIdxFor? n
+  env.allImportedModuleNames[i.toNat]?
+
+def kind (c : ConstantInfo) : String :=
+  match c with
+  | .defnInfo _ => "definition"
+  | .thmInfo _ => "theorem (type only; proof not traversed)"
+  | .opaqueInfo _ => "opaque"
+  | .axiomInfo _ => "axiom"
+  | .inductInfo _ => "inductive/structure"
+  | .ctorInfo _ => "constructor"
+  | .recInfo _ => "recursor (type only)"
+  | .quotInfo _ => "quotient primitive"
+
+def readingExprs (c : ConstantInfo) : Array Expr :=
+  match c with
+  | .defnInfo v => #[v.type, v.value]
+  | .opaqueInfo v => #[v.type, v.value]
+  | _ => #[c.type]
+
+structure Closure where
+  visited : NameSet := {}
+  items : Array Name := #[]
+  boundary : NameSet := {}
+  missing : NameSet := {}
+
+partial def visit (env : Environment) (n : Name) : StateM Closure Unit := do
+  if (← get).visited.contains n then return
+  modify fun s => { s with visited := s.visited.insert n }
+  match env.find? n, moduleOf env n with
+  | some c, some mod =>
+    if stopped mod then
+      modify fun s => { s with boundary := s.boundary.insert n }
+      return
+    modify fun s => { s with items := s.items.push n }
+    for e in (if definitionHoles.contains n.toString then #[c.type] else readingExprs c) do
+      for dep in e.getUsedConstants do visit env dep
+    match c with
+    | .inductInfo i =>
+      for ctor in i.ctors do visit env ctor
+      for sibling in i.all do visit env sibling
+      if let some s := getStructureInfo? env n then
+        for f in s.fieldNames do
+          if let some fi := s.fieldInfo.find? (fun x => x.fieldName == f) then
+            visit env fi.projFn
+    | .ctorInfo i => visit env i.induct
+    | .recInfo i => for ind in i.all do visit env ind
+    | _ => pure ()
+  | _, _ => modify fun s => { s with missing := s.missing.insert n }
+
+def namesJson (ns : Array Name) : Json := toJson (ns.map (·.toString))
+
+def rangeJson (r : DeclarationRange) : Json := obj [
+  ("start_line", jn r.pos.line), ("start_column", jn r.pos.column),
+  ("end_line", jn r.endPos.line), ("end_column", jn r.endPos.column),
+  ("column_encoding", js "Unicode code points; zero based; end exclusive")]
+
+def sourceSlice (s : String) (r : DeclarationRange) : String := Id.run do
+  let lines := s.splitOn "\n" |>.toArray
+  let mut out : Array String := #[]
+  for i in [r.pos.line - 1:r.endPos.line] do
+    let line := lines[i]?.getD ""
+    let chars := line.toList
+    let lo := if i == r.pos.line - 1 then r.pos.column else 0
+    let hi := if i == r.endPos.line - 1 then r.endPos.column else chars.length
+    out := out.push (String.ofList ((chars.take hi).drop lo))
+  return "\n".intercalate out.toList
+
+structure Source where
+  path : String := ""
+  text : String := ""
+  range : Option DeclarationRange := none
+  owner : Name := .anonymous
+  status : String := "unavailable"
+
+def sourceFor (n mod : Name) : CoreM Source := do
+  let env ← getEnv
+  let mut owner := if isAuxRecursor env n || isNoConfusion env n || (← isRec n)
+    then n.getPrefix else n
+  let mut range? ← findDeclarationRanges? owner
+  -- Generated matchers/projections can share a parent's verbatim source.
+  while range?.isNone && !owner.isAnonymous do
+    owner := owner.getPrefix
+    range? ← findDeclarationRanges? owner
+  let some r := range? | return { status := "missing declaration range (explicit gap)" }
+  try
+    let sp ← getSrcSearchPath
+    let path ← findLean ((← IO.currentDir) :: sp) mod
+    let text ← IO.FS.readFile path
+    return {
+      path := path.toString
+      text := sourceSlice text r.range
+      range := some r.range
+      owner := owner
+      status := if owner == n then "exact declaration range" else "generated declaration; parent source range" }
+  catch e =>
+    return { range := some r.range, owner := owner, status := s!"source unavailable: {← e.toMessageData.toString}" }
+
+def sourceJson (s : Source) : Json := obj [
+  ("trust", js "verbatim"), ("path", js s.path), ("text", js s.text),
+  ("range", s.range.map rangeJson |>.getD Json.null),
+  ("source_owner", js s.owner.toString), ("status", js s.status),
+  ("line_count", jn (if s.text.isEmpty then 0 else (s.text.splitOn "\n").length))]
+
+partial def stripMetadata : Expr → Expr
+  | .mdata _ e => stripMetadata e
+  | e => e
+
+partial def binderRows (type : Expr) (proof? : Option Expr) (index := 0) : MetaM (Array Json) := do
+  if let some proof := proof? then
+    if let .letE n domain value body _ := stripMetadata proof then
+      -- Open intervening syntactic lets as local declarations, without reducing
+      -- their values or inlining proof constants, to find the next lambda.
+      return ← Meta.withLetDecl n domain value fun x =>
+        binderRows type (some (body.instantiate1 x)) index
+  match stripMetadata type with
+  | .forallE n domain body bi =>
+    Meta.withLocalDecl n bi domain fun x => do
+      let aligned := proof?.bind fun p => match stripMetadata p with
+        | .lam _ _ b _ => some b
+        | _ => none
+      let referenced := aligned.map (·.hasLooseBVar 0)
+      let proofNext := aligned.map (·.instantiate1 x)
+      let rest ← binderRows (body.instantiate1 x) proofNext (index + 1)
+      if bi != .default && bi != .instImplicit then return rest
+      let t := (← Meta.ppExpr domain).pretty 100
+      let status := match referenced with
+        | some true => "referenced in proof term"
+        | some false => "not referenced in proof term"
+        | none => "unavailable: proof has no corresponding syntactic lambda"
+      return #[obj [("trust", js mechanical), ("index", jn index),
+        ("name", js n.toString), ("binder_kind", js (if bi == .instImplicit then "instance" else "explicit")),
+        ("type", js t), ("referenced", referenced.map toJson |>.getD Json.null),
+        ("status", js status)]] ++ rest
+  | _ => return #[]
+
+structure Pattern where
+  name : String
+  constants : Array String
+  references : Array String
+  tokens : Array String
+  deriving Inhabited, FromJson, ToJson
+
+def defaults : Array Pattern := #[
+  ⟨"Nat division", #["Nat.div"], #["Nat.div", "HDiv.hDiv", "Div.div"], #["/", "div"]⟩,
+  ⟨"Int division", #["Int.ediv", "Int.tdiv", "Int.fdiv"], #["Int.ediv", "Int.tdiv", "Int.fdiv", "HDiv.hDiv", "Div.div"], #["/", "ediv", "tdiv", "fdiv"]⟩,
+  ⟨"Nat subtraction", #["Nat.sub"], #["Nat.sub", "HSub.hSub", "Sub.sub"], #["-", "sub"]⟩,
+  ⟨"Int subtraction", #["Int.sub"], #["Int.sub", "HSub.hSub", "Sub.sub"], #["-", "sub"]⟩,
+  ⟨"Option.getD", #["Option.getD"], #["Option.getD"], #["getD"]⟩,
+  ⟨"getElem!", #["GetElem?.getElem!", "getElem!", "getElem!Internal"], #["GetElem?.getElem!", "getElem!", "getElem!Internal"], #["getElem!", "!"]⟩,
+  ⟨"List.get!", #["List.get!", "List.get!Internal"], #["List.get!", "List.get!Internal"], #["get!", "get!Internal"]⟩,
+  ⟨"head!", #["List.head!", "Array.head!"], #["List.head!", "Array.head!"], #["head!"]⟩,
+  ⟨"Array.get!", #["Array.get!", "Array.get!Internal"], #["Array.get!", "Array.get!Internal"], #["get!", "get!Internal"]⟩,
+  ⟨"default/Inhabited.default", #["Inhabited.default", "default"], #["Inhabited.default", "default"], #["default"]⟩,
+  ⟨"panic!", #["panic", "panicCore", "panicWithPosWithDecl"], #["panic", "panicCore", "panicWithPosWithDecl"], #["panic!"]⟩,
+  ⟨"Classical.choice/choose", #["Classical.choice", "Classical.choose"], #["Classical.choice", "Classical.choose"], #["choice", "choose"]⟩]
+
+partial def semanticMatches (e : Expr) (p : Pattern) : Bool :=
+  p.constants.any (fun s => e.getUsedConstants.contains s.toName) ||
+  -- Notation elaborates to overloaded projections, with the numeric type explicit.
+  (e.find? fun x =>
+    let fn := x.getAppFn
+    let args := x.getAppArgs
+    let op := if ["Nat division", "Int division"].contains p.name then ["HDiv.hDiv", "Div.div"]
+      else if ["Nat subtraction", "Int subtraction"].contains p.name then ["HSub.hSub", "Sub.sub"] else []
+    op.any (fun n => fn.isConstOf n.toName) &&
+      args.any (fun a => a.isConstOf (if p.name.startsWith "Nat" then ``Nat else ``Int))).isSome
+
+def field? (j : Json) (k : String) : Option Json := (j.getObjVal? k).toOption
+def array? (j : Json) : Array Json := j.getArr?.toOption.getD #[]
+def string? (j : Json) : String := j.getStr?.toOption.getD ""
+def nat? (j : Json) : Nat := j.getNat?.toOption.getD 0
+
+def referenceLocations (ilean : Json) (p : Pattern) (owner : Name) : Array Json := Id.run do
+  let mut out := #[]
+  let some (.obj refs) := field? ilean "references" | return out
+  for (key, value) in refs.toArray do
+    let some ident := (Json.parse key).toOption | continue
+    let some const := field? ident "c" | continue
+    let name := string? ((field? const "n").getD Json.null)
+    if !p.references.contains name then continue
+    for usage in array? ((field? value "usages").getD Json.null) do
+      let a := array? usage
+      if string? (a[4]?.getD Json.null) != owner.toString then continue
+      out := out.push (obj [("line", jn (nat? (a[0]?.getD Json.null) + 1)),
+        ("column_utf16", a[1]?.getD Json.null),
+        ("end_line", jn (nat? (a[2]?.getD Json.null) + 1)),
+        ("end_column_utf16", a[3]?.getD Json.null),
+        ("reference", js name),
+        ("location_kind", js "elaborator reference; overloaded numeric type confirmed at enclosing definition level")])
+  return out
+
+def identChar (c : Char) : Bool := c.isAlphanum || c == '_' || c == '\'' || c == '!'
+
+/-- A lexical fallback reports source tokens as candidates, never infers their type.
+    Nested comments and strings are skipped; reference ranges remain preferred. -/
+def tokenLocations (src : Source) (p : Pattern) : Array Json := Id.run do
+  let some r := src.range | return #[]
+  let chars := src.text.toList.toArray
+  let mut i := 0
+  let mut line := r.pos.line
+  let mut col := r.pos.column
+  let mut depth := 0
+  let mut comment := false
+  let mut quoted := false
+  let mut escaped := false
+  let mut out := #[]
+  while i < chars.size do
+    let c := chars[i]!
+    let next := chars[i + 1]?.getD '\x00'
+    let mut skip := 1
+    if comment then
+      if c == '\n' then comment := false
+    else if depth > 0 then
+      if c == '/' && next == '-' then depth := depth + 1; skip := 2
+      else if c == '-' && next == '/' then depth := depth - 1; skip := 2
+    else if quoted then
+      if escaped then escaped := false
+      else if c == '\\' then escaped := true
+      else if c == '"' then quoted := false
+    else if c == '-' && next == '-' then comment := true; skip := 2
+    else if c == '/' && next == '-' then depth := 1; skip := 2
+    else if c == '"' then quoted := true
+    else
+      for token in p.tokens do
+        let ts := token.toList.toArray
+        if ts.isEmpty then continue
+        let tokenMatch := (List.range ts.size).all fun j => chars[i + j]? == ts[j]?
+        let before := chars[i - 1]?.getD '\x00'
+        let after := chars[i + ts.size]?.getD '\x00'
+        let bounded := (!identChar ts[0]! || i == 0 || !identChar before) &&
+          (!identChar ts[ts.size - 1]! || !identChar after)
+        if tokenMatch && bounded then
+          out := out.push (obj [("line", jn line), ("column", jn col),
+            ("token", js token), ("column_encoding", js "Unicode code points; zero based"),
+            ("location_kind", js "lexical candidate token; operation type confirmed only for enclosing definition")])
+    for j in [0:skip] do
+      if chars[i + j]?.getD '\x00' == '\n' then line := line + 1; col := 0
+      else col := col + 1
+    i := i + skip
+  return out
+
+def readIleanUncached (mod : Name) : IO Json := do
+  try
+    let path ← findOLean mod
+    return (Json.parse (← IO.FS.readFile (path.withExtension "ilean"))).toOption.getD Json.null
+  catch _ => return Json.null
+
+initialize ileanCache : IO.Ref (Std.HashMap Name Json) ← IO.mkRef {}
+
+def readIlean (mod : Name) : IO Json := do
+  if let some j := (← ileanCache.get)[mod]? then return j
+  let j ← readIleanUncached mod
+  ileanCache.modify (·.insert mod j)
+  return j
+
+initialize referenceCache : IO.Ref (Std.HashMap Name (Array (Nat × Name))) ← IO.mkRef {}
+
+def sourceReferenceNames (mod : Name) (first last : Nat) : IO (Array Name) := do
+  let entries ← match (← referenceCache.get)[mod]? with
+    | some entries => pure entries
+    | none => do
+      let refs ← readIlean mod
+      let mut entries := #[]
+      if let some (.obj table) := field? refs "references" then
+        for (key, value) in table.toArray do
+          let some ident := (Json.parse key).toOption | continue
+          let some c := field? ident "c" | continue
+          let name := (string? ((field? c "n").getD Json.null)).toName
+          for usage in array? ((field? value "usages").getD Json.null) do
+            let line := nat? ((array? usage)[0]?.getD Json.null) + 1
+            entries := entries.push (line, name)
+      referenceCache.modify (·.insert mod entries)
+      pure entries
+  return entries.filterMap fun (line, name) => if first ≤ line && line ≤ last then some name else none
+
+def sourceBlock (s : String) : String :=
+  let fence := (s.splitOn "\n").foldl (fun acc line =>
+    if line.startsWith acc then acc ++ "`" else acc) "````"
+  s!"{fence}lean\n{s}\n{fence}\n"
+
+def jsonBlock (j : Json) : String := s!"```json\n{j.pretty}\n```\n"
+
+partial def syntaxRanges (fileMap : FileMap) (s : Syntax) : Array Json := Id.run do
+  let mut out := #[]
+  if ["Lean.Parser.Command.declValSimple", "Lean.Parser.Command.declValEqns",
+      "Lean.Parser.Command.whereStructInst", "Lean.Parser.Command.declId"].contains s.getKind.toString then
+    if let some lo := s.getPos? then
+      if let some hi := s.getTailPos? then
+        out := out.push (obj [("kind", js s.getKind.toString),
+          ("start_byte", jn lo.byteIdx), ("end_byte", jn hi.byteIdx),
+          ("start_line", jn (fileMap.toPosition lo).line),
+          ("start_column", jn (fileMap.toPosition lo).column),
+          ("end_line", jn (fileMap.toPosition hi).line),
+          ("end_column", jn (fileMap.toPosition hi).column)])
+  for child in s.getArgs do out := out ++ syntaxRanges fileMap child
+  return out
+
+partial def syntaxIdentifiers (s : Syntax) : Array String := Id.run do
+  if s.isIdent then return #[s.getId.toString]
+  let mut result := #[]
+  for child in s.getArgs do result := result ++ syntaxIdentifiers child
+  return result
+
+-- Replay only lexical context commands in an isolated environment. Proofs and
+-- definitions are never elaborated here; imported declarations supply their values.
+def parserContextCommand (stx : Syntax) : Bool :=
+  [`Lean.Parser.Command.namespace, `Lean.Parser.Command.section,
+   `Lean.Parser.Command.noncomputableSection, `Lean.Parser.Command.end,
+   `Lean.Parser.Command.open, `Lean.Parser.Command.universe,
+   `Lean.Parser.Command.notation, `Lean.Parser.Command.mixfix,
+   `Lean.Parser.Command.localNotation].contains stx.getKind
+
+def updateParserContext (input : Parser.InputContext) (stx : Syntax)
+    (state : Elab.Command.State) : IO Elab.Command.State := do
+  if !parserContextCommand stx then return state
+  let context : Elab.Command.Context := {
+    fileName := input.fileName, fileMap := input.fileMap, snap? := none,
+    cancelTk? := none, cmdPos := stx.getPos?.getD 0 }
+  match (← EIO.toIO' <| ((Elab.Command.elabCommandTopLevel stx) context).run state) with
+  | .ok (_, next) => return next
+  | .error error => throw <| IO.userError (← error.toMessageData.toString)
+
+def parsedSource (env : Environment) (path : System.FilePath) : IO Json := do
+  let contents ← IO.FS.readFile path
+  let input := Parser.mkInputContext contents path.toString
+  let (header, initial, initialMessages) ← Parser.parseHeader input
+  let mut state := initial
+  let mut messages := initialMessages
+  let mut commandState := Elab.Command.mkState env {} ppOptions
+  let mut scopeCommands : List Nat := []
+  let mut commands := #[]
+  repeat
+    let scope := commandState.scopes.head!
+    let (stx, next, msgs) := Parser.parseCommand input {
+      env := commandState.env, options := scope.opts,
+      currNamespace := scope.currNamespace, openDecls := scope.openDecls } state messages
+    state := next
+    messages := msgs
+    if Parser.isTerminalCommand stx then break
+    let parents := scopeCommands.reverse
+    let attributeTargets := if stx.getKind == `Lean.Parser.Command.attribute then
+      (syntaxIdentifiers stx[4]).flatMap fun ident =>
+        (ResolveName.resolveGlobalName commandState.env scope.opts scope.currNamespace
+          scope.openDecls ident.toName).toArray.filterMap fun (name, projections) =>
+          if projections.isEmpty && commandState.env.contains name then some name.toString else none
+      else #[]
+    let before := commandState.scopes.length
+    commandState ← updateParserContext input stx commandState
+    let newOpenDecls := commandState.scopes.head!.openDecls.filter fun d =>
+      !(scope.openDecls.any (fun old => old == d))
+    let openTargets := if stx.getKind == `Lean.Parser.Command.open then
+      newOpenDecls.toArray.filterMap fun
+        | .explicit _ name => some name.toString
+        | _ => none
+      else #[]
+    let openNamespaces := if stx.getKind == `Lean.Parser.Command.open then
+      newOpenDecls.toArray.filterMap fun
+        | .simple name _ => some name.toString
+        | _ => none
+      else #[]
+    let externalTargets := fun names : Array String => names.filter fun name =>
+      (moduleOf commandState.env name.toName).any stopped
+    let after := commandState.scopes.length
+    let closes := scopeCommands.take (before - after)
+    scopeCommands := scopeCommands.drop (before - after)
+    for _ in [:after - before] do scopeCommands := commands.size :: scopeCommands
+    if let some lo := stx.getPos? then
+      if let some hi := stx.getTailPos? then
+        commands := commands.push (obj [("kind", js stx.getKind.toString),
+          ("start_byte", jn lo.byteIdx), ("end_byte", jn hi.byteIdx),
+          ("start_line", jn (input.fileMap.toPosition lo).line),
+          ("start_column", jn (input.fileMap.toPosition lo).column),
+          ("end_line", jn (input.fileMap.toPosition hi).line),
+          ("end_column", jn (input.fileMap.toPosition hi).column),
+          ("scope_parents", toJson parents),
+          ("opens_scope", toJson (decide (after > before))),
+          ("opened_frames", jn (after - before)),
+          ("namespace_after", js commandState.scopes.head!.currNamespace.toString),
+          ("context_identifiers", toJson (if stx.getKind == `Lean.Parser.Command.open then syntaxIdentifiers stx else #[])),
+          ("attribute_targets", toJson attributeTargets),
+          ("attribute_external_targets", toJson (externalTargets attributeTargets)),
+          ("open_explicit_targets", toJson openTargets),
+          ("open_namespace_targets", toJson openNamespaces),
+          ("open_external_targets", toJson (externalTargets openTargets)),
+          ("closes_scopes", toJson closes),
+          ("parts", toJson (syntaxRanges input.fileMap stx))])
+  let mut errors := #[]
+  for msg in messages.toList do
+    if msg.severity == .error then errors := errors.push (← msg.toString)
+  return obj [("path", js path.toString), ("commands", toJson commands),
+    ("header_end_byte", jn (header.raw.getTailPos?.getD 0).byteIdx),
+    ("parse_errors", toJson errors)]
+
+partial def argumentUse (e : Expr) : Array Bool × Expr :=
+  match stripMetadata e with
+  | .lam _ _ body bi =>
+    let (rest, result) := argumentUse body
+    (if bi == .default then #[body.hasLooseBVar 0] ++ rest else rest, result)
+  | result => (#[], result)
+
+def stubHint (ci : ConstantInfo) (src : Source) : Option Json := do
+  let .defnInfo info := ci | none
+  let (used, body) := argumentUse info.value
+  if used.isEmpty || used.any id then none else do
+    let fn := (stripMetadata body).getAppFn
+    let literal := match fn with
+      | .lit (.natVal 0) => true
+      | .const n _ => ["List.nil", "Option.none", "Bool.false", "Inhabited.default"].contains n.toString
+      | _ => false
+    let literal := literal || ((src.text.splitOn ":=").getLast?.any (fun t =>
+      ["[]", "none", "false", "0", "default", "⟨⟩", "{}"].contains t.trimAscii.toString))
+    if !literal then none else
+      some (obj [("trust", js "hint, not trusted"), ("definition", js ci.name.toString),
+        ("kind", js "constant-result stub candidate"),
+        ("explicit_arguments", jn used.size), ("path", js src.path),
+        ("range", src.range.map rangeJson |>.getD Json.null),
+        ("check", js "all explicit lambda arguments absent from body; literal/default result")])
+
+def review (decl : Name) (patterns : Array Pattern) : CoreM (Json × String) := do
+  let env ← getEnv
+  let c ← getConstInfo decl
+  let statement := (← Meta.MetaM.run' (Meta.ppExpr c.type)).pretty 100
+  let signature ← (← addMessageContext (MessageData.signature decl)).toString
+  let axioms ← collectAxioms decl
+  let binders ← Meta.MetaM.run' (binderRows c.type (c.value? (allowOpaque := true)))
+  let binderGaps := binders.filter (fun b => field? b "referenced" == some Json.null)
+  let proofForGaps ← if binderGaps.isEmpty then pure Json.null else do
+    match c.value? (allowOpaque := true) with
+    | none => pure (obj [("trust", js "mechanical"), ("status", js "proof value unavailable")])
+    | some proof =>
+      let text := (← Meta.MetaM.run' (Meta.ppExpr proof)).pretty 100
+      pure (obj [("trust", js "verbatim"), ("text", js text)])
+  let (_, originalClosure) := (c.type.getUsedConstants.forM (visit env)).run {}
+  let mut localInstances : Array ConstantInfo := #[]
+  for i in [:env.header.moduleData.size] do
+    if stopped env.allImportedModuleNames[i]! then continue
+    for candidate in env.header.moduleData[i]!.constants do
+      if Meta.isInstanceCore env candidate.name then localInstances := localInstances.push candidate
+  -- A copied source theorem retains its proof. Support dependencies are separate
+  -- from the statement reading list; the target theorem's proof is never visited.
+  let mut closure := originalClosure
+  let mut next := 0
+  while next < closure.items.size do
+    let n := closure.items[next]!
+    next := next + 1
+    if definitionHoles.contains n.toString then continue
+    if let some ci := env.find? n then
+      if let some value := ci.value? (allowOpaque := true) then
+        let (_, expanded) := (value.getUsedConstants.forM (visit env)).run closure
+        closure := expanded
+      if let some mod := moduleOf env n then
+        let src ← sourceFor n mod
+        if let some range := src.range then
+          for name in ← sourceReferenceNames mod range.pos.line range.endPos.line do
+            let (_, expanded) := (visit env name).run closure
+            closure := expanded
+      if ci matches .inductInfo _ then
+        for candidate in localInstances do
+          let head := candidate.type.getAppFn
+          if Meta.isInstanceCore env candidate.name && candidate.type.getUsedConstants.contains n &&
+              ([``Repr, ``CoeSort, ``Coe, ``CoeFun].any head.isConstOf) then
+            if let some mod := moduleOf env candidate.name then
+              if !stopped mod then
+                let (_, expanded) := (visit env candidate.name).run closure
+                closure := expanded
+  let items := closure.items.qsort (fun a b => a.toString < b.toString)
+  let mut rows := #[]
+  let mut flags := #[]
+  let mut lines := 0
+  let mut incomplete := #[]
+  let mut sources : Array String := #[]
+  let mut moduleRefs : NameMap Json := {}
+  let mut parsed : Array Json := #[]
+  let mut parsedPaths : Array String := #[]
+  let mut stubs : Array Json := #[]
+  let targetSource ← sourceFor decl (moduleOf env decl |>.getD .anonymous)
+  if !targetSource.path.isEmpty then
+    parsedPaths := parsedPaths.push targetSource.path
+    parsed := parsed.push (← parsedSource env targetSource.path)
+  let mut md := s!"# Lean statement review: {decl}\n\n[mechanical] Lean {Lean.versionString}; extracted environment facts, not a new kernel check.\n\n"
+  md := md ++ "[mechanical] Trust legend: [mechanical] = extracted or syntactically checked facts; [verbatim] = source/type text for a human to judge. No natural-language theorem interpretation is generated.\n\n"
+  md := md ++ s!"## Statement\n\n[mechanical] Pretty printer options: full names, universes, width 100; signature printer is the same as #check.\n\n[verbatim] #check signature:\n\n{sourceBlock signature}\n\n[verbatim] Declaration type:\n\n{sourceBlock statement}\n"
+  md := md ++ s!"## Axioms\n\n[mechanical] Lean.collectAxioms (the same function used by #print axioms):\n\n{jsonBlock (namesJson axioms)}\n"
+  md := md ++ s!"## Hypothesis references\n\n[mechanical] Syntactic occurrence in the corresponding lambda body, including nested binder types. No reduction or claim of necessity. Implicit binders align the telescope but are not reported.\n\n{jsonBlock (toJson binders)}\n"
+  if !binderGaps.isEmpty then
+    md := md ++ s!"[mechanical] Unaligned quantified binders are explicit gaps in the syntactic check.\n\n[verbatim] Complete stored proof term for human inspection of those gaps:\n\n{jsonBlock proofForGaps}\n"
+  for n in items do
+    let some ci := env.find? n | continue
+    let some mod := moduleOf env n | continue
+    let src ← sourceFor n mod
+    if !src.path.isEmpty && !parsedPaths.contains src.path then
+      parsedPaths := parsedPaths.push src.path
+      parsed := parsed.push (← parsedSource env src.path)
+    if let some hint := stubHint ci src then stubs := stubs.push hint
+    let count := if src.text.isEmpty then 0 else (src.text.splitOn "\n").length
+    -- Count unique verbatim ranges; generated declarations can share one source block.
+    let key := s!"{src.path}:{repr src.range}"
+    if !sources.contains key then
+      sources := sources.push key
+      lines := lines + count
+    if src.text.isEmpty then incomplete := incomplete.push n.toString
+    let row := obj [("trust", js mechanical), ("name", js n.toString),
+      ("module", js mod.toString), ("kind", js (kind ci)),
+      ("is_instance", toJson (Meta.isInstanceCore env n)), ("source", sourceJson src),
+      ("statement_reading_list", toJson (originalClosure.items.contains n)),
+      ("dependencies", namesJson ((readingExprs ci).foldl (fun acc e => acc ++ e.getUsedConstants) #[]))]
+    rows := rows.push row
+    md := md ++ s!"### {n}\n\n[mechanical] Module: `{mod}`; kind: {kind ci}; source: `{src.path}`; source owner: `{src.owner}`; {count} lines; {src.status}.\n\n"
+    if let some r := src.range then
+      md := md ++ s!"[mechanical] Range: {r.pos.line}:{r.pos.column}–{r.endPos.line}:{r.endPos.column} (one-based lines, zero-based Unicode columns, exclusive end).\n\n"
+    md := md ++ s!"[verbatim] Source text:\n\n{sourceBlock src.text}\n"
+    if ci matches .defnInfo _ || ci matches .opaqueInfo _ then
+      let refs ← match moduleRefs.find? mod with
+        | some j => pure j
+        | none =>
+          let j ← readIlean mod
+          moduleRefs := moduleRefs.insert mod j
+          pure j
+      for p in patterns do
+        if !(readingExprs ci).any (semanticMatches · p) then continue
+        let refs := referenceLocations refs p src.owner
+        let locations := if refs.isEmpty then tokenLocations src p else refs
+        let flag := obj [("trust", js mechanical), ("pattern", js p.name),
+          ("enclosing_definition", js n.toString), ("module", js mod.toString),
+          ("path", js src.path), ("source_owner", js src.owner.toString),
+          ("locations", toJson locations), ("enclosing_range", src.range.map rangeJson |>.getD Json.null),
+          ("location_status", js (if locations.isEmpty then "enclosing range only (explicit location gap)" else if refs.isEmpty then "lexical candidates; not typed source occurrences" else "reference ranges available")),
+          ("status", js "configured operation occurs in elaborated definition; no claim of a bug")]
+        flags := flags.push flag
+  let missing := closure.missing.toArray.map (·.toString)
+  let header := obj [("trust", js mechanical), ("reading_list_definitions", jn originalClosure.items.size),
+    ("source_support_constants", jn (rows.size - originalClosure.items.size)),
+    ("total_lines", jn lines), ("line_count_policy", js "unique source ranges; generated declarations sharing a parent counted once"),
+    ("source_gaps", toJson incomplete), ("unresolved_constants", toJson missing),
+    ("binder_gaps", toJson binderGaps)]
+  md := md.replace "## Statement" s!"[mechanical] Counts and gaps:\n\n{jsonBlock header}\n## Statement"
+  md := md ++ s!"## Totalization flags\n\n[mechanical] Expression matches against configured constants/typed arithmetic. Source locations are elaborator references from .ilean; unavailable locations are explicit gaps. For overloaded arithmetic, the numeric type is confirmed for the enclosing definition; mixed arithmetic can give candidate locations of another numeric type.\n\n{jsonBlock (toJson flags)}\n"
+  md := md ++ s!"## Library boundary\n\n[mechanical] Traversal stops by defining module at Init, Std, Lean, Batteries, Mathlib; referenced instances are traversed like other constants. The target proof is never traversed; copied support theorem proofs contribute support dependencies.\n\n{jsonBlock (namesJson closure.boundary.toArray)}\n"
+  md := md ++ "## Limits and future work\n\n[mechanical] Environment declarations and source text are independently extracted; this run does not certify that source files match compiled artifacts. Build the target first. Generated declarations may reuse parent text. A missing range/source is a reported gap, never silently omitted. Library-boundary bodies and the target proof are excluded from this reading list. Nonvacuity witnesses and proofs are future work.\n"
+  let j := obj [("schema_version", js "lean-statement-review/extraction-v1"), ("trust", js mechanical),
+    ("declaration", js decl.toString), ("lean_version", js Lean.versionString),
+    ("statement", obj [("trust", js "verbatim"), ("text", js statement), ("check_signature", js signature), ("options", js "pp.fullNames=true pp.universes=true format.width=100")]),
+    ("header", header), ("axioms", namesJson axioms), ("hypotheses", toJson binders),
+    ("proof_term_for_binder_gaps", proofForGaps),
+    ("reading_list", toJson rows), ("totalization_flags", toJson flags),
+    ("stub_hints", toJson stubs), ("parsed_sources", toJson parsed),
+    ("target_source", sourceJson targetSource),
+    ("patterns", toJson patterns), ("boundary", namesJson closure.boundary.toArray)]
+  return (j, md)
+
+end StatementReview
+
+unsafe def main (args : List String) : IO UInt32 := do
+  let [mod, decl, output] := args | do
+    IO.eprintln "expected module, declaration, output JSON"
+    return 2
+  try
+    Lean.initSearchPath (← Lean.findSysroot)
+    Lean.enableInitializersExecution
+    let env ← Lean.importModules #[{ module := mod.toName }] StatementReview.ppOptions
+      (loadExts := true) (level := .private)
+    let j ← if decl.startsWith "SOURCE:" then
+      StatementReview.parsedSource env (decl.drop 7 |>.toString)
+    else do
+      let (j, _) ← (StatementReview.review decl.toName StatementReview.defaults).toIO'
+        { fileName := "Extract.lean", fileMap := default, options := StatementReview.ppOptions }
+        { env := env }
+      pure j
+    IO.FS.writeFile output (j.pretty ++ "\n")
+    return 0
+  catch e =>
+    IO.eprintln s!"extraction failed: {e}"
+    return 1

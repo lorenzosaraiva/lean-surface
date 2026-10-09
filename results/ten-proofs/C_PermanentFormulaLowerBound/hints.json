@@ -1,0 +1,85 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hn",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LE.le.{0} 32 n"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "f",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "PermanentFormulaLowerBound.Formula.{0, 0} (Prod.{0, 0} (Fin n) (Fin n)) ℂ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 3,
+        "name": "hf",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Eq.{1} (PermanentFormulaLowerBound.Formula.eval.{0, 0} f)\n  (PermanentFormulaLowerBound.permanentPolynomial n)"
+      }
+    ],
+    "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hn",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LE.le.{0} 32 n"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "f",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "PermanentFormulaLowerBound.RationalFormula.{0, 0} (Prod.{0, 0} (Fin n) (Fin n)) ℂ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 3,
+        "name": "hvalid",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "PermanentFormulaLowerBound.RationalFormula.Valid.{0, 0} f"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 4,
+        "name": "hf",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Eq.{1} (PermanentFormulaLowerBound.RationalFormula.eval.{0, 0} f)\n  ((Algebra.algebraMap.{0, 0} (MvPolynomial.{0, 0} (Prod.{0, 0} (Fin n) (Fin n)) ℂ)\n      (FractionRing.{0} (MvPolynomial.{0, 0} (Prod.{0, 0} (Fin n) (Fin n)) ℂ)))\n    (PermanentFormulaLowerBound.permanentPolynomial n))"
+      }
+    ]
+  },
+  "safety": [
+    {
+      "name": "PermanentFormulaLowerBound.Formula.variableLeaves._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    },
+    {
+      "name": "PermanentFormulaLowerBound.RationalFormula.variableLeaves._unsafe_rec",
+      "safety": "Lean.DefinitionSafety.partial"
+    }
+  ],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

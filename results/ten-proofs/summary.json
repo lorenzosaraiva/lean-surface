@@ -1,0 +1,242 @@
+[
+  {
+    "challenge": "A_SpherePacking",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 75,
+    "ours_declarations": 20,
+    "ours_lines": 289,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 75,
+    "theirs_declarations": 20,
+    "theirs_lines": 185,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "B_BinaryCodes",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 55,
+    "ours_declarations": 38,
+    "ours_lines": 237,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 61,
+    "theirs_declarations": 44,
+    "theirs_lines": 197,
+    "theirs_minus_ours": 6,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "B_SphericalCodes",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 97,
+    "ours_declarations": 63,
+    "ours_lines": 498,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 99,
+    "theirs_declarations": 65,
+    "theirs_lines": 302,
+    "theirs_minus_ours": 2,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "C_PermanentFormulaLowerBound",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 137,
+    "ours_declarations": 10,
+    "ours_lines": 114,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 137,
+    "theirs_declarations": 10,
+    "theirs_lines": 102,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "D_NonSoficGroup",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 36,
+    "ours_declarations": 5,
+    "ours_lines": 66,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 36,
+    "theirs_declarations": 5,
+    "theirs_lines": 39,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "E_ConnesRigidity",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 100,
+    "ours_declarations": 25,
+    "ours_lines": 241,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 100,
+    "theirs_declarations": 25,
+    "theirs_lines": 223,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "F_EhrhartVolumeInequality",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 34,
+    "ours_declarations": 14,
+    "ours_lines": 141,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 34,
+    "theirs_declarations": 14,
+    "theirs_lines": 78,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "G_QuantumParallelRepetition",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 91,
+    "ours_declarations": 14,
+    "ours_lines": 171,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 91,
+    "theirs_declarations": 14,
+    "theirs_lines": 139,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "H_GapCVP",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 52,
+    "ours_declarations": 17,
+    "ours_lines": 115,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 145,
+    "theirs_declarations": 44,
+    "theirs_lines": 313,
+    "theirs_minus_ours": 93,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "I_MulticolorTriangleRamsey",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 7,
+    "ours_declarations": 7,
+    "ours_lines": 61,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 7,
+    "theirs_declarations": 7,
+    "theirs_lines": 50,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "J_CompactnessConjecture",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 29,
+    "ours_declarations": 11,
+    "ours_lines": 120,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 29,
+    "theirs_declarations": 11,
+    "theirs_lines": 90,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  },
+  {
+    "challenge": "J_TwoDegenerateGraphs",
+    "comparator": {
+      "comparison": "PASS",
+      "lean_kernel": "PASS",
+      "nanoda_kernel": "PASS",
+      "profile": "trusted-cache; no sandbox"
+    },
+    "our_bugs": 0,
+    "ours_constants": 6,
+    "ours_declarations": 6,
+    "ours_lines": 66,
+    "ours_minus_theirs": 0,
+    "status": "PASS",
+    "theirs_constants": 6,
+    "theirs_declarations": 6,
+    "theirs_lines": 47,
+    "theirs_minus_ours": 0,
+    "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+  }
+]

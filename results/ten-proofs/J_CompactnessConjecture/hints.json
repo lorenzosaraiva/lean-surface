@@ -1,0 +1,12 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "CompactnessConjecture.compactnessCounterexample_bigO": [],
+    "CompactnessConjecture.not_erdos_180": [],
+    "CompactnessConjecture.quantitativeCompactnessCounterexample": []
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

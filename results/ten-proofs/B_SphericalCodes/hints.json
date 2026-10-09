@@ -1,0 +1,70 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "MetricCodes.Johnson.main_binary_theorem": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hδ",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 δ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hhalf",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} δ (1 / 2)"
+      }
+    ],
+    "MetricCodes.Spherical.HigherHierarchy.NumericalMaximum.eventually_kissingNumber_lt_published": [],
+    "MetricCodes.Spherical.HigherHierarchy.main_general": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hs",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 s"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hs'",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} s 1"
+      }
+    ],
+    "MetricCodes.Spherical.HigherHierarchy.strict_hierarchy": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hs",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 s"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "hs'",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} s 1"
+      }
+    ]
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

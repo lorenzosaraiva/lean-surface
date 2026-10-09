@@ -1,0 +1,11 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "TwoDegenerateGraphs.not_erdos_146": [],
+    "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample": []
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

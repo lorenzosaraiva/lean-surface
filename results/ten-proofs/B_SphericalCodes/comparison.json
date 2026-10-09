@@ -1,0 +1,15 @@
+{
+  "ours_minus_theirs": [],
+  "ours_raw_constants": 97,
+  "theirs_minus_ours": [
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.Spherical.HigherHierarchy.hierarchyRateSet"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.Spherical.HigherHierarchy.hierarchyVariationalRate"
+    }
+  ],
+  "theirs_raw_constants": 99
+}

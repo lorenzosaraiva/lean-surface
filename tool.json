@@ -1,0 +1,13 @@
+{
+  "name": "surface",
+  "version": "0.1.0",
+  "lean_versions": [
+    "4.32.0",
+    "4.29.0-rc7"
+  ],
+  "comparator_revision": "07bc4ea40f2266dcb861820a2ec1fa3244ed307f",
+  "checker_revision": "b7398199245524275543dec6113229c9bb4902e5",
+  "exporter_revision": "4e7915201d3f9f04470d9eae002fa695f7cdc589",
+  "nanoda_revision": "3a2407216ee84a75f9e1aead6803d0578be06ae7",
+  "upstream_commit": "94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6"
+}

@@ -1,0 +1,125 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "Ehrhart.SimplexVolume.barycenter_centeredSimplex": [
+      {
+        "binder_kind": "explicit",
+        "index": 0,
+        "name": "n",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "ℕ"
+      }
+    ],
+    "Ehrhart.SimplexVolume.exists_centeredBody_sharp": [
+      {
+        "binder_kind": "explicit",
+        "index": 0,
+        "name": "n",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "ℕ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hn",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 n"
+      }
+    ],
+    "Ehrhart.SimplexVolume.normalizedVolume_centeredSimplex": [
+      {
+        "binder_kind": "explicit",
+        "index": 0,
+        "name": "n",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "ℕ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "_hn",
+        "referenced": false,
+        "status": "not referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 n"
+      }
+    ],
+    "Ehrhart.Volume.ehrhart_volume_inequality_for_sets": [
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hn",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 n"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 2,
+        "name": "S",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Set.{0} (Ehrhart.Space n)"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 3,
+        "name": "hconvex",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Convex.{0, 0} ℝ S"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 4,
+        "name": "hcompact",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "IsCompact.{0} S"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 5,
+        "name": "hinterior",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Set.Nonempty.{0} (interior.{0} S)"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 6,
+        "name": "hcentered",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Eq.{1} (Ehrhart.barycenter S) 0"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 7,
+        "name": "hlattice",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Eq.{1} (Ehrhart.interiorLatticePoints S) (Singleton.singleton.{0, 0} 0)"
+      }
+    ]
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

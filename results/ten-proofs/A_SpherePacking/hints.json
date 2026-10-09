@@ -1,0 +1,13 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "PackingBounds.FullMain.exact_binary_exponent": [],
+    "PackingBounds.FullMain.exact_limit": [],
+    "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper": [],
+    "PackingBounds.sharpFullCohnElkiesManuscriptConclusions": []
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

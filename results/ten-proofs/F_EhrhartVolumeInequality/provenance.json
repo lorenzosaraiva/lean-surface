@@ -1,0 +1,232 @@
+{
+  "challenge_lines": 141,
+  "imports": [
+    "Lean",
+    "Mathlib"
+  ],
+  "matcher_context": "single source module; no cache reset required",
+  "raw_constant_count_v0": 17,
+  "records": [
+    {
+      "challenge_end_byte": 1632,
+      "challenge_start_byte": 1593,
+      "end_byte": 315,
+      "lines": 1,
+      "owners": [
+        "Ehrhart.Space"
+      ],
+      "sha256": "22b047afb563d6e216218639fec18f3a3b320954ac8098f7da5237266a34eea5",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 13,
+      "source_start_line": 13,
+      "start_byte": 276,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1717,
+      "challenge_start_byte": 1634,
+      "end_byte": 402,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.integerPoint"
+      ],
+      "sha256": "cb5e02502c07ab3b0f5866b5af8d608a8106db685684c373b5dd3e70d975c40e",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 16,
+      "source_start_line": 15,
+      "start_byte": 319,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1818,
+      "challenge_start_byte": 1719,
+      "end_byte": 505,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.standardSimplex"
+      ],
+      "sha256": "30a98faada1e6669f160e1a2ca36313d7507fcb4189d6d61a0d043e832e17eac",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 19,
+      "source_start_line": 18,
+      "start_byte": 406,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1914,
+      "challenge_start_byte": 1820,
+      "end_byte": 603,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.simplexDilation"
+      ],
+      "sha256": "3c14967fd391463fbaa8672df4c1a0e2f38f8924bb93ca69653bf264cb261d3c",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 22,
+      "source_start_line": 21,
+      "start_byte": 509,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2006,
+      "challenge_start_byte": 1916,
+      "end_byte": 697,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.centeredSimplex"
+      ],
+      "sha256": "cb704d0c245247b28e56747bd7923909860fcdcc4ce264d45a3b246cd028736c",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 25,
+      "source_start_line": 24,
+      "start_byte": 607,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2110,
+      "challenge_start_byte": 2008,
+      "end_byte": 803,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.normalizedVolume"
+      ],
+      "sha256": "08504c9e0b14ceb43f5e8f25d66d5687a14eaac374d793959d41d868d02a2d87",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 28,
+      "source_start_line": 27,
+      "start_byte": 701,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2248,
+      "challenge_start_byte": 2112,
+      "end_byte": 943,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.barycenter"
+      ],
+      "sha256": "7a636d28b92238bd5e8dfdeb56963a38b38d5b5074e31c0095c74912776bddcf",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 31,
+      "source_start_line": 30,
+      "start_byte": 807,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2371,
+      "challenge_start_byte": 2250,
+      "end_byte": 1068,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.interiorLatticePoints"
+      ],
+      "sha256": "a75f768fb9646410456896ac35c3e1869a663e416034397ca02e2f5322572abc",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 34,
+      "source_start_line": 33,
+      "start_byte": 947,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2654,
+      "challenge_start_byte": 2373,
+      "end_byte": 1353,
+      "lines": 7,
+      "owners": [
+        "Ehrhart.CenteredBody",
+        "Ehrhart.CenteredBody.carrier",
+        "Ehrhart.CenteredBody.centered",
+        "Ehrhart.CenteredBody.compact",
+        "Ehrhart.CenteredBody.convex",
+        "Ehrhart.CenteredBody.fullDimensional",
+        "Ehrhart.CenteredBody.mk",
+        "Ehrhart.CenteredBody.uniqueInteriorLatticePoint"
+      ],
+      "sha256": "22d4246122c0892caf0319e7dea1501ea9615d32c84744a356c0a53096902312",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 42,
+      "source_start_line": 36,
+      "start_byte": 1072,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2737,
+      "challenge_start_byte": 2656,
+      "end_byte": 1753,
+      "lines": 2,
+      "owners": [
+        "Ehrhart.sharpConstant"
+      ],
+      "sha256": "f84a9b03c2270b65b4f6d623cdeb22c8e7f22493880613844416ef568feb192a",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 53,
+      "source_start_line": 52,
+      "start_byte": 1672,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2979,
+      "challenge_start_byte": 2832,
+      "end_byte": 131199,
+      "lines": 4,
+      "owners": [
+        "Ehrhart.SimplexVolume.normalizedVolume_centeredSimplex"
+      ],
+      "sha256": "e4400c20cdd66e33783b18d064640ea73ea4b5a82a9ca8f0a227ec24b6b95ab6",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 3509,
+      "source_start_line": 3504,
+      "start_byte": 130923,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 3081,
+      "challenge_start_byte": 2981,
+      "end_byte": 139127,
+      "lines": 3,
+      "owners": [
+        "Ehrhart.SimplexVolume.barycenter_centeredSimplex"
+      ],
+      "sha256": "38b006ff54bbd33e207e298c4a52ce7fc23e5799519649b06462c392f7246f07",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 3688,
+      "source_start_line": 3675,
+      "start_byte": 138505,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 3236,
+      "challenge_start_byte": 3083,
+      "end_byte": 139718,
+      "lines": 4,
+      "owners": [
+        "Ehrhart.SimplexVolume.exists_centeredBody_sharp"
+      ],
+      "sha256": "514f4bcbc7615cfe1ba130153c6a8e7c0e9f96e517ed2a78983efbc1f7d5f8e5",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 3701,
+      "source_start_line": 3690,
+      "start_byte": 139131,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 4251,
+      "challenge_start_byte": 3900,
+      "end_byte": 2219201,
+      "lines": 7,
+      "owners": [
+        "Ehrhart.Volume.ehrhart_volume_inequality_for_sets"
+      ],
+      "sha256": "e2c5b832965bf3d610cb964467fc290549ca81f8addcc25a655133d706cba0e7",
+      "source": ".\\EhrhartVolumeInequality.lean",
+      "source_end_line": 55749,
+      "source_start_line": 55733,
+      "start_byte": 2218442,
+      "target_statement": true
+    }
+  ],
+  "sha256": "fabdc96d855ade2ffbaed29f39b50e8ac5006ca6a4935a726248e2d7280e5bae",
+  "source_declarations": 10,
+  "source_lines": 24,
+  "support_constants": 0
+}

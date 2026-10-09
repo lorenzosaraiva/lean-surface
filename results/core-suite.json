@@ -1,0 +1,1119 @@
+{
+  "fixtures": [
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "café"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "CRLF",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Outer.Inner.quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "Outer.Inner.sample"
+          ]
+        }
+      ],
+      "fixture": "Nested",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "extract"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Matchers",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Packet",
+            "Packet.mk",
+            "Packet.value"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "packet"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Structures",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [
+        "promised"
+      ],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Packet",
+            "Packet.mk",
+            "Packet.value"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "promised"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "DefinitionHole",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Amount",
+            "Amount.amount",
+            "Amount.mk"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "instAmountNat"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "amountOf"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Classes",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Abbrev",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Code",
+            "Code.next",
+            "Code.zero"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "depth"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Inductives",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "even",
+            "odd"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Mutual",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "transform",
+            "transform.helper"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Where",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "_private.Private.0.quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Private",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Arithmetic.quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Scoped",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "identity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Universes",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "pick"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Noncomputable",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Opaque",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "definition._@.Irreducible.3607086067._hygCtx._hyg.2",
+            "quantity",
+            "wrapped._@.Irreducible.3607086067._hygCtx._hyg.2"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Irreducible",
+      "lean_version": "4.32.0",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "loopValue"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Partial",
+      "lean_version": "4.32.0",
+      "safety_flags": [
+        {
+          "declaration": [
+            "loopValue"
+          ],
+          "modifier": "partial"
+        },
+        {
+          "name": "loopValue._unsafe_rec",
+          "safety": "Lean.DefinitionSafety.partial"
+        }
+      ],
+      "source_safety_modifiers": [
+        "partial"
+      ],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "error": "reviews/d1da7d7ec6e09a42569e8fcaaa19597627476b440d93bffb1de32d78e7cdffb7/nanoda.log: exit 101; see private cache log",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "FAIL"
+      },
+      "comparison_diagnostic": "Comparator comparison and axiom checks: PASS\nLean kernel replay: PASS\n",
+      "definition_holes": [
+        "quantity"
+      ],
+      "diagnostic": "",
+      "error": "unsafe definition roots are unsupported by pinned Nanoda (src/parser.rs:784); safety flags emitted, Comparator and Lean replay passed",
+      "fixture": "Unsafe",
+      "lean_version": "4.32.0",
+      "nanoda_diagnostic": "\nthread 'main' (31324) panicked at src\\parser.rs:784:17:\nassertion failed: !matches!(safety, DefinitionSafety::Unsafe | DefinitionSafety::Partial)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "safety_flags": [
+        {
+          "declaration": [
+            "quantity"
+          ],
+          "modifier": "unsafe"
+        },
+        {
+          "name": "quantity",
+          "safety": "Lean.DefinitionSafety.unsafe"
+        }
+      ],
+      "source_safety_modifiers": [
+        "unsafe"
+      ],
+      "status": "FAIL"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "café"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "CRLF",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Outer.Inner.quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "Outer.Inner.sample"
+          ]
+        }
+      ],
+      "fixture": "Nested",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "extract"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Matchers",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Packet",
+            "Packet.mk",
+            "Packet.value"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "packet"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Structures",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [
+        "promised"
+      ],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Packet",
+            "Packet.mk",
+            "Packet.value"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "promised"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "DefinitionHole",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Amount",
+            "Amount.amount",
+            "Amount.mk"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "instAmountNat"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "amountOf"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Classes",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Abbrev",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Code",
+            "Code.next",
+            "Code.zero"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "depth"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Inductives",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "even",
+            "odd"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Mutual",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "transform",
+            "transform.helper"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Where",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "_private.Private.0.quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Private",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "Arithmetic.quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Scoped",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "identity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Universes",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "pick"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Noncomputable",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "quantity"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Opaque",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "definition._@.Irreducible.3607086067._hygCtx._hyg.2",
+            "quantity",
+            "wrapped._@.Irreducible.3607086067._hygCtx._hyg.2"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Irreducible",
+      "lean_version": "4.29.0-rc7",
+      "source_safety_modifiers": [],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "PASS",
+        "profile": "trusted-cache; no sandbox"
+      },
+      "definition_holes": [],
+      "deletions": [
+        {
+          "compile_fails": true,
+          "owners": [
+            "loopValue"
+          ]
+        },
+        {
+          "compile_fails": true,
+          "owners": [
+            "sample"
+          ]
+        }
+      ],
+      "fixture": "Partial",
+      "lean_version": "4.29.0-rc7",
+      "safety_flags": [
+        {
+          "declaration": [
+            "loopValue"
+          ],
+          "modifier": "partial"
+        },
+        {
+          "name": "loopValue._unsafe_rec",
+          "safety": "Lean.DefinitionSafety.partial"
+        }
+      ],
+      "source_safety_modifiers": [
+        "partial"
+      ],
+      "status": "PASS"
+    },
+    {
+      "comparator": {
+        "comparison": "PASS",
+        "error": "reviews/2e1fadcc0b21dfa9a4a3da22a6788fff0b90b26bb61d37632e5903a7496fd8a2/nanoda.log: exit 101; see private cache log",
+        "lean_kernel": "PASS",
+        "nanoda_kernel": "FAIL"
+      },
+      "comparison_diagnostic": "Comparator comparison and axiom checks: PASS\nLean kernel replay: PASS\n",
+      "definition_holes": [
+        "quantity"
+      ],
+      "diagnostic": "",
+      "error": "unsafe definition roots are unsupported by pinned Nanoda (src/parser.rs:784); safety flags emitted, Comparator and Lean replay passed",
+      "fixture": "Unsafe",
+      "lean_version": "4.29.0-rc7",
+      "nanoda_diagnostic": "\nthread 'main' (15332) panicked at src\\parser.rs:784:17:\nassertion failed: !matches!(safety, DefinitionSafety::Unsafe | DefinitionSafety::Partial)\nnote: run with `RUST_BACKTRACE=1` environment variable to display a backtrace\n",
+      "safety_flags": [
+        {
+          "declaration": [
+            "quantity"
+          ],
+          "modifier": "unsafe"
+        },
+        {
+          "name": "quantity",
+          "safety": "Lean.DefinitionSafety.unsafe"
+        }
+      ],
+      "source_safety_modifiers": [
+        "unsafe"
+      ],
+      "status": "FAIL"
+    }
+  ],
+  "method": "Fixtures explicitly disable automatic implicit parameters so deleting a referenced name cannot silently generalize the statement. Delete each copied source declaration command, including each requested root; #check anchors make root deletion observable. Inductives/structures/mutual blocks are source command units, not separately editable generated constants.",
+  "negative_controls": [
+    {
+      "mutation": "statement",
+      "rejected_by_comparator": true
+    },
+    {
+      "mutation": "hypothesis",
+      "rejected_by_comparator": true
+    },
+    {
+      "mutation": "definition",
+      "rejected_by_comparator": true
+    }
+  ]
+}

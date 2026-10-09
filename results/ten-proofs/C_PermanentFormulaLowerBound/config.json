@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "Permanent",
+  "theorem_names": [
+    "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound",
+    "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "ours_minus_theirs": [],
+  "ours_raw_constants": 55,
+  "theirs_minus_ours": [
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.Johnson.binaryCodeFamily"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.Johnson.binaryCodeNumber"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.Johnson.shellCodeFamily"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.Johnson.shellCodeNumber"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.binaryWeight"
+    },
+    {
+      "classification": "unused by any listed theorem",
+      "name": "MetricCodes.weightShell"
+    }
+  ],
+  "theirs_raw_constants": 61
+}

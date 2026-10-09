@@ -1,0 +1,22 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [
+    "GapCVP.Comparator.gapCVP400Promise",
+    "GapCVP.Comparator.binaryNearestCodewordPromise",
+    "GapCVP.Comparator.binarySyndromeDecodingPromise",
+    "GapCVP.Comparator.finitePGapCVPPromise"
+  ],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "GapCVP",
+  "theorem_names": [
+    "GapCVP.Comparator.gapCVP400IsNPHard",
+    "GapCVP.Comparator.binaryNearestCodewordIsNPHard",
+    "GapCVP.Comparator.binarySyndromeDecodingIsNPHard",
+    "GapCVP.Comparator.finitePNormGapCVPIsNPHard"
+  ]
+}

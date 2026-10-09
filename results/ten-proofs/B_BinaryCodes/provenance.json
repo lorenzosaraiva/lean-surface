@@ -1,0 +1,598 @@
+{
+  "challenge_lines": 237,
+  "imports": [
+    "Lean",
+    "Mathlib"
+  ],
+  "matcher_context": "single source module; no cache reset required",
+  "raw_constant_count_v0": 45,
+  "records": [
+    {
+      "challenge_end_byte": 269,
+      "challenge_start_byte": 205,
+      "end_byte": 184,
+      "lines": 1,
+      "owners": [
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "sha256": "fb6741b224470c19d1fbb068444b159deec8deadfb8cf500b957195acc9bd29e",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 9,
+      "source_start_line": 9,
+      "start_byte": 120,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 316,
+      "challenge_start_byte": 271,
+      "end_byte": 291,
+      "lines": 1,
+      "owners": [
+        "MetricCodes.BinaryWord"
+      ],
+      "sha256": "205e3ab7f04142a25ea6441deb41f40f123618751b3475f9acfa1f5ae2f82fe1",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 13,
+      "source_start_line": 13,
+      "start_byte": 246,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 423,
+      "challenge_start_byte": 318,
+      "end_byte": 400,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.hammingDist"
+      ],
+      "sha256": "a969f3f73ebbeed37d32a5508d8b8f2a10432b628cd1b23c80d33e83c5761c27",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 16,
+      "source_start_line": 15,
+      "start_byte": 295,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 586,
+      "challenge_start_byte": 425,
+      "end_byte": 792,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.IsBinaryCode"
+      ],
+      "sha256": "9c72d36e03f218a9fcf4ddae350b44518fbea366a79a5cdfcf736f68dc9e94a4",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 26,
+      "source_start_line": 25,
+      "start_byte": 631,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 685,
+      "challenge_start_byte": 588,
+      "end_byte": 2278,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.binaryEntropy"
+      ],
+      "sha256": "ce7cb95aaeb1b027f7ab53d2f367e35e80b46be149f5237ca3652161f491c54c",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 70,
+      "source_start_line": 68,
+      "start_byte": 2181,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 786,
+      "challenge_start_byte": 687,
+      "end_byte": 6544,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.hammingGamma"
+      ],
+      "sha256": "9520548e058b4f16d0cafa91c2449fa6d9480abdc0285a5cb1d9cf86ea54b223",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 194,
+      "source_start_line": 192,
+      "start_byte": 6445,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1137,
+      "challenge_start_byte": 988,
+      "end_byte": 169032,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Hamming.validCodes"
+      ],
+      "sha256": "39715dc6452332b2b114d9c416cea8c1135eb162001f38fa1ea4c345be533f01",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 4512,
+      "source_start_line": 4510,
+      "start_byte": 168883,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1228,
+      "challenge_start_byte": 1139,
+      "end_byte": 169469,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Hamming.codeNumber"
+      ],
+      "sha256": "2be974d3e454a3c7935eca8489fadc12afd972413fd68e7acaa7033b92b2a7bd",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 4524,
+      "source_start_line": 4523,
+      "start_byte": 169380,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1363,
+      "challenge_start_byte": 1230,
+      "end_byte": 190905,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Hamming.Feasible"
+      ],
+      "sha256": "64f1f307849ac520bef7a4ffb23dd47f43b6d503faae8c190d60721c8287d259",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 5058,
+      "source_start_line": 5056,
+      "start_byte": 190772,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1511,
+      "challenge_start_byte": 1365,
+      "end_byte": 191055,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Hamming.rateSet"
+      ],
+      "sha256": "9a4cd5b3aee36de50971c880c673f5718a5e0313cd1f72e4f748bff42c0f0898",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 5062,
+      "source_start_line": 5060,
+      "start_byte": 190909,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1570,
+      "challenge_start_byte": 1513,
+      "end_byte": 191116,
+      "lines": 1,
+      "owners": [
+        "MetricCodes.Hamming.variationalRate"
+      ],
+      "sha256": "7dd3ba759a91c41f0a094758b7089577a29ceaafe167f1dce1b97297bd0bb9ea",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 5064,
+      "source_start_line": 5064,
+      "start_byte": 191059,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1659,
+      "challenge_start_byte": 1572,
+      "end_byte": 191822,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Hamming.classicalParameter"
+      ],
+      "sha256": "bfe698206b904d273f28ec2e867e621a6b4bfe5d0efe458ff4d19497050c6a0f",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 5082,
+      "source_start_line": 5081,
+      "start_byte": 191735,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1751,
+      "challenge_start_byte": 1661,
+      "end_byte": 191916,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Hamming.classicalRate"
+      ],
+      "sha256": "0438014199a66aec98072bd57d71f711817de6498b4b070f041daf4a6669dedb",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 5085,
+      "source_start_line": 5084,
+      "start_byte": 191826,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1933,
+      "challenge_start_byte": 1753,
+      "end_byte": 242340,
+      "lines": 6,
+      "owners": [
+        "MetricCodes.Hamming.binaryRate"
+      ],
+      "sha256": "495e4dbdb4747ca6744c2cd70879b5f0f9512e58edea047f5a59d335fe5c3890",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 6324,
+      "source_start_line": 6319,
+      "start_byte": 242160,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2083,
+      "challenge_start_byte": 1935,
+      "end_byte": 259729,
+      "lines": 4,
+      "owners": [
+        "MetricCodes.Hamming.binaryRate_lt_classicalRate"
+      ],
+      "sha256": "0f6a1c491bcec7ed6d6090b7e60f756aa99b4fd05facefb30ef384242bf6cdea",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 6733,
+      "source_start_line": 6729,
+      "start_byte": 259481,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 2267,
+      "challenge_start_byte": 2085,
+      "end_byte": 260110,
+      "lines": 4,
+      "owners": [
+        "MetricCodes.Hamming.exists_binaryRate_improvement"
+      ],
+      "sha256": "ae2b1528963dd71c6f5d45465dac9b43c4f6980632634bf3546aa00499c8ba79",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 6741,
+      "source_start_line": 6735,
+      "start_byte": 259733,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 2427,
+      "challenge_start_byte": 2380,
+      "end_byte": 320940,
+      "lines": 1,
+      "owners": [
+        "MetricCodes.Johnson.centeredDegree"
+      ],
+      "sha256": "ab7205286e3309a9d4a7dbe5f96f276b66fda6b060fa9daa4544222ae06d6bb3",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8308,
+      "source_start_line": 8308,
+      "start_byte": 320893,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2478,
+      "challenge_start_byte": 2429,
+      "end_byte": 320993,
+      "lines": 1,
+      "owners": [
+        "MetricCodes.Johnson.centeredWeight"
+      ],
+      "sha256": "eca0a4e64cdee89e89aaef8d342253fe915424adc7309171b25df7d825998926",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8310,
+      "source_start_line": 8310,
+      "start_byte": 320944,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2540,
+      "challenge_start_byte": 2480,
+      "end_byte": 321057,
+      "lines": 1,
+      "owners": [
+        "MetricCodes.Johnson.centeredSigma"
+      ],
+      "sha256": "01023644128ab2718069ec06e5886d6387429de3b978671aa0d67ceb29c973dd",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8312,
+      "source_start_line": 8312,
+      "start_byte": 320997,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2615,
+      "challenge_start_byte": 2542,
+      "end_byte": 321134,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Johnson.centeredEta"
+      ],
+      "sha256": "c23506b77ebd448265cff27b28fadbb0be3607ce8d7467e0369f4604c217a89c",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8315,
+      "source_start_line": 8314,
+      "start_byte": 321061,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2962,
+      "challenge_start_byte": 2617,
+      "end_byte": 321483,
+      "lines": 9,
+      "owners": [
+        "MetricCodes.Johnson.spectralLimit"
+      ],
+      "sha256": "a16c6be3ab7e0ca894d4f1192a5dbaf68a8a29649ce666187a092d48239a91c8",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8325,
+      "source_start_line": 8317,
+      "start_byte": 321138,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3042,
+      "challenge_start_byte": 2964,
+      "end_byte": 326225,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Johnson.asymptoticThreshold"
+      ],
+      "sha256": "a0ee0730337c26b07f98096ac4924c9808c5f4f0841fff75af25c20aae34a335",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8457,
+      "source_start_line": 8456,
+      "start_byte": 326147,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3189,
+      "challenge_start_byte": 3044,
+      "end_byte": 326374,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Johnson.rankPenalty"
+      ],
+      "sha256": "bac40fc8d8d52972f5607702af051aaa80524c913d35acbc51e0ba79273f669b",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8461,
+      "source_start_line": 8459,
+      "start_byte": 326229,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3326,
+      "challenge_start_byte": 3191,
+      "end_byte": 326513,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Johnson.shellRate"
+      ],
+      "sha256": "05d2a2f7d82b0027da080107a10c496d58f5ce14ff0149f5c50684827806d680",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8465,
+      "source_start_line": 8463,
+      "start_byte": 326378,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3811,
+      "challenge_start_byte": 3328,
+      "end_byte": 327507,
+      "lines": 13,
+      "owners": [
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "MetricCodes.Johnson.AsymptoticParameters.complement_lt_half",
+        "MetricCodes.Johnson.AsymptoticParameters.complement_nonneg",
+        "MetricCodes.Johnson.AsymptoticParameters.degree_lt_left",
+        "MetricCodes.Johnson.AsymptoticParameters.degree_lt_right",
+        "MetricCodes.Johnson.AsymptoticParameters.degree_lt_weight",
+        "MetricCodes.Johnson.AsymptoticParameters.distance_lt_half",
+        "MetricCodes.Johnson.AsymptoticParameters.distance_pos",
+        "MetricCodes.Johnson.AsymptoticParameters.first_lt_degree",
+        "MetricCodes.Johnson.AsymptoticParameters.mk",
+        "MetricCodes.Johnson.AsymptoticParameters.support_lt_half",
+        "MetricCodes.Johnson.AsymptoticParameters.support_nonneg",
+        "MetricCodes.Johnson.AsymptoticParameters.weight_gt_distance",
+        "MetricCodes.Johnson.AsymptoticParameters.weight_lt_half"
+      ],
+      "sha256": "9470758d7a32a0bf7aca714a76ce3d73d0f80f6a25030f4e4051673d65861d18",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8492,
+      "source_start_line": 8480,
+      "start_byte": 327024,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3925,
+      "challenge_start_byte": 3813,
+      "end_byte": 331609,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Johnson.IsSpectrallyFeasible"
+      ],
+      "sha256": "bbf68ba8d57e3c11807b6ab475c4ac10a9728730b34930b400e853d336049523",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8611,
+      "source_start_line": 8610,
+      "start_byte": 331497,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4053,
+      "challenge_start_byte": 3927,
+      "end_byte": 331739,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Johnson.Feasible"
+      ],
+      "sha256": "93ae05fdac0f3022c3d752974d75ab5a23b7798d9a3005b6260d3e4531173c32",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8615,
+      "source_start_line": 8613,
+      "start_byte": 331613,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4178,
+      "challenge_start_byte": 4055,
+      "end_byte": 331866,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Johnson.rateSet"
+      ],
+      "sha256": "f8236ed4625443e14379b67fab6a904dcd8aab95acbdcc06e46e1afc6e3ca9e5",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8619,
+      "source_start_line": 8617,
+      "start_byte": 331743,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4240,
+      "challenge_start_byte": 4180,
+      "end_byte": 332130,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Johnson.variationalRate"
+      ],
+      "sha256": "b50476b7c3b70d00a9b95d612e74b978d1f3bbfdca087bd40b07546642fa2678",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8628,
+      "source_start_line": 8627,
+      "start_byte": 332070,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4329,
+      "challenge_start_byte": 4242,
+      "end_byte": 332444,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Johnson.mrrwG"
+      ],
+      "sha256": "1555eb9d9958b8c05783f155c4227c9245f8a37877ec331765d461fa91220373",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8636,
+      "source_start_line": 8635,
+      "start_byte": 332357,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4434,
+      "challenge_start_byte": 4331,
+      "end_byte": 333276,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Johnson.mrrwObjective"
+      ],
+      "sha256": "307a13e99a7d75cc7875d5396c3889cca61c04b52f3f4a76d10fbceffe915e72",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8662,
+      "source_start_line": 8660,
+      "start_byte": 333173,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4558,
+      "challenge_start_byte": 4436,
+      "end_byte": 337189,
+      "lines": 3,
+      "owners": [
+        "MetricCodes.Johnson.mrrwRateSet"
+      ],
+      "sha256": "7cdb9390a1d4bbc28fd75c0e5a207a07f033d356c29ea0548ed1ada14f23c224",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8776,
+      "source_start_line": 8774,
+      "start_byte": 337067,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4617,
+      "challenge_start_byte": 4560,
+      "end_byte": 337599,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Johnson.mrrwRate"
+      ],
+      "sha256": "9fd391ff00226a0dab1ce36ca7796798c599e50bdb8f7586c9165f9c99c7a62a",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8791,
+      "source_start_line": 8790,
+      "start_byte": 337542,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 4735,
+      "challenge_start_byte": 4619,
+      "end_byte": 339682,
+      "lines": 2,
+      "owners": [
+        "MetricCodes.Johnson.combinedVariationalRate"
+      ],
+      "sha256": "52c7ce9fc709a8b393e781ee037a509da460c3068d63c551f7a27d7b1498965f",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 8845,
+      "source_start_line": 8844,
+      "start_byte": 339566,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 5058,
+      "challenge_start_byte": 4869,
+      "end_byte": 711307,
+      "lines": 5,
+      "owners": [
+        "MetricCodes.MRRW.strict_mrrw2"
+      ],
+      "sha256": "cb79446b07e7785c02c63fc1f957cbc33be0948696ff3d81c03a077e7ca03894",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 18299,
+      "source_start_line": 18289,
+      "start_byte": 710778,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 5416,
+      "challenge_start_byte": 5230,
+      "end_byte": 809530,
+      "lines": 4,
+      "owners": [
+        "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate"
+      ],
+      "sha256": "da1c771936337ce941d292fdbb3d5697995e95ec930d9c6e19027ce4835a0371",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 20795,
+      "source_start_line": 20788,
+      "start_byte": 809167,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 5568,
+      "challenge_start_byte": 5418,
+      "end_byte": 809791,
+      "lines": 4,
+      "owners": [
+        "MetricCodes.Johnson.binaryRate_lt_mrrw"
+      ],
+      "sha256": "938409e58345ab2a6068bb56d4b2e6cf84edb0fe45eafc4de499079efa14ebd9",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 20801,
+      "source_start_line": 20797,
+      "start_byte": 809534,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 5765,
+      "challenge_start_byte": 5570,
+      "end_byte": 810176,
+      "lines": 4,
+      "owners": [
+        "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement"
+      ],
+      "sha256": "5370c49f9eedadb7299bc12e1d0738a19e1c80e46bde90d0a0490b05d6313bfe",
+      "source": ".\\MetricCodes.lean",
+      "source_end_line": 20808,
+      "source_start_line": 20803,
+      "start_byte": 809795,
+      "target_statement": true
+    }
+  ],
+  "sha256": "28146ebc2cbf47f61e52559d5a8bd23ef2fbbf52a3845852d844be6d8b077694",
+  "source_declarations": 32,
+  "source_lines": 91,
+  "support_constants": 0
+}

@@ -1,0 +1,15 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "CompactnessAndDegeneracy",
+  "theorem_names": [
+    "TwoDegenerateGraphs.twoDegenerateExtremalCounterexample",
+    "TwoDegenerateGraphs.not_erdos_146"
+  ]
+}

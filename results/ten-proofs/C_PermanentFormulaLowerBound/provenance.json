@@ -1,0 +1,184 @@
+{
+  "challenge_lines": 114,
+  "imports": [
+    "Lean",
+    "Mathlib"
+  ],
+  "matcher_context": "single source module; no cache reset required",
+  "raw_constant_count_v0": 41,
+  "records": [
+    {
+      "challenge_end_byte": 506,
+      "challenge_start_byte": 219,
+      "end_byte": 868437,
+      "lines": 6,
+      "owners": [
+        "PermanentFormulaLowerBound.Formula",
+        "PermanentFormulaLowerBound.Formula.add",
+        "PermanentFormulaLowerBound.Formula.brecOn",
+        "PermanentFormulaLowerBound.Formula.const",
+        "PermanentFormulaLowerBound.Formula.mul",
+        "PermanentFormulaLowerBound.Formula.sub",
+        "PermanentFormulaLowerBound.Formula.var"
+      ],
+      "sha256": "044595664f0aca9116a0ff3514d92f036de2dd70eca4f84068686b546d578ab6",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20410,
+      "source_start_line": 20405,
+      "start_byte": 868150,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 801,
+      "challenge_start_byte": 564,
+      "end_byte": 868738,
+      "lines": 6,
+      "owners": [
+        "PermanentFormulaLowerBound.Formula.eval"
+      ],
+      "sha256": "4ee021f7e06bf1e8f0df62ef40a0ba8929e28994e0f3a5b69bd89991327ee297",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20421,
+      "source_start_line": 20416,
+      "start_byte": 868501,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1039,
+      "challenge_start_byte": 803,
+      "end_byte": 869183,
+      "lines": 6,
+      "owners": [
+        "PermanentFormulaLowerBound.Formula.variableLeaves"
+      ],
+      "sha256": "7fbb1dbd6973d94fd5e505f033eba05373f884850bfc010f6ceb75aa8f2c0810",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20435,
+      "source_start_line": 20430,
+      "start_byte": 868947,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1519,
+      "challenge_start_byte": 1054,
+      "end_byte": 871640,
+      "lines": 7,
+      "owners": [
+        "PermanentFormulaLowerBound.RationalFormula",
+        "PermanentFormulaLowerBound.RationalFormula.add",
+        "PermanentFormulaLowerBound.RationalFormula.brecOn",
+        "PermanentFormulaLowerBound.RationalFormula.const",
+        "PermanentFormulaLowerBound.RationalFormula.div",
+        "PermanentFormulaLowerBound.RationalFormula.mul",
+        "PermanentFormulaLowerBound.RationalFormula.sub",
+        "PermanentFormulaLowerBound.RationalFormula.var"
+      ],
+      "sha256": "a353e18dc40f1b07a75bc83e71c88aadcc10ce11bf8d490304477308da0ed117",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20495,
+      "source_start_line": 20489,
+      "start_byte": 871175,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2048,
+      "challenge_start_byte": 1585,
+      "end_byte": 872175,
+      "lines": 12,
+      "owners": [
+        "PermanentFormulaLowerBound.RationalFormula.eval"
+      ],
+      "sha256": "0e751e42c11992ba9042b9129d3fc97f6f2e696c003c4f345b4ec81e35496805",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20512,
+      "source_start_line": 20501,
+      "start_byte": 871712,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2534,
+      "challenge_start_byte": 2050,
+      "end_byte": 872663,
+      "lines": 8,
+      "owners": [
+        "PermanentFormulaLowerBound.RationalFormula.Valid",
+        "PermanentFormulaLowerBound.RationalFormula.Valid.add",
+        "PermanentFormulaLowerBound.RationalFormula.Valid.const",
+        "PermanentFormulaLowerBound.RationalFormula.Valid.div",
+        "PermanentFormulaLowerBound.RationalFormula.Valid.mul",
+        "PermanentFormulaLowerBound.RationalFormula.Valid.sub",
+        "PermanentFormulaLowerBound.RationalFormula.Valid.var"
+      ],
+      "sha256": "401e5e07014fac988587f320014f6e1ce5f1f66ff39ac13227b0caf6c6e8e1d4",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20521,
+      "source_start_line": 20514,
+      "start_byte": 872179,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2833,
+      "challenge_start_byte": 2536,
+      "end_byte": 873220,
+      "lines": 7,
+      "owners": [
+        "PermanentFormulaLowerBound.RationalFormula.variableLeaves"
+      ],
+      "sha256": "3cc17e39a8d207b2c652f2ee933aa92d72d90a9a45b8477c6814f6e4a5fe9a2f",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20537,
+      "source_start_line": 20531,
+      "start_byte": 872923,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3003,
+      "challenge_start_byte": 2856,
+      "end_byte": 885245,
+      "lines": 3,
+      "owners": [
+        "PermanentFormulaLowerBound.permanentPolynomial"
+      ],
+      "sha256": "57328aafeae8b2bf4cead980c0666d6946bf3366c9eb45d7da0f415a7522bfad",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 20847,
+      "source_start_line": 20845,
+      "start_byte": 885098,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 3300,
+      "challenge_start_byte": 3005,
+      "end_byte": 1158528,
+      "lines": 7,
+      "owners": [
+        "PermanentFormulaLowerBound.permanent_divisionFree_formula_logarithmic_lower_bound"
+      ],
+      "sha256": "36542ee7f5968b610ea750a06c9f2c725a0dfdc5c8ef2ccf1aa189bcfa57c2d9",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 27549,
+      "source_start_line": 27543,
+      "start_byte": 1158186,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 3782,
+      "challenge_start_byte": 3302,
+      "end_byte": 1159062,
+      "lines": 11,
+      "owners": [
+        "PermanentFormulaLowerBound.permanent_rational_formula_logarithmic_lower_bound"
+      ],
+      "sha256": "f130e7d6c9fb9a6cc3e4217a7b872f61688fe7c940c73a49795ee87d317f882c",
+      "source": ".\\Permanent.lean",
+      "source_end_line": 27561,
+      "source_start_line": 27551,
+      "start_byte": 1158532,
+      "target_statement": true
+    }
+  ],
+  "sha256": "637ace6b96645a979ec8e09c2d83a61ab65d747629addc4053446c34ad995d14",
+  "source_declarations": 8,
+  "source_lines": 55,
+  "support_constants": 0
+}

@@ -1,0 +1,279 @@
+{
+  "challenge_lines": 115,
+  "imports": [
+    "Lean",
+    "Mathlib"
+  ],
+  "matcher_context": "single source module; no cache reset required",
+  "raw_constant_count_v0": 18,
+  "records": [
+    {
+      "challenge_end_byte": 185,
+      "challenge_start_byte": 145,
+      "end_byte": 21820,
+      "lines": 1,
+      "owners": [
+        "GapCVP.BitLanguage"
+      ],
+      "sha256": "bee860b9eb7c35d09369bd44da68b835dd69a2e56b56eb71a6552e4aa05a48db",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 621,
+      "source_start_line": 621,
+      "start_byte": 21780,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 237,
+      "challenge_start_byte": 187,
+      "end_byte": 21874,
+      "lines": 1,
+      "owners": [
+        "GapCVP.bitEncoding"
+      ],
+      "sha256": "2f0bf213274a72bf44ca5460d98fcb9cc8d628de6d1150a9f859edcf3b2950f4",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 623,
+      "source_start_line": 623,
+      "start_byte": 21824,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 435,
+      "challenge_start_byte": 239,
+      "end_byte": 22074,
+      "lines": 5,
+      "owners": [
+        "GapCVP.pairBitEncoding"
+      ],
+      "sha256": "c3dff865e72f88bed60185b5dbb07a9906e7bd591d7ce9cf90b803c38d34686d",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 629,
+      "source_start_line": 625,
+      "start_byte": 21878,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 542,
+      "challenge_start_byte": 437,
+      "end_byte": 22183,
+      "lines": 2,
+      "owners": [
+        "GapCVP.BitTM"
+      ],
+      "sha256": "50a146e20e3de6f634a23c601c70eea8e01d6f5ad95611db9afce8545c87c5a0",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 632,
+      "source_start_line": 631,
+      "start_byte": 22078,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 698,
+      "challenge_start_byte": 544,
+      "end_byte": 22341,
+      "lines": 3,
+      "owners": [
+        "GapCVP.VerifierTM"
+      ],
+      "sha256": "1e9f608a71437c58d6083d4c679071bc08ab1932616a8e4899555d458d799d5c",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 636,
+      "source_start_line": 634,
+      "start_byte": 22187,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1090,
+      "challenge_start_byte": 700,
+      "end_byte": 22735,
+      "lines": 9,
+      "owners": [
+        "GapCVP.IsNP"
+      ],
+      "sha256": "38795734f3c2bcc98f42df7775c7677d81fa87c780bffc298b5e0d90ad5e5bc8",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 646,
+      "source_start_line": 638,
+      "start_byte": 22345,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1356,
+      "challenge_start_byte": 1230,
+      "end_byte": 5441389,
+      "lines": 4,
+      "owners": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.disjoint",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseProblem.yes"
+      ],
+      "sha256": "068e01e7f447dcd554d308a784d5b663e419afff2fce9f56d755e7453d2c7626",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 129886,
+      "source_start_line": 129883,
+      "start_byte": 5441263,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 1409,
+      "challenge_start_byte": 1358,
+      "end_byte": 5441852,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.gapCVP400Promise"
+      ],
+      "sha256": "41e5e72d4136641f69561de8ddbcdc818dd34f6844d3e009d102c0c26efb3923",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 129898,
+      "source_start_line": 129888,
+      "start_byte": 5441393,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 1488,
+      "challenge_start_byte": 1411,
+      "end_byte": 5451033,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.binaryNearestCodewordPromise"
+      ],
+      "sha256": "3dab4a0f9735fb60fa7b98ce3224d5f34ca74ff2dd4478332c60adfb1fec1049",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130109,
+      "source_start_line": 130066,
+      "start_byte": 5449123,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 1568,
+      "challenge_start_byte": 1490,
+      "end_byte": 5452920,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.binarySyndromeDecodingPromise"
+      ],
+      "sha256": "cbcce36105b146ef41bf696ee22ce0ff786e15d96ace074e8d10961ba6bbfd64",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130149,
+      "source_start_line": 130111,
+      "start_byte": 5451037,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 1664,
+      "challenge_start_byte": 1570,
+      "end_byte": 5455083,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.finitePGapCVPPromise"
+      ],
+      "sha256": "fe5355ef1753c41aa65a1388d733b695cd365ec213a25cec95809616f90cef9c",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130201,
+      "source_start_line": 130166,
+      "start_byte": 5453608,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 1973,
+      "challenge_start_byte": 1666,
+      "end_byte": 5455394,
+      "lines": 6,
+      "owners": [
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.completeness",
+        "GapCVP.Comparator.PromiseReduction.map",
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "GapCVP.Comparator.PromiseReduction.polynomial_time",
+        "GapCVP.Comparator.PromiseReduction.soundness"
+      ],
+      "sha256": "194e6f978152f0969dba239404b5dc9af17cff04ec1e361da3c31b746f73f890",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130208,
+      "source_start_line": 130203,
+      "start_byte": 5455087,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2180,
+      "challenge_start_byte": 1975,
+      "end_byte": 5455603,
+      "lines": 5,
+      "owners": [
+        "GapCVP.Comparator.IsNPHardPromise"
+      ],
+      "sha256": "b9799980fb0483e814708aed73c612124606782cc75c9aaa361e0879317821f2",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130214,
+      "source_start_line": 130210,
+      "start_byte": 5455398,
+      "target_statement": false
+    },
+    {
+      "challenge_end_byte": 2256,
+      "challenge_start_byte": 2182,
+      "end_byte": 5464595,
+      "lines": 2,
+      "owners": [
+        "GapCVP.Comparator.gapCVP400IsNPHard"
+      ],
+      "sha256": "1a368cdaca0bf66a39f5e2bcc1b7a14fc4f47839e3e83bc93ef3aac335260ef3",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130400,
+      "source_start_line": 130398,
+      "start_byte": 5464319,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 2361,
+      "challenge_start_byte": 2258,
+      "end_byte": 5464912,
+      "lines": 3,
+      "owners": [
+        "GapCVP.Comparator.binaryNearestCodewordIsNPHard"
+      ],
+      "sha256": "623660480a5d04f59749946861fd59e6a1d24407647eb5f37ddabe67819adced",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130407,
+      "source_start_line": 130402,
+      "start_byte": 5464599,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 2468,
+      "challenge_start_byte": 2363,
+      "end_byte": 5465248,
+      "lines": 3,
+      "owners": [
+        "GapCVP.Comparator.binarySyndromeDecodingIsNPHard"
+      ],
+      "sha256": "55dcfba85255e14c17864dc12a830ecc944ecb7c3cb886a6969035017b9f796f",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130414,
+      "source_start_line": 130409,
+      "start_byte": 5464916,
+      "target_statement": true
+    },
+    {
+      "challenge_end_byte": 2593,
+      "challenge_start_byte": 2470,
+      "end_byte": 5465585,
+      "lines": 3,
+      "owners": [
+        "GapCVP.Comparator.finitePNormGapCVPIsNPHard"
+      ],
+      "sha256": "345e65ddee74920634af7e6dfd790f855a3c35fc0b0d541c3dc3b9b26c4b0fe6",
+      "source": ".\\GapCVP.lean",
+      "source_end_line": 130422,
+      "source_start_line": 130416,
+      "start_byte": 5465252,
+      "target_statement": true
+    }
+  ],
+  "sha256": "289655a5ce25a9bd605e280b70fb77ddaf4b2216fa643237f08d3de3bbbf8017",
+  "source_declarations": 9,
+  "source_lines": 36,
+  "support_constants": 0
+}

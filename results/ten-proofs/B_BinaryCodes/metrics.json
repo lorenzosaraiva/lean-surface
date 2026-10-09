@@ -1,0 +1,1670 @@
+{
+  "compilation_module_identity": "Challenge",
+  "constants": [
+    {
+      "body_dependencies": [
+        "Nat",
+        "Fin",
+        "Bool"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.BinaryWord",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Nat"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "And",
+        "LE.le",
+        "Real.instLE",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "LT.lt",
+        "Real.instLT",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "MetricCodes.hammingGamma"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.Feasible",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "Filter.limsup",
+        "Nat",
+        "ConditionallyCompleteLinearOrder.toConditionallyCompleteLattice",
+        "Real.instConditionallyCompleteLinearOrder",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "Real.logb",
+        "OfNat.ofNat",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "Nat.cast",
+        "MetricCodes.Hamming.codeNumber",
+        "Nat.ceil",
+        "Real.semiring",
+        "Real.partialOrder",
+        "FloorRing.toFloorSemiring",
+        "Real.instRing",
+        "Real.linearOrder",
+        "Real.instFloorRing",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "Filter.atTop",
+        "Nat.instPreorder"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.binaryRate",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "sorryAx",
+        "Lean.Name",
+        "MetricCodes.Hamming.binaryRate",
+        "MetricCodes.Hamming.classicalRate",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Hamming.binaryRate_lt_classicalRate",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "MetricCodes.Hamming.binaryRate",
+        "MetricCodes.Hamming.classicalRate"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "Real.sqrt",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.classicalParameter",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.binaryEntropy",
+        "MetricCodes.Hamming.classicalParameter"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.classicalRate",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Nat",
+        "Finset.sup",
+        "Finset",
+        "MetricCodes.BinaryWord",
+        "Lattice.toSemilatticeSup",
+        "Nat.instLattice",
+        "Nat.instOrderBot",
+        "MetricCodes.Hamming.validCodes",
+        "Finset.card"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.codeNumber",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Nat"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "sorryAx",
+        "Lean.Name",
+        "Exists",
+        "And",
+        "LE.le",
+        "Real.instLE",
+        "MetricCodes.Hamming.binaryRate",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "MetricCodes.Hamming.classicalRate",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Hamming.exists_binaryRate_improvement",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "Exists",
+        "And",
+        "LE.le",
+        "Real.instLE",
+        "MetricCodes.Hamming.binaryRate",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "MetricCodes.Hamming.classicalRate"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "setOf",
+        "Exists",
+        "And",
+        "MetricCodes.Hamming.Feasible",
+        "Eq",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "MetricCodes.binaryEntropy"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.rateSet",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real",
+        "Set"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Nat",
+        "Finset.filter",
+        "Finset",
+        "MetricCodes.BinaryWord",
+        "MetricCodes.IsBinaryCode",
+        "Classical.propDecidable",
+        "Finset.univ",
+        "Finset.fintype",
+        "Pi.instFintype",
+        "Fin",
+        "Bool",
+        "instDecidableEqFin",
+        "Fin.fintype",
+        "Bool.fintype"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.validCodes",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Nat",
+        "Finset",
+        "MetricCodes.BinaryWord"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "InfSet.sInf",
+        "Real.instInfSet",
+        "MetricCodes.Hamming.rateSet"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Hamming.variationalRate",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Nat",
+        "Finset",
+        "MetricCodes.BinaryWord",
+        "Membership.mem",
+        "SetLike.instMembership",
+        "Finset.instSetLike",
+        "Ne",
+        "LE.le",
+        "instLENat",
+        "MetricCodes.hammingDist"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.IsBinaryCode",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Nat",
+        "Finset",
+        "MetricCodes.BinaryWord"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "inductive",
+      "name": "MetricCodes.Johnson.AsymptoticParameters",
+      "related_constants": [
+        "MetricCodes.Johnson.AsymptoticParameters.mk",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters.mk",
+        "MetricCodes.Johnson.AsymptoticParameters.rec"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.casesOn",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.complement_lt_half",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.complement_nonneg",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LE.le",
+        "Real.instLE",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.degree_lt_left",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.degree_lt_right",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.degree_lt_weight",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.distance_lt_half",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.distance_pos",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.first_lt_degree",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "constructor",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.mk",
+      "related_constants": [
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters.mk"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.mk._flat_ctor",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "recursor",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.rec",
+      "related_constants": [
+        "MetricCodes.Johnson.AsymptoticParameters.mk",
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters.mk"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters.mk",
+        "MetricCodes.Johnson.AsymptoticParameters.rec"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.recOn",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "MetricCodes.Johnson.AsymptoticParameters.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.support_lt_half",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "OfNat.ofNat",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.support_nonneg",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LE.le",
+        "Real.instLE",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.weight_gt_distance",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "OfNat.ofNat",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.AsymptoticParameters.weight_lt_half",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "LT.lt",
+        "Real.instLT",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "And",
+        "MetricCodes.Johnson.AsymptoticParameters",
+        "MetricCodes.Johnson.IsSpectrallyFeasible"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.Feasible",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "MetricCodes.Johnson.asymptoticThreshold",
+        "MetricCodes.Johnson.spectralLimit"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.IsSpectrallyFeasible",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.asymptoticThreshold",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "sorryAx",
+        "Lean.Name",
+        "LE.le",
+        "Real.instLE",
+        "MetricCodes.Hamming.binaryRate",
+        "MetricCodes.Johnson.combinedVariationalRate",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "LE.le",
+        "Real.instLE",
+        "MetricCodes.Hamming.binaryRate",
+        "MetricCodes.Johnson.combinedVariationalRate"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "sorryAx",
+        "Lean.Name",
+        "MetricCodes.Hamming.binaryRate",
+        "MetricCodes.Johnson.mrrwRate",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.binaryRate_lt_mrrw",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "MetricCodes.Hamming.binaryRate",
+        "MetricCodes.Johnson.mrrwRate"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.centeredDegree",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.centeredEta",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.centeredSigma",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.centeredWeight",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "Min.min",
+        "Real.instMin",
+        "MetricCodes.Hamming.variationalRate",
+        "MetricCodes.Johnson.variationalRate"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.combinedVariationalRate",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "sorryAx",
+        "Lean.Name",
+        "Exists",
+        "And",
+        "LE.le",
+        "Real.instLE",
+        "MetricCodes.Hamming.binaryRate",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "MetricCodes.Johnson.mrrwRate",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "Exists",
+        "And",
+        "LE.le",
+        "Real.instLE",
+        "MetricCodes.Hamming.binaryRate",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "MetricCodes.Johnson.mrrwRate"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.binaryEntropy",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "Real.sqrt",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.mrrwG",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "MetricCodes.Johnson.mrrwG",
+        "HPow.hPow",
+        "Nat",
+        "instHPow",
+        "NPow.toPow",
+        "Monoid.toNPow",
+        "Real.instMonoid",
+        "instOfNatNat",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.mrrwObjective",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "InfSet.sInf",
+        "Real.instInfSet",
+        "MetricCodes.Johnson.mrrwRateSet"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.mrrwRate",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "setOf",
+        "Exists",
+        "And",
+        "LE.le",
+        "Real.instLE",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "One.toOfNat1",
+        "Real.instOne",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "Eq",
+        "MetricCodes.Johnson.mrrwObjective"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.mrrwRateSet",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real",
+        "Set"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "MetricCodes.binaryEntropy",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.rankPenalty",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "setOf",
+        "Exists",
+        "And",
+        "MetricCodes.Johnson.Feasible",
+        "Eq",
+        "MetricCodes.Johnson.shellRate"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.rateSet",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real",
+        "Set"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "OfNat.ofNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "MetricCodes.binaryEntropy",
+        "MetricCodes.Johnson.rankPenalty"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.shellRate",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "MetricCodes.Johnson.centeredDegree",
+        "MetricCodes.Johnson.centeredWeight",
+        "MetricCodes.Johnson.centeredSigma",
+        "MetricCodes.Johnson.centeredEta",
+        "HAdd.hAdd",
+        "instHAdd",
+        "Real.instAdd",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "HPow.hPow",
+        "Nat",
+        "instHPow",
+        "NPow.toPow",
+        "Monoid.toNPow",
+        "Real.instMonoid",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "One.toOfNat1",
+        "Real.instOne",
+        "Real.sqrt"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.spectralLimit",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "InfSet.sInf",
+        "Real.instInfSet",
+        "MetricCodes.Johnson.rateSet"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.Johnson.variationalRate",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "sorryAx",
+        "Lean.Name",
+        "MetricCodes.Johnson.combinedVariationalRate",
+        "MetricCodes.Johnson.mrrwRate",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.MRRW.strict_mrrw2",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Real",
+        "LT.lt",
+        "Real.instLT",
+        "OfNat.ofNat",
+        "Zero.toOfNat0",
+        "Real.instZero",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "One.toOfNat1",
+        "Real.instOne",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "MetricCodes.Johnson.combinedVariationalRate",
+        "MetricCodes.Johnson.mrrwRate"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "Neg.neg",
+        "Real.instNeg",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "Real.logb",
+        "OfNat.ofNat",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "One.toOfNat1",
+        "Real.instOne"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.binaryEntropy",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Nat",
+        "MetricCodes.BinaryWord",
+        "Finset.card",
+        "Fin",
+        "Finset.filter",
+        "Ne",
+        "Bool",
+        "instDecidableNot",
+        "Eq",
+        "instDecidableEqBool",
+        "Finset.univ",
+        "Fin.fintype"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.hammingDist",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Nat",
+        "MetricCodes.BinaryWord"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Real",
+        "HDiv.hDiv",
+        "instHDiv",
+        "DivInvMonoid.toDiv",
+        "Real.instDivInvMonoid",
+        "HMul.hMul",
+        "instHMul",
+        "Real.instMul",
+        "OfNat.ofNat",
+        "instOfNatAtLeastTwo",
+        "Real.instNatCast",
+        "MetricCodes.numeralTwoAtLeast",
+        "HSub.hSub",
+        "instHSub",
+        "Real.instSub",
+        "One.toOfNat1",
+        "Real.instOne",
+        "Real.sqrt"
+      ],
+      "kind": "definition",
+      "name": "MetricCodes.hammingGamma",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Real"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Nat.AtLeastTwo.mk",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat",
+        "of_decide_eq_true",
+        "LE.le",
+        "instLENat",
+        "Nat.decLe",
+        "id",
+        "Eq",
+        "Bool",
+        "Decidable.decide",
+        "Bool.true",
+        "Eq.refl"
+      ],
+      "kind": "theorem",
+      "name": "MetricCodes.numeralTwoAtLeast",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Nat.AtLeastTwo",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat"
+      ]
+    }
+  ],
+  "declarations": 38,
+  "definition_holes": [],
+  "lean_version": "4.32.0",
+  "lines": 237,
+  "raw_constants": 55,
+  "source_sha256": "28146ebc2cbf47f61e52559d5a8bd23ef2fbbf52a3845852d844be6d8b077694"
+}

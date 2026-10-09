@@ -1,0 +1,19 @@
+{
+  "hits": [],
+  "pattern_file_sha256": "4e10b654af4452d87cbfee9b6a06b02c7b3f5962e4af62488368fef2f14a1d7c",
+  "pattern_ids": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12"
+  ],
+  "scope": "all release working-tree files except .git and this self-report; no content exemptions"
+}

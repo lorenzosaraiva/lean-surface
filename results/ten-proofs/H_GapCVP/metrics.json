@@ -1,0 +1,1333 @@
+{
+  "compilation_module_identity": "Challenge",
+  "constants": [
+    {
+      "body_dependencies": [
+        "List",
+        "Bool"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.BitLanguage",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": []
+    },
+    {
+      "body_dependencies": [
+        "List",
+        "Bool",
+        "Turing.TM2ComputableInPolyTime",
+        "GapCVP.bitEncoding"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.BitTM",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "List",
+        "Bool"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "Decidable.decide",
+        "GapCVP.BitLanguage",
+        "Eq",
+        "Bool",
+        "GapCVP.IsNP",
+        "Bool.true",
+        "Nonempty",
+        "GapCVP.Comparator.PromiseReduction",
+        "Classical.propDecidable"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.IsNPHardPromise",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "Bool"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "inductive",
+      "name": "GapCVP.Comparator.PromiseProblem",
+      "related_constants": [
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "GapCVP.Comparator.PromiseProblem"
+      ],
+      "safety": "safe",
+      "type_dependencies": []
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.rec",
+        "Nat",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "OfNat.ofNat",
+        "instOfNatNat"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem._sizeOf_1",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "Nat"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "SizeOf.mk",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem._sizeOf_1"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem._sizeOf_inst",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "SizeOf",
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "GapCVP.Comparator.PromiseProblem.rec"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.casesOn",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.ctorIdx",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "Nat"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseProblem.disjoint",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Eq",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "False"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "constructor",
+      "name": "GapCVP.Comparator.PromiseProblem.mk",
+      "related_constants": [
+        "GapCVP.Comparator.PromiseProblem"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem.mk"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.mk._flat_ctor",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "GapCVP.Comparator.PromiseProblem.mk.noConfusion",
+        "And",
+        "And.intro"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseProblem.mk.inj",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "And"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "Eq.propIntro",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "And",
+        "GapCVP.Comparator.PromiseProblem.mk.inj",
+        "Lean.injEq_helper",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseProblem.mk.injEq",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "And"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "id",
+        "GapCVP.Comparator.PromiseProblem.noConfusion"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.mk.noConfusion",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "Eq.refl",
+        "Nat",
+        "OfNat.ofNat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseProblem.mk.sizeOf_spec",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem._sizeOf_inst",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "OfNat.ofNat",
+        "instOfNatNat"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.no",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "Eq",
+        "Eq.ndrec",
+        "GapCVP.Comparator.PromiseProblem.noConfusionType",
+        "GapCVP.Comparator.PromiseProblem.casesOn",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Bool.true",
+        "False",
+        "Eq.refl"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.noConfusion",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "Eq",
+        "GapCVP.Comparator.PromiseProblem.noConfusionType"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseProblem.casesOn",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.noConfusionType",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "recursor",
+      "name": "GapCVP.Comparator.PromiseProblem.rec",
+      "related_constants": [
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem.mk"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem.mk",
+        "GapCVP.Comparator.PromiseProblem.rec"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.recOn",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "False",
+        "GapCVP.Comparator.PromiseProblem.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseProblem.yes",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.BitLanguage"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "inductive",
+      "name": "GapCVP.Comparator.PromiseReduction",
+      "related_constants": [
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "GapCVP.Comparator.PromiseReduction"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.rec",
+        "Nat",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "instSizeOfDefault"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction._sizeOf_1",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "Nat"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "SizeOf.mk",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction._sizeOf_1"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction._sizeOf_inst",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "SizeOf",
+        "GapCVP.Comparator.PromiseReduction"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "GapCVP.Comparator.PromiseReduction.rec"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.casesOn",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseReduction.completeness",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "GapCVP.Comparator.PromiseReduction.map"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.ctorIdx",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "Nat"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.map",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "constructor",
+      "name": "GapCVP.Comparator.PromiseReduction.mk",
+      "related_constants": [
+        "GapCVP.Comparator.PromiseReduction"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.mk._flat_ctor",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "GapCVP.Comparator.PromiseReduction.mk.noConfusion"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseReduction.mk.inj",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "Eq.propIntro",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "GapCVP.Comparator.PromiseReduction.mk.inj",
+        "Eq.ndrec",
+        "Eq.refl"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseReduction.mk.injEq",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "id",
+        "GapCVP.Comparator.PromiseReduction.noConfusion",
+        "Eq.refl",
+        "heq_of_eq"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.mk.noConfusion",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "Eq.refl",
+        "Nat",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "SizeOf.sizeOf",
+        "instSizeOfDefault"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseReduction.mk.sizeOf_spec",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "Nat",
+        "SizeOf.sizeOf",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction._sizeOf_inst",
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "HAdd.hAdd",
+        "instHAdd",
+        "instAddNat",
+        "OfNat.ofNat",
+        "instOfNatNat",
+        "instSizeOfDefault"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "Eq",
+        "HEq",
+        "Eq.ndrec",
+        "GapCVP.Comparator.PromiseReduction.noConfusionType",
+        "GapCVP.Comparator.PromiseReduction.casesOn",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "Eq.refl",
+        "eq_of_heq"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.noConfusion",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "Eq",
+        "HEq",
+        "GapCVP.Comparator.PromiseReduction.noConfusionType"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "GapCVP.Comparator.PromiseReduction.casesOn",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.noConfusionType",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseReduction.polynomial_time",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "GapCVP.Comparator.PromiseReduction.map"
+      ]
+    },
+    {
+      "body_dependencies": [],
+      "kind": "recursor",
+      "name": "GapCVP.Comparator.PromiseReduction.rec",
+      "related_constants": [
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.mk",
+        "GapCVP.Comparator.PromiseReduction.rec"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.PromiseReduction.recOn",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Nonempty",
+        "GapCVP.BitTM",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.yes",
+        "Not",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.mk"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.PromiseReduction.soundness",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "GapCVP.Comparator.PromiseProblem",
+        "GapCVP.Comparator.PromiseReduction",
+        "List",
+        "Bool",
+        "Not",
+        "Eq",
+        "Bool.true",
+        "GapCVP.Comparator.PromiseProblem.no",
+        "GapCVP.Comparator.PromiseReduction.map"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "sorryAx",
+        "Lean.Name",
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.binaryNearestCodewordPromise",
+        "Bool.true",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.binaryNearestCodewordIsNPHard",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.binaryNearestCodewordPromise",
+        "Bool.true"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "sorryAx",
+        "Lean.Name",
+        "GapCVP.Comparator.PromiseProblem",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.binaryNearestCodewordPromise",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "sorryAx",
+        "Lean.Name",
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.binarySyndromeDecodingPromise",
+        "Bool.true",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.binarySyndromeDecodingIsNPHard",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.binarySyndromeDecodingPromise",
+        "Bool.true"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "sorryAx",
+        "Lean.Name",
+        "GapCVP.Comparator.PromiseProblem",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.binarySyndromeDecodingPromise",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Rat",
+        "LE.le",
+        "Rat.instLE",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "sorryAx",
+        "Lean.Name",
+        "GapCVP.Comparator.PromiseProblem",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.finitePGapCVPPromise",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Rat",
+        "LE.le",
+        "Rat.instLE",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Rat",
+        "LE.le",
+        "Rat.instLE",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "sorryAx",
+        "Lean.Name",
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.finitePGapCVPPromise",
+        "Bool.true",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.finitePNormGapCVPIsNPHard",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Rat",
+        "LE.le",
+        "Rat.instLE",
+        "OfNat.ofNat",
+        "Rat.instOfNat",
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.finitePGapCVPPromise",
+        "Bool.true"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "sorryAx",
+        "Lean.Name",
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.gapCVP400Promise",
+        "Bool.true",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "theorem",
+      "name": "GapCVP.Comparator.gapCVP400IsNPHard",
+      "related_constants": [],
+      "safety": "safe",
+      "type_dependencies": [
+        "Eq",
+        "Bool",
+        "GapCVP.Comparator.IsNPHardPromise",
+        "GapCVP.Comparator.gapCVP400Promise",
+        "Bool.true"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "sorryAx",
+        "Lean.Name",
+        "GapCVP.Comparator.PromiseProblem",
+        "Bool.false",
+        "Lean.Name.num",
+        "Lean.Name.str",
+        "Lean.Name.anonymous",
+        "OfNat.ofNat",
+        "Nat",
+        "instOfNatNat"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.Comparator.gapCVP400Promise",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.Comparator.PromiseProblem"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "GapCVP.BitLanguage",
+        "Decidable.decide",
+        "Exists",
+        "Polynomial",
+        "Nat",
+        "Nat.instSemiring",
+        "Prod",
+        "List",
+        "Bool",
+        "And",
+        "Nonempty",
+        "GapCVP.VerifierTM",
+        "Iff",
+        "Eq",
+        "Bool.true",
+        "LE.le",
+        "instLENat",
+        "List.length",
+        "Polynomial.eval",
+        "Prod.mk",
+        "Classical.propDecidable"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.IsNP",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "GapCVP.BitLanguage",
+        "Bool"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Prod",
+        "List",
+        "Bool",
+        "Turing.TM2ComputableInPolyTime",
+        "Sum",
+        "GapCVP.pairBitEncoding",
+        "Computability.encodeBool"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.VerifierTM",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Prod",
+        "List",
+        "Bool"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "id",
+        "List",
+        "Bool"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.bitEncoding",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "List",
+        "Bool"
+      ]
+    },
+    {
+      "body_dependencies": [
+        "Computability.Encoding.encode",
+        "Prod",
+        "List",
+        "Bool",
+        "Sum",
+        "Computability.encodingProd",
+        "Computability.encodingList"
+      ],
+      "kind": "definition",
+      "name": "GapCVP.pairBitEncoding",
+      "related_constants": [],
+      "safety": "Lean.DefinitionSafety.safe",
+      "type_dependencies": [
+        "Prod",
+        "List",
+        "Bool",
+        "Sum"
+      ]
+    }
+  ],
+  "declarations": 17,
+  "definition_holes": [
+    "GapCVP.Comparator.gapCVP400Promise",
+    "GapCVP.Comparator.binaryNearestCodewordPromise",
+    "GapCVP.Comparator.binarySyndromeDecodingPromise",
+    "GapCVP.Comparator.finitePGapCVPPromise"
+  ],
+  "lean_version": "4.32.0",
+  "lines": 115,
+  "raw_constants": 52,
+  "source_sha256": "289655a5ce25a9bd605e280b70fb77ddaf4b2216fa643237f08d3de3bbbf8017"
+}

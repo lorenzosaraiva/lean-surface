@@ -1,0 +1,57 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "QuantumParallelRepetition.distributionUniformExponential": [],
+    "QuantumParallelRepetition.standardQuantumParallelRepetition": [
+      {
+        "binder_kind": "instance",
+        "index": 4,
+        "name": "inst._@.QuantumParallelRepetition.1392907302._hygCtx._hyg.6",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Fintype.{0} X"
+      },
+      {
+        "binder_kind": "instance",
+        "index": 5,
+        "name": "inst._@.QuantumParallelRepetition.1392907302._hygCtx._hyg.9",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Fintype.{0} Y"
+      },
+      {
+        "binder_kind": "instance",
+        "index": 6,
+        "name": "inst._@.QuantumParallelRepetition.1392907302._hygCtx._hyg.12",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Fintype.{0} A"
+      },
+      {
+        "binder_kind": "instance",
+        "index": 7,
+        "name": "inst._@.QuantumParallelRepetition.1392907302._hygCtx._hyg.15",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "Fintype.{0} B"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 8,
+        "name": "G",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "QuantumParallelRepetition.Game.{0, 0, 0, 0} X Y A B"
+      }
+    ]
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

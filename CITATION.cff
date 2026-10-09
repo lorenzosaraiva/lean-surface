@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Please cite this software using the metadata below."
+title: "surface: Lean statement review"
+type: software
+version: 0.1.0
+license: Apache-2.0
+authors:
+  - family-names: Saraiva
+    given-names: Lorenzo
+    affiliation: PUC-Rio

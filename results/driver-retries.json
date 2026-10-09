@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "attempts": 2,
+      "check": "resume_after_stack_overflow",
+      "status": "PASS"
+    },
+    {
+      "attempts": 3,
+      "check": "bounded_three_crashes",
+      "status": "PASS"
+    },
+    {
+      "attempts": 1,
+      "check": "ordinary_failure_is_not_retried",
+      "status": "PASS"
+    }
+  ],
+  "method": "Mock subprocess return codes; no actual crash, stress test or Lean process launched. Tests the final expanded Windows stack-overflow retry codes."
+}

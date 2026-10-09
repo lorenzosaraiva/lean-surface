@@ -1,0 +1,55 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "GapCVP.Comparator.binaryNearestCodewordIsNPHard": [],
+    "GapCVP.Comparator.binaryNearestCodewordPromise": [],
+    "GapCVP.Comparator.binarySyndromeDecodingIsNPHard": [],
+    "GapCVP.Comparator.binarySyndromeDecodingPromise": [],
+    "GapCVP.Comparator.finitePGapCVPPromise": [
+      {
+        "binder_kind": "explicit",
+        "index": 0,
+        "name": "p",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "ℚ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hp",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LE.le.{0} 1 p"
+      }
+    ],
+    "GapCVP.Comparator.finitePNormGapCVPIsNPHard": [
+      {
+        "binder_kind": "explicit",
+        "index": 0,
+        "name": "p",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "ℚ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "hp",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LE.le.{0} 1 p"
+      }
+    ],
+    "GapCVP.Comparator.gapCVP400IsNPHard": [],
+    "GapCVP.Comparator.gapCVP400Promise": []
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

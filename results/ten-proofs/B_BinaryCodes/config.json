@@ -1,0 +1,19 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "MetricCodes",
+  "theorem_names": [
+    "MetricCodes.Hamming.binaryRate_lt_classicalRate",
+    "MetricCodes.Hamming.exists_binaryRate_improvement",
+    "MetricCodes.Johnson.binaryRate_le_combinedVariationalRate",
+    "MetricCodes.MRRW.strict_mrrw2",
+    "MetricCodes.Johnson.binaryRate_lt_mrrw",
+    "MetricCodes.Johnson.exists_binaryRate_mrrw_improvement"
+  ]
+}

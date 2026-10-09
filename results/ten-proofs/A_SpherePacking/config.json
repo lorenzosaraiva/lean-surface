@@ -1,0 +1,17 @@
+{
+  "challenge_module": "Challenge",
+  "definition_names": [],
+  "enable_nanoda": true,
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "solution_module": "SpherePacking",
+  "theorem_names": [
+    "PackingBounds.FullMain.exact_limit",
+    "PackingBounds.FullMain.exact_binary_exponent",
+    "PackingBounds.PackingBridge.sphere_packing_sharp_asymptotic_upper",
+    "PackingBounds.sharpFullCohnElkiesManuscriptConclusions"
+  ]
+}

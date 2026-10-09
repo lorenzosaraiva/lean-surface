@@ -1,0 +1,32 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "ErdosProblems.MulticolourTriangleRamsey.erdos_183": [],
+    "ErdosProblems.MulticolourTriangleRamsey.erdos_problem_183_explicit": [],
+    "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_isTheta": [],
+    "ErdosProblems.MulticolourTriangleRamsey.triangleRamseyNumber_log_sharp_coefficients": [
+      {
+        "binder_kind": "explicit",
+        "index": 0,
+        "name": "ε",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "ℝ"
+      },
+      {
+        "binder_kind": "explicit",
+        "index": 1,
+        "name": "a._@._internal._hyg.0",
+        "referenced": true,
+        "status": "referenced in proof term",
+        "trust": "mechanical",
+        "type": "LT.lt.{0} 0 ε"
+      }
+    ]
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}

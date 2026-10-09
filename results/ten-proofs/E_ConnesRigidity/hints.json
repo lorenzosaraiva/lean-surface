@@ -1,0 +1,11 @@
+{
+  "advisory": true,
+  "hypotheses": {
+    "ConnesRigidity.exists_infinite_pairwise_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors": [],
+    "ConnesRigidity.exists_nonisomorphic_propertyT_icc_groups_with_isomorphic_factors": []
+  },
+  "safety": [],
+  "source_modifiers": [],
+  "stub_hints": [],
+  "totalization": []
+}
