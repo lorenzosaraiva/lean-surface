@@ -1,0 +1,39 @@
+{
+  "acceptance": "PASS",
+  "core": {
+    "body_controls_passed": 4,
+    "commit": "df1cd899e3aa834c7f0262409075b8d2aae508cf",
+    "conclusion": "success",
+    "fixture_outcomes_passed": 36,
+    "job_id": 113636313800,
+    "log": "ci/core-suite.log",
+    "negative_controls_rejected": 3,
+    "run_id": 37873396120,
+    "runner": "ubuntu-latest"
+  },
+  "correction": {
+    "artifact_files_compared": 8,
+    "cached_log_publication": "canonical LF",
+    "differing_files_after_correction": [],
+    "manual_job_rerun": false,
+    "test_command": "python tests/compare_example.py ACTUAL results/ten-proofs/I_MulticolorTriangleRamsey",
+    "unchanged_ci_artifact_id": 11592030530
+  },
+  "log_excerpt_format": "Trailing whitespace trimmed for publication; complete raw logs remain on GitHub and in the ignored local cache.",
+  "manual_example": {
+    "commit": "df1cd899e3aa834c7f0262409075b8d2aae508cf",
+    "comparison": "PASS",
+    "conclusion": "failure",
+    "differing_files": [
+      "comparator.log"
+    ],
+    "dispatch_count": 1,
+    "failed_step": "Diff every review artifact against the recorded bundle",
+    "job_id": 113636313666,
+    "lean_kernel": "PASS",
+    "log": "ci/erdos-example-failure.log",
+    "measured_difference": "Committed log used CRLF; Ubuntu log used LF. All other bytes and files agreed.",
+    "nanoda": "PASS",
+    "run_id": 37873396120
+  }
+}
