@@ -1,0 +1,7 @@
+2026-10-09T02:18:17.6816011Z {"comparison": "PASS", "lean_kernel": "PASS", "nanoda": "PASS", "profile": "trusted-cache; no sandbox"}
+2026-10-09T02:18:17.7289308Z {
+2026-10-09T02:18:17.7292571Z   "differing_files": [
+2026-10-09T02:18:17.7292894Z     "comparator.log"
+2026-10-09T02:18:17.7293164Z   ]
+2026-10-09T02:18:17.7293366Z }
+2026-10-09T02:18:17.7331035Z ##[error]Process completed with exit code 1.

@@ -62,6 +62,7 @@ jobs:
       - name: Fetch pinned target and Mathlib cache
         run: |
           git -c core.autocrlf=true clone https://github.com/openai/ten-proofs "$RUNNER_TEMP/ten-proofs"
+          git -C "$RUNNER_TEMP/ten-proofs" config core.autocrlf true
           git -C "$RUNNER_TEMP/ten-proofs" checkout 94bc0feb6a9ff12c7d31d6de640a725c9d43d2b6
           cd "$RUNNER_TEMP/ten-proofs"
           lake exe cache get

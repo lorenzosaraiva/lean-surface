@@ -755,15 +755,23 @@ def review(
         if no_nanoda and (out / "nanoda.log").exists():
             (out / "nanoda.log").unlink()
         for filename in ["comparator.log", "Challenge.compile.log", *([] if no_nanoda else ["nanoda.log"])]:
-            if (work / filename).exists():
+            source = work / filename
+            if (not source.exists() and status.get("comparison") == "PASS"
+                    and status.get("lean_kernel") == "PASS" and status.get("nanoda") in {"PASS", "skipped"}):
+                # Older trusted-cache receipts may lack a private raw log.
+                # Preserve an existing published log, with canonical LF bytes.
+                source = out / filename
+            if source.exists():
                 (out / filename).write_text(
                     scrub(
-                        (work / filename).read_text(encoding="utf-8", errors="replace"),
+                        source.read_text(encoding="utf-8", errors="replace"),
                         project,
                     ),
                     encoding="utf-8",
                     newline="\n",
                 )
+            elif (out / filename).exists():
+                (out / filename).unlink()
     dump(out / "status.json", status)
     return {
         "metrics": metrics,
